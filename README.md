@@ -1,8 +1,11 @@
-# integradorDHgrupo7
+# Grupo_7_SweetTreats
+
+- [Noelia Baquero Staci]  -
+- [Diego Delachaux] - 
+- [Juan Manuel Marengo] - 
 
 # ENGLISH
 :doughnut: ## About Us :lollipop:
-
 
 ### OUR PRODUCT
 
@@ -39,14 +42,20 @@ colleagues and other businesses. Some of them are:
 - [         ]
 - [         ]
 
-## color palette
+## Color palette
 
-* 82869A
-* 7E33E0
-* 7C8087
-* 1D252C
-* 1D438A
-* E5E5E5
+* #82869A
+* #7E33E0
+* #7C8087
+* #1D252C
+* #1D438A
+* #E5E5E5
+
+##Fuente:
+
+- Poppins
+
+
 
 # SPANISH
 
@@ -54,7 +63,7 @@ colleagues and other businesses. Some of them are:
 
 ### Nuestro Producto
 
-Ofrecemos una importante variedad de dulces y chocolates. Tambien ofrecemos cookes, donas y mesas dulces por encargo.
+Ofrecemos una importante variedad de dulces y chocolates. Tambien ofrecemos cookies, donas y mesas dulces por encargo.
 
 ### Mentalidad
 
@@ -66,13 +75,13 @@ Somos creyentes que el crecimiento genera oportunidad. Todos/as son bienvenidos/
 
 ### Clientes
 
-Todos/as los que creen en una manera mas dulce de vivir
+Todos/as los que creen en una manera mas dulce de vivir.
 
 ### Layout y desing 
 
 Nuestra tienda es una herramienta critica para nuestra estrategia de retail online. No solo focalizandose en la venta en si, sino en conceptos de desing 
 
-### Tomamos inspiracion de colegas y otros negocios. Algunos de ellos son 
+### Tomamos inspiracion de colegas y otros negocios. Algunos de ellos son:
 
 #### Modelo de negocio 
 
@@ -87,9 +96,18 @@ Nuestra tienda es una herramienta critica para nuestra estrategia de retail onli
 
 ## Paleta de colores
 
-* 82869A
-* 7E33E0
-* 7C8087
-* 1D252C
-* 1D438A
-* E5E5E5
+* #82869A
+* #7E33E0
+* #7C8087
+* #1D252C
+* #1D438A
+* #E5E5E5
+
+##Fuente:
+
+-Poppins
+
+
+
+ 
+
