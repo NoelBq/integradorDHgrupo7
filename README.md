@@ -51,7 +51,7 @@ colleagues and other businesses. Some of them are:
 * #1D438A
 * #E5E5E5
 
-##Fuente:
+## Font:
 
 - Poppins
 
@@ -103,7 +103,7 @@ Nuestra tienda es una herramienta critica para nuestra estrategia de retail onli
 * #1D438A
 * #E5E5E5
 
-##Fuente:
+## Fuente:
 
 -Poppins
 
