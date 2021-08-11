@@ -33,14 +33,14 @@ colleagues and other businesses. Some of them are:
 
 ### Business model ###
 
-- [    ]
-- [    ]
+- [ https://sentio.com.ar/   ]
+- [ https://scarlett.com.ar/ ]
 
 ### Desing and color palletes ###
 
-- [         ]
-- [         ]
-- [         ]
+- [ https://www.hallmark.com/   ]
+- [ https://www.avon.com.ar/    ]
+- [ https://www.fravega.com/    ]
 
 ## Color palette
 
@@ -85,14 +85,14 @@ Nuestra tienda es una herramienta critica para nuestra estrategia de retail onli
 
 #### Modelo de negocio 
 
-- [    ]
-- [    ]
+- [ https://sentio.com.ar/  ]
+- [ https://scarlett.com.ar/]
 
 #### Desing and color palletes 
 
-- [         ]
-- [         ]
-- [         ]
+- [  https://www.hallmark.com/   ]
+- [  https://www.avon.com.ar/    ]
+- [  https://www.fravega.com/    ]
 
 ## Paleta de colores
 
