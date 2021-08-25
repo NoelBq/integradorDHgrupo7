@@ -76,15 +76,132 @@
     
     #touch:checked + .slide {height: 300px;} 
   
+/* WELCOME BOX STYLES*/
+.welcome-box{
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-image: url('/images/Welcome-bg.jpg');
+  background-position: center center;
+  text-align: center;
+
+}
 
 
+.welcome-title{ 
+  position: absolute;
+  width: 100%;
+  font-weight: 800;
+  font-size: 40px;
+  color: #FFFFFF;
+  top: -10px;
+  text-shadow: 3px 5px 2px #474747;
+}
+
+.welcome-subtitle{
+  position: absolute;
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  top: 49px;
+  color: #444444;
+}
+
+.welcome-btn{
+  position: absolute;
+  width: 170px;
+  border-radius: 10px;
+  background-color: rgba(126,51,224,90);
+  padding: 10px;
+  top: 330px;
+  left: calc(50% - 85px);
+  box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.58);
+}
+
+.welcome-btn a{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+
+}
+
+/*ABOUT US STYLES*/
+
+.fas{
+  color: rgba(255,0,0,0.8);
+  font-size: 24px;
+
+}
+
+.about-text-paragraph{
+  font-weight: 300;
+  padding: 10px;
+}
+
+.about-box{
+  position: relative;
+  background-image: url('/images/chelsea-audibert-hV1gChgMa-k-unsplash.jpg');
+  width: 100vw;
+  height: 400px;
+  background-size: cover;
+}
 
 
+.about-text{
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 70px;
+  left: calc(50% - 150px);
+  background-color: rgba(255,255,255,0.7);
+}
 
-    
+.about-text-title{
+  font-size: 24;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+@media only screen and (max-width:295px) {
+  /*WELCOME BOX STYLES*/
+  .welcome-box{height: 400px;}
+  .welcome-title{
+      font-size: 30px;
+      top: -27;}
+ }
+ .welcome-subtitle{
+     font-size: 14px;
+     top: 66px;
+ }
+ .welcome-btn{
+      width: 124px;
+      padding: 6px;
+      left: calc(50% - 62px);
+ }
+ .welcome-btn a{
+     font-size: 16px;
+ }
+
+ @media only screen and (min-width:295px){
+  /*WELCOME BOX STYLES*/
+  .welcome-box{
+      height: 550px;
+  }
+  .welcome-title{
+      font-size: 40px;
+      top: 0px;
+  }
+  .welcome-subtitle{
+      font-size: 22px;
+      top: 86px;
+  }
+  .welcome-btn{top: 479px;}
+}
   
   @media screen and (min-width: 768px) {
-    
+    /* Nav Bar Styles */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -133,8 +250,99 @@
     .nav-links i:hover {
       color:var(--grey);
     }
+
+ /*WELCOME BOX STYLES*/
+    .welcome-box{
+        height: 650px;
+    }
+    .welcome-title {
+        font-size: 59px;
+        top: -10px;
+    }
+    .welcome-btn {
+        width: 190px;
+        padding: 10px;
+        left: calc(50% - 95px);
+    }
+    .welcome-btn a {
+        font-size: 22px;
+    }
+
+/*ABOUT US STYLES*/
+.about-box {
+  height: 450px;
+}
+.about-text{
+  height: 360px;
+  width: 329px;
+  top:63px;
+  left: calc(50% - 170px);
+}
+.about-text-title{
+  font-size: 26px;
+}
+.about-text-paragraph{
+  font-size: 18px;
+}
+
   }
 
+  @media only screen and (min-width: 1200px) {
+    /*WELCOME BOX STYLES*/
+    .welcome-box{
+      height: 700px;
+  }
+  .welcome-title {
+      font-size: 119px;
+      top: -53px;
+  }
+  .welcome-subtitle {
+      font-size: 31px;
+      top: 331px;
+  }
+  .welcome-btn {
+      top: 567px;
+      width: 260px;
+      padding: 17px;
+      left: calc(50% - 130px);
+  }
+  .welcome-btn a {
+      font-size: 32px;
+  }
+
+  /*ABOUT US STYLES*/
+  .about-box {
+    height: 570px;
+}
+.about-text{
+    height: 454px;
+    width: 400px;
+    left: calc(50% - -170px);
+}
+.about-text-title{
+    font-size: 36px;
+}
+.about-text-paragraph{
+    font-size: 22px;
+}   
+
+  }
+
+  @media only screen and (min-width: 2000px)  {
+    /*ABOUT US STYLES*/
+    .about-text {
+        height: 492px;
+        width: 480px;
+        left: calc(50% - -400px);
+    }
+    .about-text-paragraph {
+        font-size: 26px;
+    }
+    .about-box{    background-position: center;
+    }
+    
+    }
+    
 
 
 
