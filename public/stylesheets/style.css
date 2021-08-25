@@ -148,7 +148,7 @@
   
   .footer-addr {
     margin-right: 1.25em;
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
   }
   
   .footer-logo {
@@ -160,38 +160,72 @@
   
   .footer-addr h2 {
     margin-top: 1.3em;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
   
   }
+
+  .footer-addr h2::first-letter {
+     color: var(--lightviolet);
+     text-decoration: underline;
   
+  }
+
   .nav-title {
     font-weight: 400;
     font-size: 15px;
     color: var(--lightviolet);
+  }
+
+  .social-container {
+    color: --lightgrey;
+    padding: 15px 0px;
+    width: 100%;
+    background-color: var(--fontcolor);
+  }
+  
+  .fab {
+      font-size: 2em;
+      color: --lightviolet;
+      width: 50px;
+      text-decoration: none;
+  }
+
+  .fab:hover {
+    color: var(--lightblue);
   }
   
   .footer address {
     font-style: normal;
     color: var(--grey);
   }
-  
+
+  .footer address i {
+    color: var(--lightviolet);
+    padding: 5px;
+  }
+
   .footer-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 36px;
+    height: 20px;
     max-width: max-content;
     background-color: --fontcolor;
-    color: var(--lightgrey);
-    border: 1px solid #E5E5E5;
-    border-color: var(--lightgrey);
+    color: var(--grey);
+    border: 0.5px solid #E5E5E5;
+    border-color:  var(--grey);
     line-height: 0;
-    margin: 0.6em 0;
+    margin: 0.8em 0;
     font-size: 1rem;
-    padding: 0 18px;
+    padding: 5px 10px;
   }
-  
+
+  .footer-btn i {
+    padding: 5px;
+    font-size: 1rem;
+  }
+   
   .footer ul {
     list-style: none;
     padding-left: 0;
