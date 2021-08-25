@@ -4,6 +4,8 @@
 - [Diego Delachaux] - 
 - [Juan Manuel Marengo] - 
 
+### Trelo [ https://trello.com/b/4oWQHMWe/tareas ]
+
 # ENGLISH
 :doughnut: ## About Us :lollipop:
 
