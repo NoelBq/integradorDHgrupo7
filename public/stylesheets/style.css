@@ -84,6 +84,8 @@
   background-image: url('/images/Welcome-bg.jpg');
   background-position: center center;
   text-align: center;
+  
+
 
 }
 
@@ -93,19 +95,13 @@
   width: 100%;
   font-weight: 800;
   font-size: 40px;
-  color: #FFFFFF;
+  color: #eb9ac0;
   top: -10px;
   text-shadow: 3px 5px 2px #474747;
+  font-family: 'Pacifico';
 }
 
-.welcome-subtitle{
-  position: absolute;
-  width: 100%;
-  font-weight: 500;
-  font-size: 18px;
-  top: 49px;
-  color: #444444;
-}
+
 
 .welcome-btn{
   position: absolute;
@@ -141,7 +137,7 @@
 
 .about-box{
   position: relative;
-  background-image: url('/images/chelsea-audibert-hV1gChgMa-k-unsplash.jpg');
+  background-image: url('/images/About-BS.jpg');
   width: 100vw;
   height: 400px;
   background-size: cover;
@@ -171,10 +167,7 @@
       font-size: 30px;
       top: -27;}
  }
- .welcome-subtitle{
-     font-size: 14px;
-     top: 66px;
- }
+
  .welcome-btn{
       width: 124px;
       padding: 6px;
@@ -193,10 +186,7 @@
       font-size: 40px;
       top: 0px;
   }
-  .welcome-subtitle{
-      font-size: 22px;
-      top: 86px;
-  }
+
   .welcome-btn{top: 479px;}
 }
   
@@ -293,13 +283,10 @@
       height: 700px;
   }
   .welcome-title {
-      font-size: 119px;
+      font-size: 130px;
       top: -53px;
   }
-  .welcome-subtitle {
-      font-size: 31px;
-      top: 331px;
-  }
+
   .welcome-btn {
       top: 567px;
       width: 260px;
