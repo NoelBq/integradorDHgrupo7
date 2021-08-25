@@ -4,7 +4,8 @@
   "description": "- [Noelia Baquero Staci]  -\r - [Diego Delachaux] - \r - [Juan Manuel Marengo] -",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/NoelBq/integradorDHgrupo7#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
