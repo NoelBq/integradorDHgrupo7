@@ -1,0 +1,10 @@
+/* Color palette */ 
+:root {
+    --lightblue: #1D438A;
+    --darkblue: #1D252C;
+    --grey: #82869A;
+    --lightgrey: #E5E5E5;
+    --lightviolet: #A69CF1;
+    --strongviolet: #7E33E0;
+    --fontcolor: #262626;
+ }
