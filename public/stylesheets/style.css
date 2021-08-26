@@ -1,4 +1,6 @@
+@import url(_colorpalette.css);
 @import url(_nav.css);
+@import url(_footer.css);
 
 /* Color palette */ 
 :root {
