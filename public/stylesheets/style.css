@@ -1,81 +1,7 @@
-/* Color palette */ 
-:root {
-    --lightblue: #1D438A;
-    --darkblue: #1D252C;
-    --grey: #82869A;
-    --lightgrey: #E5E5E5;
-    --lightviolet: #A69CF1;
-    --strongviolet: #7E33E0;
-    --fontcolor: #262626;
- }
+@import url(_colorpalette.css);
+@import url(_nav.css);
+@import url(_footer.css);
 
- body {
-    font-family: poppins, sans-serif;
-  }
-  
-/* Nav Bar Styles */
-
-.navbar {
-    font-size: 15px;
-    border: 1px solid rgba(166, 156, 241, 0.4);
-    padding-bottom: 10px;
-  }
-  
-  .main-nav {
-    list-style-type: none;
-    display: none;
-  }
-  
-  .nav-links,
-  .logo {
-    text-decoration: none;
-    color: var(--fontcolor) ;
-  }
-  
-  .main-nav li {
-    text-align: center;
-    margin: 15px auto;
-  }
-  
-  .main-nav li a {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  
-  .logo {
-    display: inline-block;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-family: 'Pacifico', cursive;
-  }
-  
-  .navbar-toggle {
-    position: absolute;
-    top: 17px;
-    right: 20px;
-    cursor: pointer;
-    color: black;
-    font-size: 18px;
-  }
-  
-  .nav-links i {
-      color: var(--lightviolet);
-  }
-  
-  #chkToggle {
-    display: none;
-  }
-  
-  #chkToggle:checked + ul.main-nav {
-    display: block;
-  }
-  
-    
-    #touch {position: absolute; opacity: 0; height: 0px;}    
-    
-    #touch:checked + .slide {height: 300px;} 
-  
 /* WELCOME BOX STYLES*/
 .welcome-box{
   width: 100vw;
@@ -84,11 +10,7 @@
   background-image: url('/images/Welcome-bg.jpg');
   background-position: center center;
   text-align: center;
-  
-
-
 }
-
 
 .welcome-title{ 
   position: absolute;
@@ -100,8 +22,6 @@
   text-shadow: 3px 5px 2px #474747;
   font-family: 'Pacifico';
 }
-
-
 
 .welcome-btn{
   position: absolute;
@@ -315,35 +235,17 @@
 
   }
 
-  @media only screen and (min-width: 2000px)  {
-    /*ABOUT US STYLES*/
-    .about-text {
-        height: 492px;
-        width: 480px;
-        left: calc(50% - -400px);
-    }
-    .about-text-paragraph {
-        font-size: 26px;
-    }
-    .about-box{    background-position: center;
-    }
-    
-    }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media only screen and (min-width: 2000px)  {
+  /*ABOUT US STYLES*/
+  .about-text {
+      height: 492px;
+      width: 480px;
+      left: calc(50% - -400px);
+  }
+  .about-text-paragraph {
+      font-size: 26px;
+  }
+  .about-box{    background-position: center;
+  }
+  
+}
