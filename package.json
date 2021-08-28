@@ -4,7 +4,8 @@
   "description": "- [Noelia Baquero Staci]  -\r - [Diego Delachaux] - \r - [Juan Manuel Marengo] -",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
