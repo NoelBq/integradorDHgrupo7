@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     background: var(--lightviolet);
-    background: url(https://images.unsplash.com/photo-1490367605959-06955305859b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFjYXJvbnN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60);
+    background: url('/images/Form-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
