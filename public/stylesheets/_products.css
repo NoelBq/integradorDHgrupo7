@@ -83,3 +83,33 @@ width: 100vw;
 .card:hover .product-card-btn{
     display: block;
 }
+
+@media screen and (min-width: 768px){
+
+    .Product-cards{
+        grid-template-columns: 44% 355px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .Product-cards{
+        grid-template-columns: 33% 33% 366px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .Product-cards{
+        grid-template-columns: 33% 33% 343px;;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 1600px){
+    .Product-cards {
+         grid-template-columns: 20% 20% 342px;
+        }
+    }
