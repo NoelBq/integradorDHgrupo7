@@ -10,6 +10,9 @@ width: 100vw;
 
 }
 
+
+/* product-card Styles*/ 
+
 .product-card-header{
     text-align: center;
 }
@@ -84,7 +87,74 @@ width: 100vw;
     display: block;
 }
 
+/* offerbox Styles*/
+
+
+  
+  .offerbox-box{
+    position: relative;
+    background-image: url('/images/offerbox-bg.png');
+    width: 100vw;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .offerbox-img{
+      display: none;
+  }
+  
+  .offerbox-text{
+    position: absolute;
+    height: 300px;
+    width: 290px;
+    top: 55px;
+    left: calc(50% - 145px);
+    background-color: rgba(255,255,255,0.7);
+  }
+  
+
+  .offerbox-text-title{
+    font-size: 33px;
+    margin-top: 9px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .offerbox-text-subtitle{
+      text-decoration: underline;
+      padding: 10px;
+  }
+  .offerbox-text-paragraph{
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 12px;
+    text-align: left;
+    line-height: 34px;
+  }
+
+  .offerbox-text-btn{
+      padding: 40px;
+      text-align: center;
+  }
+
+  .offerbox-text-btn a{
+    line-height:13px;
+    letter-spacing:1px;
+    text-decoration:none;
+    color:#fff;
+    display:inline-block;
+    padding:15px 12px 15px 15px;
+    background:#231f20;
+    transition: all 200ms;
+    border-radius:4px;
+  }
+
+.offerbox-text-btn a:hover{
+    background: var(--lightviolet);
+}
+
 @media screen and (min-width: 768px){
+    /* product-card Styles*/ 
 
     .Product-cards{
         grid-template-columns: 44% 355px;
@@ -93,22 +163,39 @@ width: 100vw;
 }
 
 @media only screen and (min-width: 992px) {
+    /* product-card Styles*/ 
+
     .Product-cards{
         grid-template-columns: 33% 33% 366px;
+    }
+
+    /* offerbox Styles*/
+
+    .offerbox-box{
+        position: grid;
+        background-image: none;
+    }
+
+    .offerbox-img{
+        height: 200px;
+        width: 200px;
+        display: block;
     }
 
 }
 
 @media only screen and (min-width: 1200px) {
+    /* product-card Styles*/ 
+
     .Product-cards{
         grid-template-columns: 33% 33% 343px;;
     }
 
 }
 
-
-
 @media only screen and (min-width: 1600px){
+    /* product-card Styles*/ 
+
     .Product-cards {
          grid-template-columns: 20% 20% 342px;
         }
