@@ -3,7 +3,7 @@
 @import url(_footer.css);
 
 body {
-    font-family: poppins, sans-serif;
+    font-family: 'Poppins' , sans-serif;
 }
 
 .wrapper {
@@ -179,12 +179,12 @@ body {
 
     .register-icons{
         position: absolute;
-        bottom: -41px;
+        bottom: -28px;
     }
 
     .login-icons{
         position: absolute;
-        bottom: -59px;
+        bottom: -49px;
     }
 
     .form-pass {
@@ -199,6 +199,6 @@ body {
 
     .is-link{
         position:absolute;
-        bottom: -95px;
+        bottom: -85px;
     }
 }
