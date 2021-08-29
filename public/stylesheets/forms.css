@@ -32,29 +32,20 @@ body {
 .container h3 {
     text-align: center;
     margin-top: 0px;
+    padding-top: 20px;
 }
 
 .form{
     margin: 0;
     position: relative;
-    padding: 60px 10px 20px 10px;
+    margin-bottom: 66px;
     color: #fff;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-.avatar {
-    position: absolute;
-    border-radius: 50%;
-    top:-7%;
-    left: 40%;
-    z-index: 4;
-}
-.avatar img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-}
+
+
 
 .form-item {
     padding: 10px;
@@ -177,7 +168,25 @@ body {
         min-height: 420px;
     
     }
+
+    .login-pw{
+        margin-top:20px
+    }
     
+    .register{
+        padding: 22px 10px 20px 10px;
+    }
+
+    .register-icons{
+        position: absolute;
+        bottom: -41px;
+    }
+
+    .login-icons{
+        position: absolute;
+        bottom: -59px;
+    }
+
     .form-pass {
         display: flex;
         flex-direction: row;
@@ -186,5 +195,10 @@ body {
     
     .form-item button {
         font-size: 1em;
+    }
+
+    .is-link{
+        position:absolute;
+        bottom: -95px;
     }
 }
