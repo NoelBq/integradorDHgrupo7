@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheets/style.css">
-    <link rel="stylesheet" href="./stylesheets/nav.css">
     <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="./stylesheets/forms.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -48,8 +49,142 @@
     </header>
     <main>
         <section>
-            
+            <div class="wrapper">
+                <div class="container">
+                    <form action="#" method="POST" class="form login" autocomplete="off">
+                        <h3>Iniciar Sesion</h3>
+                        <div class="form-item">
+                            <label for="email"><i class="fas fa-envelope"></i>Email</label>
+                            <input type="text" name="email" class="is-input" placeholder="Email" id="email"
+                                autocomplete="off">
+                        </div>
+                        <div class="form-item login-pw">
+                            <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
+                            <input type="password" name="password" class="is-input" placeholder="Contraseña"
+                                id="password">
+                        </div>
+                        <div class="form-item">
+                            <div class="form-section">
+                                <button type="submit" class="button is-button">Iniciar Sesion</button>
+                                <div class="social-container-form login-icons">
+                                    <a href="https://www.facebook.com/" class="link facebook"><i
+                                            class="fab fa-facebook"></i></a>
+                                    <a href="https://www.google.com/intl/es-419/gmail/about/" class="link google">
+                                        <i class="fab fa-google"></i></a>
+                                </div>
+                                <a href="#" class="button is-link">¿Olvidaste tu contraseña?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="container ">
+                    <form action="#" method="POST" class="form register" autocomplete="off">
+                        <h3>Registro</h3>
+                        <div class="form-item">
+                            <label for="email"><i class="fas fa-envelope"></i>Email</label>
+                            <input type="text" name="email" class="is-input" placeholder="Email" id="email"
+                                autocomplete="off">
+                        </div>
+                        <div class="form-pass">
+                            <div class="form-item">
+                                <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
+                                <input type="password" name="password" class="is-input" placeholder="Contraseña"
+                                    id="password">
+                            </div>
+                            <div class="form-item">
+                                <label for="password"><i class="fas fa-lock"></i>Confirmar contraseña</label>
+                                <input type="password" name="password" class="is-input"
+                                    placeholder="Confirmar contraseña" id="password">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-section">
+                                <button type="submit" class="button is-button">Registrarse</button>
+                                <div class="social-container-form register-icons">
+                                    <a href="https://www.facebook.com/" class="link facebook"><i
+                                            class="fab fa-facebook"></i></a>
+                                    <a href="https://www.google.com/intl/es-419/gmail/about/" class="link google"><i class="fab fa-google"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="footer-addr">
+            <h1 class="footer-logo">Sweet Treats</h1>
+            <h2>Contacto</h2>
+
+            <address>
+                <i class="fas fa-map-marker-alt"></i> Av Indiana 3162 || <i class="fas fa-mobile-alt"></i> 11 335789
+                <a class="footer-btn" href="mailto:sweettreatsarg@gmail.com">Mail: <i class="far fa-envelope"></i> </a>
+            </address>
+
+            <div class="social-container">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.google.com/intl/es-419/gmail/about/"><i class="fab fa-google-plus"></i></a>
+            </div>
+        </div>
+
+        <ul class="footer-nav">
+
+            </li>
+            <li class="nav-item">
+                <h2 class="nav-title">Productos</h2>
+
+                <ul class="nav-ul">
+                    <li>
+                        <a href="#">Mas Vendidos</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Tendencias</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <h2 class="nav-title">Nosotros</h2>
+
+                <ul class="nav-ul">
+                    <li>
+                        <a href="#">Envios</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Ayuda</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="nav-item">
+                <h2 class="nav-title">Info</h2>
+
+                <ul class="nav-ul">
+                    <li>
+                        <a href="#">Contacto</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Privacidad</a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+
+        <div class="legal">
+            <p>&copy; 2021 Todos los derechos reservados.</p>
+
+            <div class="legal-links">
+                <span>Hecho con <span class="heart">♥</span> por Diego, Juan y Noelia</span>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
