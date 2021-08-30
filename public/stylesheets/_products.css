@@ -15,6 +15,7 @@ width: 100vw;
 
 .product-card-header{
     text-align: center;
+    margin-top: 1em;
 }
 
 .product-card-headerTitle{
