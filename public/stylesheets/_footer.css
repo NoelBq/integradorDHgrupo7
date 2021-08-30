@@ -54,7 +54,7 @@
   
   .fab {
       font-size: 2em;
-      color: --lightviolet;
+      color: var(--lightviolet);
       width: 50px;
       text-decoration: none;
   }
