@@ -26,21 +26,26 @@
 
 .welcome-btn{
   position: absolute;
-  width: 170px;
-  border-radius: 10px;
-  background-color: rgba(126,51,224,90);
-  padding: 10px;
-  top: 330px;
-  left: calc(50% - 85px);
-  box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.58);
+  width: 140px;
+  left: calc(50% - 70px);
 }
 
 .welcome-btn a{
+  
+  top: 330px;
+  
+  background-color: var(--darkblue);
+  box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.58);
+  border-radius: 10px;
+  padding: 10px;
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   font-size: 20px;
+}
 
+.welcome-btn a:hover{
+  background-color: rgba(126,51,224,90);
 }
 
 /*ABOUT US STYLES*/
@@ -86,13 +91,14 @@
   .welcome-box{height: 400px;}
   .welcome-title{
       font-size: 30px;
-      top: -27;}
+      top: 11px;}
  }
 
  .welcome-btn{
-      width: 124px;
+      top: 350px;
+      width: 140px;
       padding: 6px;
-      left: calc(50% - 62px);
+      left: calc(50% - 70px);
  }
  .welcome-btn a{
      font-size: 16px;
