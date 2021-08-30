@@ -17,12 +17,12 @@ app.get("/shop", (req, res) => {
   });
 
 app.get("/cart", (req, res) => {
-    res.sendFile(path.join(__dirname, "./view/cart.html"));
+    res.sendFile(path.join(__dirname, "./views/cart.html"));
   });
 
   
 app.get("/underconstruction", (req, res) => {
-  res.sendFile(path.join(__dirname, "./view/underconstruction.html"));
+  res.sendFile(path.join(__dirname, "./views/underconstruction.html"));
 });
 
   
