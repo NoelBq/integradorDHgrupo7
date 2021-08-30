@@ -33,12 +33,6 @@
   
   }
 
-  .footer-addr h2::first-letter {
-     color: var(--lightviolet);
-     text-decoration: underline;
-  
-  }
-
   .nav-title {
     font-weight: 400;
     font-size: 15px;
@@ -52,14 +46,15 @@
     background-color: var(--fontcolor);
   }
   
-  .fab {
+  .social-container i {
       font-size: 2em;
       color: var(--lightviolet);
       width: 50px;
       text-decoration: none;
   }
 
-  .fab:hover {
+
+  .social-container i:hover {
     color: var(--lightblue);
   }
   

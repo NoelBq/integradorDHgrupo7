@@ -11,14 +11,15 @@
 
  body {
     font-family: poppins, sans-serif;
+
   }
   
 /* Nav Bar Styles */
 
 .navbar {
     font-size: 15px;
+    background-color: var(--fontcolor);
     border: 1px solid rgba(166, 156, 241, 0.4);
-    padding-bottom: 10px;
   }
   
   .main-nav {
@@ -29,7 +30,7 @@
   .nav-links,
   .logo {
     text-decoration: none;
-    color: var(--fontcolor) ;
+    color: var(--lightgrey);
   }
   
   .main-nav li {
@@ -55,7 +56,7 @@
     top: 17px;
     right: 20px;
     cursor: pointer;
-    color: black;
+    color: var(--strongviolet);
     font-size: 18px;
   }
   
@@ -80,9 +81,9 @@
   @media screen and (min-width: 768px) {
     .navbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       padding-bottom: 0;
-      height: 50px;
+      height: 60px;
       align-items: center;
     }
   
@@ -99,18 +100,18 @@
   
     .main-nav li {
       margin: 0;
+      font-size: 2em;
     }
   
-    .main-nav li a {
-      font-size: 13px;
-    }
-  
+
+
     .nav-links {
       margin-left: 40px;
     }
   
     .logo {
       margin-top: 0;
+      font-size: 2em;
     }
   
     .navbar-toggle {
