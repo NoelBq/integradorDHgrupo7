@@ -298,16 +298,19 @@
 
 .stars {
   border: none;
-  font-size: 12px;
+  font-size: 1em;
   font-weight: bold;
-  color: white;
 
 }
 
 .stars i {
-  color: var(--strongviolet)
+  color: var(--strongviolet);
+  font-size: 1em;
 }
 
+.stars .emptystar {
+  font-size: 1em;
+}
 
 @media screen and (min-width:768px) {
    .testimonials {
