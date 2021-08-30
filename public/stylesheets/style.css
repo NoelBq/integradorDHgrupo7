@@ -286,8 +286,8 @@
 }
 
 .description {
-  margin: 1rem 2rem;
-  font-size: 10px;
+  margin: 9px 2rem;
+  font-size: 13px;
 }
 
 .stars {
@@ -313,3 +313,23 @@
    }
 }
 
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 300px;
+    height: 300px;
+}
+
+.profile-img {
+    width: 5rem;
+    clip-path: circle(42px at center);
+}
+
+.name {
+    font-size: 22px;
+}
+
+.description {
+margin: 21px 2rem;
+    font-size: 18px;
+}
+}
