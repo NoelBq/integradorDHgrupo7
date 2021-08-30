@@ -168,7 +168,7 @@
     }
     .welcome-title {
         font-size: 59px;
-        top: -10px;
+        top: 20px;
     }
     .welcome-btn {
         width: 190px;
@@ -205,7 +205,6 @@
   }
   .welcome-title {
       font-size: 130px;
-      top: -53px;
   }
 
   .welcome-btn {
