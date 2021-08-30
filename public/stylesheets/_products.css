@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body{
+
+width: 100vw;
+
+}
+
+
+/* product-card Styles*/ 
+
+.product-card-header{
+    text-align: center;
+}
+
+.product-card-headerTitle{
+    font-weight: 400;
+    font-size: 33px;
+    color: #303030;
+    text-shadow: 0px 2px 4px #9C9C9C;
+}
+
+.product-card-headerSubtitle{
+    font-weight: 300;
+    font-size: 20px;
+    font-style: italic;
+    height: 50px;
+}
+
+.fa-heart{
+    color: #E32636;
+}
+
+
+.Product-cards{
+    display: grid;
+    justify-content: center;
+}
+
+.card{
+    position: relative;
+    width: 310px;
+    height: 355px;
+    border-radius: 8px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);    
+}
+
+
+.card img{
+    margin: auto;
+    width: 100%;
+}
+
+.card img:hover{
+    opacity: 0.82;
+}
+
+.product-card-title{
+    font-weight: 300;
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.product-card-btn{
+    display: none;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--strongviolet);
+}
+
+
+.card:hover .product-card-title{
+    display: none;
+}
+
+.card:hover .product-card-btn{
+    display: block;
+}
+
+/* offerbox Styles*/
+
+
+  
+  .offerbox-box{
+    position: relative;
+    background-image: url('/images/offerbox-bg.png');
+    width: 100vw;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .offerbox-img{
+      display: none;
+  }
+  
+  .offerbox-text{
+    position: absolute;
+    height: 300px;
+    width: 290px;
+    top: 55px;
+    left: calc(50% - 145px);
+    background-color: rgba(255,255,255,0.7);
+    border: 3px outset #A69CF1;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 4px 17px 4px rgba(0,0,0,0.46);
+  }
+  
+
+  .offerbox-text-title{
+    font-size: 33px;
+    margin-top: 9px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .offerbox-text-subtitle{
+      text-decoration: underline;
+      padding: 10px;
+  }
+  .offerbox-text-paragraph{
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 12px;
+    text-align: left;
+    line-height: 34px;
+  }
+
+  .offerbox-text-btn{
+      padding: 40px;
+      text-align: center;
+  }
+
+  .offerbox-text-btn a{
+    line-height:13px;
+    letter-spacing:1px;
+    text-decoration:none;
+    color:#fff;
+    display:inline-block;
+    padding:15px 12px 15px 15px;
+    background:#231f20;
+    transition: all 200ms;
+    border-radius:4px;
+  }
+
+.offerbox-text-btn a:hover{
+    background: var(--lightviolet);
+}
+
+@media screen and (min-width: 768px){
+    /* product-card Styles*/ 
+
+    .Product-cards{
+        grid-template-columns: 44% 355px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    /* product-card Styles*/ 
+
+    .Product-cards{
+        grid-template-columns: 33% 33% 366px;
+    }
+
+    /* offerbox Styles*/
+
+    .offerbox-box{
+        background-image: none;
+        background-color: #e9ecef;
+    }
+
+    .offerbox-text{
+        top: 43px;
+        left: calc(29vw - 100px);
+        
+    }
+
+    .offerbox-img{
+        height: 300px;
+        width: 300px;
+        display: block;
+        position: absolute;
+        
+    }
+
+    .offerbox-img img {
+        width: 100%;
+        height: 100%;
+        left: calc(76vw - 260px);
+        top: 43px;
+        position: absolute;
+        border: 3px outset #A69CF1;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 5px 4px 17px 4px rgba(0,0,0,0.46);
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+    /* product-card Styles*/ 
+
+    .Product-cards{
+        grid-template-columns: 33% 33% 343px;;
+    }
+
+}
+
+@media only screen and (min-width: 1600px){
+    /* product-card Styles*/ 
+
+    .Product-cards {
+         grid-template-columns: 20% 20% 342px;
+        }
+    }

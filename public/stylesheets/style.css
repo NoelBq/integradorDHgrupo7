@@ -1,6 +1,7 @@
 @import url(_colorpalette.css);
 @import url(_nav.css);
 @import url(_footer.css);
+@import url(_products.css);
 
 /* WELCOME BOX STYLES*/
 .welcome-box{
