@@ -175,6 +175,10 @@ width: 100vw;
         grid-template-columns: 33% 33% 366px;
     }
 
+    .product-card-header {
+        margin-top: 2em;
+    }
+
     /* offerbox Styles*/
 
     .offerbox-box{
