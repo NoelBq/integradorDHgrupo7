@@ -16,14 +16,15 @@ app.get("/shop", (req, res) => {
     res.sendFile(path.join(__dirname, "./views/shop.html"));
   });
 
-  app.get("/product", (req, res) => {
-    res.sendFile(path.join(__dirname, "./views/product.html"));
-  });
-  
-
 app.get("/cart", (req, res) => {
-    res.sendFile(path.join(__dirname, "./view/cart.html"));
+    res.sendFile(path.join(__dirname, "./views/cart.html"));
   });
+
+  
+app.get("/underconstruction", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/underconstruction.html"));
+});
+
   
 
 const port = process.env.PORT || '3000';

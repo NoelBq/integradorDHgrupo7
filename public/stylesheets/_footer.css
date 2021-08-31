@@ -28,14 +28,9 @@
   
   .footer-addr h2 {
     margin-top: 1.3em;
+    margin-bottom: 0.5em;
     font-size: 18px;
     font-weight: 400;
-  
-  }
-
-  .footer-addr h2::first-letter {
-     color: var(--lightviolet);
-     text-decoration: underline;
   
   }
 
@@ -52,14 +47,15 @@
     background-color: var(--fontcolor);
   }
   
-  .fab {
+  .social-container i {
       font-size: 2em;
-      color: --lightviolet;
+      color: var(--lightviolet);
       width: 50px;
       text-decoration: none;
   }
 
-  .fab:hover {
+
+  .social-container i:hover {
     color: var(--lightblue);
   }
   
@@ -164,3 +160,5 @@
       flex: 2 0px;
     }
   }
+ 
+ 

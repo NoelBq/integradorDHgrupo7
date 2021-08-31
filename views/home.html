@@ -22,26 +22,26 @@
             <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
                 <i class="fa fa-bars"></i>
             </label>
-            <a href="#" class="logo">Sweet Treats</a>
+            <a href="/" class="logo">Sweet Treats</a>
             <input type="checkbox" id="chkToggle"></input>
             <ul class="main-nav" id="js-menu">
                 <li>
-                    <a href="#" class="nav-links">Productos</a>
+                    <a href="shop" class="nav-links">Productos</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-links">Nosotros</a>
+                    <a href="#about-box" class="nav-links">Nosotros</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-links">Contacto</a>
+                    <a href="#footer" class="nav-links">Contacto</a>
                 </li>
                 <li>
-                    <a href="/views/forms.html" class="nav-links">
+                    <a href="forms" class="nav-links">
                         <i class="far fa-user"></i>
                     </a>
                 </li>
                 <li>
                     <div class="nav-links">
-                        <a href="#">
+                        <a href="shop">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </div>
@@ -53,10 +53,10 @@
         <div class="welcome-box">
             <h2 class="welcome-title">SWEET TREATS</h2>
             <div class="welcome-btn">
-                <a href="#">Tienda Online</a>
+                <a href="shop">Tienda Online</a>
             </div>
         </div>
-        <div class="about-box">
+        <div class="about-box" id="about-box">
             <div class="about-text">
                 <h2 class="about-text-title">Somos Sweet Treats <i class="fas fa-heart"></i></h2>
                 <p class="about-text-paragraph">Somos una empresa que adora <br>
@@ -98,47 +98,43 @@
                 <div class="container">
                     <img src='./images/avatar3.jpg'' alt=' profile image' class="profile-img">
                     <h1 class="name">Eric Santos</h1>
-                    <p class="description">&quot Imperdibles medialunas &quot</p>
+                    <p class="description">&quot Muy bueno todo!! &quot</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <i class="far fa-star emptystar"></i>
                     </div>
                 </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-addr">
             <h1 class="footer-logo">Sweet Treats</h1>
             <h2>Contacto</h2>
 
             <address>
                 <i class="fas fa-map-marker-alt"></i> Av Indiana 3162 || <i class="fas fa-mobile-alt"></i> 11 335789
-                <a class="footer-btn" href="mailto:sweettreatsarg@gmail.com">Mail: <i class="far fa-envelope"></i> </a>
             </address>
-
             <div class="social-container">
                 <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.google.com/intl/es-419/gmail/about/"><i class="fab fa-google-plus"></i></a>
+                <a href="https://www.google.com/intl/es-419/gmail/about/"><i class="fab fa-google"></i></a>
+                <a href="mailto:sweettreatsarg@gmail.com"><i class="far fa-envelope"></i> </a>
             </div>
         </div>
-
         <ul class="footer-nav">
-
             </li>
             <li class="nav-item">
-                <h2 class="nav-title">Productos</h2>
-
+                <a href="shop"><h2 class="nav-title">Productos</h2></a>
                 <ul class="nav-ul">
                     <li>
-                        <a href="#">Mas Vendidos</a>
+                        <a href="underconstruction">Mas Vendidos</a>
                     </li>
 
                     <li>
-                        <a href="#">Tendencias</a>
+                        <a href="underconstruction">Tendencias</a>
                     </li>
                 </ul>
             </li>
@@ -148,17 +144,19 @@
 
                 <ul class="nav-ul">
                     <li>
-                        <a href="#">Envios</a>
+                        <a href="underconstruction">Envios</a>
                     </li>
 
                     <li>
-                        <a href="#">Ayuda</a>
+                        <a href="underconstruction">Ayuda</a>
                     </li>
 
                 </ul>
             </li>
             <li class="nav-item">
-                <h2 class="nav-title">Info</h2>
+                <a href="underconstruction">
+                    <h2 class="nav-title">Info</h2>
+                </a>
 
                 <ul class="nav-ul">
                     <li>
@@ -166,7 +164,7 @@
                     </li>
 
                     <li>
-                        <a href="#">Privacidad</a>
+                        <a href="underconstruction">Privacidad</a>
                     </li>
 
                 </ul>
@@ -175,7 +173,6 @@
 
         <div class="legal">
             <p>&copy; 2021 Todos los derechos reservados.</p>
-
             <div class="legal-links">
                 <span>Hecho con <span class="heart">♥</span> por Diego, Juan y Noelia</span>
             </div>

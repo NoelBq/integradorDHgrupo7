@@ -1,6 +1,7 @@
 @import url(_colorpalette.css);
 @import url(_nav.css);
 @import url(_footer.css);
+@import url(_products.css);
 
 /* WELCOME BOX STYLES*/
 .welcome-box{
@@ -25,21 +26,26 @@
 
 .welcome-btn{
   position: absolute;
-  width: 170px;
-  border-radius: 10px;
-  background-color: rgba(126,51,224,90);
-  padding: 10px;
-  top: 330px;
-  left: calc(50% - 85px);
-  box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.58);
+  width: 140px;
+  left: calc(50% - 70px);
 }
 
 .welcome-btn a{
+  
+  top: 330px;
+  
+  background-color: var(--darkblue);
+  box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.58);
+  border-radius: 10px;
+  padding: 10px;
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   font-size: 20px;
+}
 
+.welcome-btn a:hover{
+  background-color: rgba(126,51,224,90);
 }
 
 /*ABOUT US STYLES*/
@@ -85,13 +91,14 @@
   .welcome-box{height: 400px;}
   .welcome-title{
       font-size: 30px;
-      top: -27;}
+      top: 11px;}
  }
 
  .welcome-btn{
-      width: 124px;
+      top: 350px;
+      width: 140px;
       padding: 6px;
-      left: calc(50% - 62px);
+      left: calc(50% - 70px);
  }
  .welcome-btn a{
      font-size: 16px;
@@ -111,55 +118,7 @@
 }
   
   @media screen and (min-width: 768px) {
-    /* Nav Bar Styles */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 50px;
-      align-items: center;
-    }
-  
-    #chkToggle:checked + ul.main-nav {
-      display: flex;
-    }
-  
-    .main-nav {
-      display: flex;
-      margin-right: 30px;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-  
-    .main-nav li {
-      margin: 0;
-    }
-  
-    .main-nav li a {
-      font-size: 13px;
-    }
-  
-    .nav-links {
-      margin-left: 40px;
-    }
-  
-    .logo {
-      margin-top: 0;
-    }
-  
-    .navbar-toggle {
-      display: none;
-    }
-  
-    .logo:hover,
-    .nav-links:hover {
-      color:var(--grey);
-    }
-  
-    .logo:hover,
-    .nav-links i:hover {
-      color:var(--grey);
-    }
+    
 
  /*WELCOME BOX STYLES*/
     .welcome-box{
@@ -167,7 +126,7 @@
     }
     .welcome-title {
         font-size: 59px;
-        top: -10px;
+        top: 20px;
     }
     .welcome-btn {
         width: 190px;
@@ -204,7 +163,6 @@
   }
   .welcome-title {
       font-size: 130px;
-      top: -53px;
   }
 
   .welcome-btn {
@@ -286,22 +244,25 @@
 }
 
 .description {
-  margin: 1rem 2rem;
-  font-size: 10px;
+  margin: 9px 2rem;
+  font-size: 13px;
 }
 
 .stars {
   border: none;
-  font-size: 12px;
+  font-size: 1em;
   font-weight: bold;
-  color: white;
 
 }
 
 .stars i {
-  color: var(--strongviolet)
+  color: var(--strongviolet);
+  font-size: 1em;
 }
 
+.stars .emptystar {
+  font-size: 1em;
+}
 
 @media screen and (min-width:768px) {
    .testimonials {
@@ -313,3 +274,23 @@
    }
 }
 
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 300px;
+    height: 300px;
+}
+
+.profile-img {
+    width: 5rem;
+    clip-path: circle(42px at center);
+}
+
+.name {
+    font-size: 22px;
+}
+
+.description {
+margin: 21px 2rem;
+    font-size: 18px;
+}
+}

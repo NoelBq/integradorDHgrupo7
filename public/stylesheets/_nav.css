@@ -11,14 +11,16 @@
 
  body {
     font-family: poppins, sans-serif;
+
   }
   
 /* Nav Bar Styles */
 
 .navbar {
     font-size: 15px;
-    border: 1px solid rgba(166, 156, 241, 0.4);
-    padding-bottom: 10px;
+    background-color: var(--fontcolor);
+    border-bottom: 1px solid rgba(166, 156, 241, 0.4);
+    height: 50px;
   }
   
   .main-nav {
@@ -29,7 +31,7 @@
   .nav-links,
   .logo {
     text-decoration: none;
-    color: var(--fontcolor) ;
+    color: var(--lightgrey);
   }
   
   .main-nav li {
@@ -45,9 +47,10 @@
   .logo {
     display: inline-block;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 17px;
     margin-left: 20px;
     font-family: 'Pacifico', cursive;
+    color: var(--strongviolet);
   }
   
   .navbar-toggle {
@@ -55,12 +58,13 @@
     top: 17px;
     right: 20px;
     cursor: pointer;
-    color: black;
+    color: var(--strongviolet);
     font-size: 18px;
   }
   
   .nav-links i {
       color: var(--lightviolet);
+      font-size: 1em;
   }
   
   #chkToggle {
@@ -82,7 +86,7 @@
       display: flex;
       justify-content: space-between;
       padding-bottom: 0;
-      height: 50px;
+      height: 80px;
       align-items: center;
     }
   
@@ -92,25 +96,25 @@
   
     .main-nav {
       display: flex;
-      margin-right: 30px;
+      margin-right: 40px;
       flex-direction: row;
       justify-content: flex-end;
     }
   
     .main-nav li {
       margin: 0;
+      font-size: 2em;
     }
   
-    .main-nav li a {
-      font-size: 13px;
-    }
-  
+
+
     .nav-links {
       margin-left: 40px;
     }
   
     .logo {
       margin-top: 0;
+      font-size: 2em;
     }
   
     .navbar-toggle {
