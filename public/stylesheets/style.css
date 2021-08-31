@@ -118,55 +118,7 @@
 }
   
   @media screen and (min-width: 768px) {
-    /* Nav Bar Styles */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 50px;
-      align-items: center;
-    }
-  
-    #chkToggle:checked + ul.main-nav {
-      display: flex;
-    }
-  
-    .main-nav {
-      display: flex;
-      margin-right: 30px;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-  
-    .main-nav li {
-      margin: 0;
-    }
-  
-    .main-nav li a {
-      font-size: 13px;
-    }
-  
-    .nav-links {
-      margin-left: 40px;
-    }
-  
-    .logo {
-      margin-top: 0;
-    }
-  
-    .navbar-toggle {
-      display: none;
-    }
-  
-    .logo:hover,
-    .nav-links:hover {
-      color:var(--grey);
-    }
-  
-    .logo:hover,
-    .nav-links i:hover {
-      color:var(--grey);
-    }
+    
 
  /*WELCOME BOX STYLES*/
     .welcome-box{

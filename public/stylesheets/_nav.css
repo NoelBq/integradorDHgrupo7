@@ -19,7 +19,8 @@
 .navbar {
     font-size: 15px;
     background-color: var(--fontcolor);
-    border: 1px solid rgba(166, 156, 241, 0.4);
+    border-bottom: 1px solid rgba(166, 156, 241, 0.4);
+    height: 50px;
   }
   
   .main-nav {
@@ -46,9 +47,10 @@
   .logo {
     display: inline-block;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 17px;
     margin-left: 20px;
     font-family: 'Pacifico', cursive;
+    color: var(--strongviolet);
   }
   
   .navbar-toggle {
@@ -62,6 +64,7 @@
   
   .nav-links i {
       color: var(--lightviolet);
+      font-size: 1em;
   }
   
   #chkToggle {
@@ -81,9 +84,9 @@
   @media screen and (min-width: 768px) {
     .navbar {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       padding-bottom: 0;
-      height: 60px;
+      height: 80px;
       align-items: center;
     }
   
@@ -93,7 +96,7 @@
   
     .main-nav {
       display: flex;
-      margin-right: 30px;
+      margin-right: 40px;
       flex-direction: row;
       justify-content: flex-end;
     }
