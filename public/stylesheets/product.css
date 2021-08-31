@@ -4,7 +4,11 @@
 
 body {
     font-family: 'Poppins' , sans-serif;
-    line-height: 1.5;
+    /* line-height: 1.5; */
+}
+
+.product-container {
+    height: 100vh;
 }
 
 .card-wrapper{
@@ -113,9 +117,10 @@ img{
     opacity: 0.9;
 }
 
-.product-detail  i{
-    font-weight: 400;
+.detail-icons  i{
     font-size: 1em;
+    color: var(--lightviolet);
+    padding-right: 1em;
 }
 
 .product-detail ul li span{
@@ -156,22 +161,25 @@ img{
 
 
 @media screen and (min-width: 768px){
+
+    .card-wrapper{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1em;
+    }
+
     .card{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.5rem;
     }
-    .card-wrapper{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
     .product-imgs{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 80%;
+
     }
     .product-content{
         padding-top: 0;
