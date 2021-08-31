@@ -17,7 +17,7 @@ body {
     margin-top: 3em;
 }
 img{
-    width: 100%;
+    width: 96%;
     display: block;
 }
 .img-display{
@@ -140,7 +140,6 @@ img{
 }
 .purchase-info input{
     width: 45px;
-    color: var(--lightviolet);
 }
 .purchase-info .btn{
     cursor: pointer;
@@ -189,6 +188,9 @@ img{
     }
     .purchase-info .btn{
         width: 200px;
+    }
+    img{
+        width: 100%;
     }
     
 }

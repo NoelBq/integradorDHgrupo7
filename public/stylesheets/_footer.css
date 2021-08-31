@@ -23,7 +23,7 @@
     font-family: 'Pacifico', cursive;
     font-weight: 400;
     font-size: 20px;
-    color: var(--strongviolet);
+    color: #A69CF1;
   }
   
 
@@ -58,7 +58,7 @@
 
   .social-container i:hover {
     color: var(--lightblue);
-  }
+  } 
   
   .footer address {
     font-style: normal;
