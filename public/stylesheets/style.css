@@ -75,8 +75,8 @@
   position: absolute;
   height: 300px;
   width: 300px;
-  top: 70px;
-  left: calc(50% - 150px);
+  top: 30px;
+  left: calc(50% - 161px);;
   background-color: rgba(255,255,255,0.7);
 }
 
@@ -178,7 +178,7 @@
   background-color: #a88fc9;
   font-family: Poppins;
   border-radius: 15px;
-padding: 10px;
+  padding: 10px;
   top: 70vw;
   left: 10vw;
   color: white;
@@ -362,8 +362,8 @@ padding: 10px;
     .about-text{
       height: 360px;
       width: 329px;
-      top:63px;
-      left: calc(50% - 170px);
+      top: 30px;
+      left: calc(50% - 161px);
     }
     .about-text-title{
       font-size: 26px;
