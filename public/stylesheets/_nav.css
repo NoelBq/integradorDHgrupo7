@@ -96,7 +96,7 @@
   
     .main-nav {
       display: flex;
-      margin-right: 40px;
+      margin-right: 70px;
       flex-direction: row;
       justify-content: flex-end;
     }
