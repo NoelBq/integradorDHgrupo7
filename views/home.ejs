@@ -18,36 +18,7 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
-                <i class="fa fa-bars"></i>
-            </label>
-            <a href="/" class="logo">Sweet Treats</a>
-            <input type="checkbox" id="chkToggle"></input>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="shop" class="nav-links">Productos</a>
-                </li>
-                <li>
-                    <a href="#about-box" class="nav-links">Nosotros</a>
-                </li>
-                <li>
-                    <a href="#footer" class="nav-links">Contacto</a>
-                </li>
-                <li>
-                    <a href="forms" class="nav-links">
-                        <i class="far fa-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <div class="nav-links">
-                        <a href="underconstruction">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        <%- include('./partials/nav') %> 
     </header>
     <main>
         <div class="welcome-box">
