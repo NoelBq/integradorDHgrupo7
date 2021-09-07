@@ -17,36 +17,7 @@
 
 <body>
   <header>
-    <nav class="navbar">
-      <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
-        <i class="fa fa-bars"></i>
-      </label>
-      <a href="/" class="logo">Sweet Treats</a>
-      <input type="checkbox" id="chkToggle"></input>
-      <ul class="main-nav" id="js-menu">
-        <li>
-          <a href="shop" class="nav-links">Productos</a>
-        </li>
-        <li>
-          <a href="/#about-box" class="nav-links">Nosotros</a>
-        </li>
-        <li>
-          <a href="#footer" class="nav-links">Contacto</a>
-        </li>
-        <li>
-          <a href="forms" class="nav-links">
-            <i class="far fa-user"></i>
-          </a>
-        </li>
-        <li>
-          <div class="nav-links">
-            <a href="underconstruction">
-              <i class="fas fa-shopping-cart"></i>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </nav>
+    <%- include('./partials/nav') %> 
   </header>
   <main>
     <section>
@@ -69,73 +40,9 @@
     </div>
   </section>
 </main>
-<footer class="footer" id="footer">
-  <div class="footer-addr">
-      <h1 class="footer-logo">Sweet Treats</h1>
-      <h2>Contacto</h2>
 
-      <address>
-          <i class="fas fa-map-marker-alt"></i> Av Indiana 3162 || <i class="fas fa-mobile-alt"></i> 11 335789
-      </address>
-      <div class="social-container">
-          <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.google.com/intl/es-419/gmail/about/"><i class="fab fa-google"></i></a>
-          <a href="mailto:sweettreatsarg@gmail.com"><i class="far fa-envelope"></i> </a>
-      </div>
-  </div>
-  <ul class="footer-nav">
-      </li>
-      <li class="nav-item">
-          <a href="shop"><h2 class="nav-title">Productos</h2></a>
-          <ul class="nav-ul">
-              <li>
-                  <a href="underconstruction">Mas Vendidos</a>
-              </li>
+<%- include('./partials/footer') %> 
 
-              <li>
-                  <a href="underconstruction">Tendencias</a>
-              </li>
-          </ul>
-      </li>
-
-      <li class="nav-item">
-          <h2 class="nav-title">Nosotros</h2>
-
-          <ul class="nav-ul">
-              <li>
-                  <a href="underconstruction">Envios</a>
-              </li>
-
-              <li>
-                  <a href="underconstruction">Ayuda</a>
-              </li>
-          </ul>
-      </li>
-      <li class="nav-item">
-          <a href="underconstruction">
-              <h2 class="nav-title">Info</h2>
-          </a>
-
-          <ul class="nav-ul">
-              <li>
-                  <a href="mailto:sweettreatsarg@gmail.com">Contacto</a>
-              </li>
-
-              <li>
-                  <a href="underconstruction">Privacidad</a>
-              </li>
-          </ul>
-      </li>
-  </ul>
-
-  <div class="legal">
-      <p>&copy; 2021 Todos los derechos reservados.</p>
-      <div class="legal-links">
-          <span>Hecho con <span class="heart">♥</span> por Diego, Juan y Noelia</span>
-      </div>
-  </div>
-</footer>
 </body>
 
 </html>
