@@ -14,6 +14,9 @@ const mainController = {
     underConstruction: (req, res) => {
         res.render('underconstruction');
     },
+    formsadmin: (req, res) => {
+        res.render('formsadmin');
+    }
 
 }
 

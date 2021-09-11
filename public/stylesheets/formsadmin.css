@@ -1,0 +1,141 @@
+@import url(_colorpalette.css);
+@import url(_nav.css);
+@import url(_footer.css);
+
+body {
+    font-family: 'Poppins' , sans-serif;
+}
+
+.wrapper-admin {
+    display: flex;
+    flex-direction: column;
+    background: var(--lightviolet);
+    background: url('/images/Form-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    width: 90vw;
+}
+
+.container h3 {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.form{
+    margin: 0;
+    position: relative;
+    margin-bottom: 66px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30em;
+}
+
+
+
+.form-item {
+    padding: 6px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.5px;
+    width: 90%;
+}
+
+.form-item label {
+    display: block;
+    flex:1;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.form-item input {
+    padding: 4px 0px;
+    flex:1;
+    background: transparent;
+    border-top: none;
+    outline: none;
+    border-left: none;
+    border-right: none;
+    caret-color: #fff;
+    color:#fff;
+    transition: all 200ms;
+    border-bottom-color: #fff;
+}
+
+.form-item .form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+::placeholder,
+::ms-input-placeholder,
+:ms-input-placeholder{
+    color: var(--lightgrey);
+    font-size:12px;
+}
+
+.form-item button {
+    flex:1;
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.75em;
+    color: var(--lightgrey);
+    letter-spacing: .5px;
+    border: none;
+    outline:none;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: var(--lightgrey);
+    margin-bottom: 15px;
+}
+
+.form-item button:hover {
+    cursor:pointer;
+    border-color: var(--lightviolet);
+    color: var(--lightviolet);
+}
+.form-item a {
+    text-decoration: none;
+}
+
+
+
+@media screen and (min-width:768px) {
+    .wrapper-admin {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .container {
+        width: 40vw;
+        min-height: 420px;
+    
+    }
+   
+    .form-item button {
+        font-size: 1em;
+    }
+
+    
+}
