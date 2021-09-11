@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/style.css"> 
+    <!-- <link rel="stylesheet" href="../stylesheets/forms.css">
+    <link rel="stylesheet" href="../stylesheets/product.css">
+    <link rel="stylesheet" href="../stylesheets/underconstruction.css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Sweet Treats</title>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/nav') %> 
+    </header>
+    <main>
+        <div class="welcome-box">
+            <h2 class="welcome-title">SWEET TREATS</h2>
+            <div class="welcome-btn">
+                <a href="shop">Tienda Online</a>
+            </div>
+        </div>
+        
+        <!-- arranca sección tendencias   -->
+        <div>
+            <div class="tendencias">
+                <img src="/images/Doughnuts_Coconut_04.jpg" class="tendenciasimg">
+                <p class="textotendencias">Tendencias</p>
+                <p class='masinfo'>Más información</p>
+                <p class="lima">Lima</p>
+                <p class="coco">coco</p>
+            </div>
+            <div class="categoriascontenedor">
+                <div class="textocategoria">Categorías</div>
+                <div class="card-container">
+                    <p class="button-one"> < </p>
+                    <div class="card-tendencia" style="width: 50%;">
+                        <div class="categoria-bg">
+                            <img src="/images/Doughnuts_V_ChocTruffle_01-1080x675.jpg" class="donaimg"
+                            style="width:100%">
+                            <h1 class="donatexto"> Donas </h1>
+                        </div>
+                    </div>
+                    <p class="button-two"> > </p
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-tendencia">
+            <div class="container-texto">
+                <div class="desktop-tendencia-texto">
+                    <h1 class="desktop-t-header"> Dona Lima y Coco </h1>
+                    
+                    <p class="desktop-tendencia-paragraph">
+                        <i class="far fa-check-circle"></i> Masa vegana<br>
+                        <i class="far fa-check-circle"></i> Rellena de flan de cocoo<br>
+                        <i class="far fa-check-circle"></i> Cubierta de glaseado de lima picante y crumble de vainilla<br>
+                        <i class="far fa-check-circle"></i> 100% orgánico<br>
+                    </p>
+                </div>
+                
+                <div class="desktop-text-btn">
+                    <a href="/product">Mas información</a>
+                </div>
+            </div>
+            <img src="/images/Doughnuts_Coconut_04.jpg" class="desktop-tendencias-img">
+        </div>
+        
+        <section>
+            <div class="product-cards categorias-cards">
+                <div class="card cat-card">
+                    <div class="card-imagebox">
+                        <a href="/product"><img src="/images/Dona1_Chocolate.png" class="card-img-top" alt="..."></a>
+                    </div>
+                    <div class="product-card-body">
+                        <h5 class="product-card-title">Donas</h5>
+                        <a href="/shop" class="product-card-btn">Visitar ahora</a>
+                    </div>
+                </div>
+                <div class="card cat-card">
+                    <div class="card-imagebox">
+                        <a href="/product"><img src="/images/cookie.jpg" class="card-img-top" alt="..."></a>
+                    </div>
+                    <div class="product-card-body">
+                        <h5 class="product-card-title">Galletitas</h5>
+                        <a href="/shop" class="product-card-btn">Visitar ahora</a>
+                    </div>
+                </div>
+                <div class="card cat-card">
+                    <div class="card-imagebox">
+                        <a href="/product"><img src="/images/helado.jpg" class="card-img-top" alt="..."></a>
+                    </div>
+                    <div class="product-card-body">
+                        <h5 class="product-card-title">Helados</h5>
+                        <a href="/shop" class="product-card-btn">Visitar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <div class="about-box" id="about-box">
+            <div class="about-text">
+                <h2 class="about-text-title">Somos Sweet Treats <i class="fas fa-heart"></i></h2>
+                <p class="about-text-paragraph">Somos una empresa que adora <br>
+                    compartir nuestra pasion por los dulces <br><br>
+                    Todos nuestros productos son 100% <br>
+                    preparados por nosotros con mucho amor <br><br>
+                    deseamos que te guste nuestro catalogo <br><br>
+                    Gracias por hacer esto posible <i class="far fa-laugh-beam"></i>
+                </p>
+            </div>
+        </div>
+        <section>
+            <div class="testimonials">
+                <% let shuffleTestimonials = (testimonials.sort((a, b) => 0.5 - Math.random())).slice(0, 3);%>
+                <% shuffleTestimonials.forEach(function(testimonial){ %>
+                    <%- include('partials/testimonials',{testimonial: testimonial}) %>
+                    <% }); %>
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer') %> 
+</body>
+
+</html>
