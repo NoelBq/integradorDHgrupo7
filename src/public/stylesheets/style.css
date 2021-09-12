@@ -372,7 +372,8 @@
     }
     
     .testimonial-container {
-      margin-top: 1em;
+      margin: 1em;
+      margin-left: 2em;
     }
   }
   @media only screen and (min-width:992px){
@@ -477,8 +478,9 @@
     }
     
     .profile-img {
-      width: 5rem;
-      clip-path: circle(42px at center);
+      margin-top: 1em;
+      width: 4rem;
+      clip-path: circle(28px at center);
     }
     
     .name {

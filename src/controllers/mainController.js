@@ -11,7 +11,7 @@ const mainController = {
         res.render('product');
     },
     shop: (req, res) => {
-        res.render('shop');
+        res.render('shop', {testimonials: testimonialsDB});
     },
     underConstruction: (req, res) => {
         res.render('underconstruction');
