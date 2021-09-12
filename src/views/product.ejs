@@ -1,76 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheets/normalize.css">
-    <link rel="stylesheet" href="./stylesheets/product.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <title>Sweet Treats</title>
+  <%- include('./partials/head') %> 
+  <link rel="stylesheet" href="./stylesheets/product.css">
 </head>
 <body>
-    <header>
-        <%- include('./partials/nav') %> 
-    </header>
-    <main>
-        <section class="product-container">
-            <div class = "product-card-wrapper">
-                <div class = "product-card">
-                  <div class = "product-imgs">
-                    <div class = "img-display">
-                      <div class = "img-showcase">
-                        <img src = "./images/cookie1.jpg" alt = "cookie">
-                      </div>
-                    </div>
-                    <div class = "img-select">
-                      <div class = "img-item">
-                          <img src = "./images/cookie3.jpg" alt = "cookie">
-                      </div>
-                      <div class = "img-item">
-                          <img src = "./images/cookie4.jpg" alt = "cookie">
-                      </div>
-                    </div>
-                  </div>
-                 
-                  <div class = "product-content">
-                    <h2 class = "product-title">Chocolate Chip Cookie</h2>
-                    <div class = "product-rating">
-                      <i class = "fas fa-star"></i>
-                      <i class = "fas fa-star"></i>
-                      <i class = "fas fa-star"></i>
-                      <i class = "fas fa-star"></i>
-                      <i class = "fas fa-star-half-alt"></i>
-                    </div>
-                    <div class = "product-price">
-                      <p class = "price">Precio: <span>$150.00</span></p>
-                    </div>
-                    <div class = "product-detail">
-                      <h2>Mas Informacion: </h2>
-                      <p>Esta galleta es una mezcla de las chispas de chocolate con leche más cremosas que tienen toques de caramelo y avellana aromática con chispas de chocolate negro</p>
-                      <ul class="detail-icons">
-                        <li> <i class="fas fa-bread-slice"></i>Contiene Tacc:<span> Si</span></li>
-                        <li><i class="fas fa-check-circle"></i></i>Disponibilidad: <span>En stock</span></li>
-                        <li><i class="fas fa-cookie"></i>Categoria: <span>Cookies</span></li>
-                        <li><i class="fas fa-shopping-bag"></i></i>Retiro en tienda: <span>Si</span></li>
-                        <li><i class="fas fa-truck"></i>Envio:<span>Sin cargo desde $2500</span></li>
-                      </ul>
-                    </div>
-                    <div class = "purchase-info">
-                      <input type = "number" min = "0" value = "1">
-                      <button type = "button" class = "btn cart">
-                        Agregar al Carro <i class = "fas fa-shopping-cart"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+  <header>
+    <%- include('./partials/nav') %> 
+  </header>
+  <main>
+    <section class="product-container">
+      <div class = "product-card-wrapper">
+        <div class = "product-card">
+          <div class = "product-imgs">
+            <div class = "img-display">
+              <div class = "img-showcase">
+                <img src = "./images/cookie1.jpg" alt = "cookie">
               </div>
-        </section>
-    </main>
-    <%- include('./partials/footer') %> 
+            </div>
+            <div class = "img-select">
+              <div class = "img-item">
+                <img src = "./images/cookie3.jpg" alt = "cookie">
+              </div>
+              <div class = "img-item">
+                <img src = "./images/cookie4.jpg" alt = "cookie">
+              </div>
+            </div>
+          </div>
+          
+          <div class = "product-content">
+            <h2 class = "product-title">Chocolate Chip Cookie</h2>
+            <div class = "product-rating">
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star-half-alt"></i>
+            </div>
+            <div class = "product-price">
+              <p class = "price">Precio: <span>$150.00</span></p>
+            </div>
+            <div class = "product-detail">
+              <h2>Mas Informacion: </h2>
+              <p>Esta galleta es una mezcla de las chispas de chocolate con leche más cremosas que tienen toques de caramelo y avellana aromática con chispas de chocolate negro</p>
+              <ul class="detail-icons">
+                <li> <i class="fas fa-bread-slice"></i>Contiene Tacc:<span> Si</span></li>
+                <li><i class="fas fa-check-circle"></i></i>Disponibilidad: <span>En stock</span></li>
+                <li><i class="fas fa-cookie"></i>Categoria: <span>Cookies</span></li>
+                <li><i class="fas fa-shopping-bag"></i></i>Retiro en tienda: <span>Si</span></li>
+                <li><i class="fas fa-truck"></i>Envio:<span>Sin cargo desde $2500</span></li>
+              </ul>
+            </div>
+            <div class = "purchase-info">
+              <input type = "number" min = "0" value = "1">
+              <button type = "button" class = "btn cart">
+                Agregar al Carro <i class = "fas fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include('./partials/footer') %> 
 </body>
 </html>
