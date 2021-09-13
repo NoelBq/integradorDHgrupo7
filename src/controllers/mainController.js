@@ -1,4 +1,6 @@
 const testimonialsDB  = require('../../db/testimonialDatabase.json');
+const productsDB  = require('../../db/productsDatabase.json');
+
 
 const mainController = {
     home: (req, res) => {
@@ -11,7 +13,7 @@ const mainController = {
         res.render('product');
     },
     shop: (req, res) => {
-        res.render('shop', {testimonials: testimonialsDB});
+        res.render('shop', {testimonials: testimonialsDB, products: productsDB});
     },
     underConstruction: (req, res) => {
         res.render('underconstruction');
