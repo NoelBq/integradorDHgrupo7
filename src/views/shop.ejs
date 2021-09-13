@@ -18,108 +18,56 @@
   <!--  Inicio de la NavBar -->
   <header>
     <%- include('./partials/nav') %> 
- </header>
+  </header>
   <main>
-
+    
     <!--  Inicio de las tarjetas de producto -->
-
+    
     <section>
       <div class="product-card-header">
         <h2 class="product-card-headerTitle">Productos</h2>
         <h4 class="product-card-headerSubtitle">Hechos con amor <i class="fas fa-heart"></i></h4>
       </div>
       <div class="Product-cards">
-        <div class="card">
-          <div class="card-imagebox">
-            <a href="/product"><img src="/images/Dona1_Chocolate.png" class="card-img-top" alt="..."></a>
-          </div>
-          <div class="product-card-body">
-            <h5 class="product-card-title">Dona de Chocolate</h5>
-            <a href="#" class="product-card-btn">Agregar al carrito</a>
+        <% products.forEach(function(product){ %>
+            <%- include('partials/product',{product: product}) %>
+          <% }); %>
+        </div>
+      </section>
+      <!-- Incio de la OfferBox-->
+      <section>
+        <div class="offerbox-box">
+          <div class="offerbox-img"><img src="/images/offerbox-bg.png" alt=""></div>
+          <div class="offerbox-text">
+            <h2 class="offerbox-text-title">Box Donas</h2>
+            <p class="offerbox-text-subtitle">Incluye: <br> </p>
+            <p class="offerbox-text-paragraph">
+              <i class="far fa-check-circle"></i> 6 Donas a eleccion tuya<br>
+              <i class="far fa-check-circle"></i> Incluye una tarjeta de regalo<br>
+              <i class="far fa-check-circle"></i> Envio 100% bonificado<br>
+            </p>
+            <div class="offerbox-text-btn">
+              <a href="/product">Mas información</a>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-imagebox">
-            <a href="/product"><img src="/images/Dona2_CocoLima.png" class="card-img-top" alt="..."></a>
-          </div>
-          <div class="product-card-body">
-            <h5 class="product-card-title">Dona de Coco y Lima</h5>
-            <a href="#" class="product-card-btn">Agregar al carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-imagebox">
-            <a href="/product"><img src="/images/Dona3_durazno.png" class="card-img-top" alt="..."></a>
-          </div>
-          <div class="product-card-body">
-            <h5 class="product-card-title">Dona de Durazno</h5>
-            <a href="#" class="product-card-btn">Agregar al carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-imagebox">
-            <a href="/product"><img src="/images/Dona4_Tematcha.png" class="card-img-top" alt="..."></a>
-          </div>
-          <div class="product-card-body">
-            <h5 class="product-card-title">Dona de Te Matcha</h5>
-            <a href="#" class="product-card-btn">Agregar al carrito</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-imagebox">
-            <a href="/product"><img src="/images/Dona5_FrutosDelBosque.png" class="card-img-top" alt="..."></a>
-          </div>
-          <div class="product-card-body">
-            <h5 class="product-card-title">Dona de Frutos del Bosque</h5>
-            <a href="#" class="product-card-btn">Agregar al carrito</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-imagebox">
-            <a href="/product"><img src="/images/Dona6_Vainilla.png" class="card-img-top" alt="..."></a>
-          </div>
-          <div class="product-card-body">
-            <h5 class="product-card-title">Dona de Vainilla</h5>
-            <a href="#" class="product-card-btn">Agregar al carrito</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Incio de la OfferBox-->
-    <section>
-      <div class="offerbox-box">
-        <div class="offerbox-img"><img src="/images/offerbox-bg.png" alt=""></div>
-        <div class="offerbox-text">
-          <h2 class="offerbox-text-title">Box Donas</h2>
-          <p class="offerbox-text-subtitle">Incluye: <br> </p>
-          <p class="offerbox-text-paragraph">
-            <i class="far fa-check-circle"></i> 6 Donas a eleccion tuya<br>
-            <i class="far fa-check-circle"></i> Incluye una tarjeta de regalo<br>
-            <i class="far fa-check-circle"></i> Envio 100% bonificado<br>
-          </p>
-          <div class="offerbox-text-btn">
-            <a href="/product">Mas información</a>
-          </div>
-        </div>
-      </div>
-    </section> 
-
-    <!--  Inicio del Testimonials  -->
-
-    <section>
-      <div class="testimonials">
-        <% let shuffleTestimonials = (testimonials.sort((a, b) => 0.5 - Math.random())).slice(0, 3);%>
-        <% shuffleTestimonials.forEach(function(testimonial){ %>
+      </section> 
+      
+      <!--  Inicio del Testimonials  -->
+      
+      <section>
+        <div class="testimonials">
+          <% let shuffleTestimonials = (testimonials.sort((a, b) => 0.5 - Math.random())).slice(0, 3);%>
+          <% shuffleTestimonials.forEach(function(testimonial){ %>
             <%- include('partials/testimonials',{testimonial: testimonial}) %>
             <% }); %>
-    </div>
-    </section>
-</main>
-
-  <!-- Inicio del footer-->
-
-  <%- include('./partials/footer') %> 
-</body>
-
-</html>
+          </div>
+        </section>
+      </main>
+      
+      <!-- Inicio del footer-->
+      
+      <%- include('./partials/footer') %> 
+    </body>
+    
+    </html>
