@@ -5,7 +5,7 @@ const mainController = require('../controllers/mainController');
 router.get('/', mainController.home);
 router.get('/forms', mainController.forms);
 router.get('/shop', mainController.shop);
-router.get('/product', mainController.product);
+router.get('/:id', mainController.product);
 router.get('/underconstruction', mainController.underConstruction);
 router.get('/formsadmin', mainController.formsadmin);
 

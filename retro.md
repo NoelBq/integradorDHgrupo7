@@ -40,7 +40,9 @@
 
 ## ¿Qué fue bien?
 
+
 ## ¿Qué no fue tan bien?
+
 ## ¿Qué aprendi?
 
 ## ¿Qué se puede  mejorar?
