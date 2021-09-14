@@ -29,13 +29,13 @@
 
 ### Diego
 ## ¿Qué fue bien?
-
+-Los resultados que venimos obteniendo
 ## ¿Qué no fue tan bien?
-
+-La comunicación del equipo
 ## ¿Qué aprendi?
-
+-Debería involucrarme más en el trabajo de todos más alla de mis propias tareas.
 ## ¿Qué se puede  mejorar?
-
+-Aún debemos seguir mejorando la comunicación y realizar la puesta en común más seguido.
 ### Juan
 
 ## ¿Qué fue bien?
