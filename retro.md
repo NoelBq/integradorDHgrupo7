@@ -39,10 +39,10 @@
 ### Juan
 
 ## ¿Qué fue bien?
-
-
+-  La dedicacion de mis compañeros.
 ## ¿Qué no fue tan bien?
-
+- La organizacion.
 ## ¿Qué aprendi?
-
+- Que no debo dejar todo para ultimo momento.
 ## ¿Qué se puede  mejorar?
+- La comunicacion de mi parte.
