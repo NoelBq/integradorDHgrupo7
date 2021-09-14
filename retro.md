@@ -14,3 +14,33 @@
 
 ### Frase del retro Sprint 1: 
   - <i><u> La union hace la fuerza! </i></u>
+
+-------------------------------------------------------------
+## Retro Sprint 2
+### Noelia
+## ¿Qué fue bien?
+- El diseño del proyecto.
+## ¿Qué no fue tan bien?
+- La division de tareas y la organizacion del equipo.
+## ¿Qué aprendi?
+- A estimar mejor los tiempos.
+## ¿Qué se puede  mejorar?
+- La organizacion de tareas.
+
+### Diego
+## ¿Qué fue bien?
+
+## ¿Qué no fue tan bien?
+
+## ¿Qué aprendi?
+
+## ¿Qué se puede  mejorar?
+
+### Juan
+
+## ¿Qué fue bien?
+
+## ¿Qué no fue tan bien?
+## ¿Qué aprendi?
+
+## ¿Qué se puede  mejorar?
