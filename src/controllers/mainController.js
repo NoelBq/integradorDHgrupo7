@@ -9,9 +9,6 @@ const mainController = {
     forms: (req, res) => {
         res.render('forms');
     },
-    product: (req, res) => {
-        res.render('product', { product: productsDB.find((p) => p.id == req.params.id) });
-    },
     shop: (req, res) => {
         res.render('shop', {testimonials: testimonialsDB, products: productsDB});
     },
