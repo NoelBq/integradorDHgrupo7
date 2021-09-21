@@ -15,6 +15,12 @@ const mainController = {
     underConstruction: (req, res) => {
         res.render('underconstruction');
     },
+    adminpanel: (req, res) => {
+        let categories = [...new Set(productsDB.map(p => p.category))];
+        console.log(categories);
+        let products = productsDB.filter(p => p.category == req.query.categorySelection);
+        res.render('adminpanel', {products: products, categories: categories});
+    },
     formsadmin: (req, res) => {
         res.render('formsadmin');
     }

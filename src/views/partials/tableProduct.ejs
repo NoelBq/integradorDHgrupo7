@@ -1,0 +1,12 @@
+<tr>
+    <th scope="row"><%- product.id %> </th>
+    <td><%- product.name %> </td>
+    <td><%- product.description %> </td>
+    <td class="btn-display">
+        <form action="/" method="POST"><button type="button" class="btn btn-outline-success">Modificar</button></form>
+         <form action="/product/<%- product.id %>/delete?_method=DELETE" enctype="application/x-www-form-urlencoded" name="deleteform" method="POST"> 
+            <input type="hidden" value="<%- product.id %>">
+            <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+        </form>
+    </td>
+  </tr>

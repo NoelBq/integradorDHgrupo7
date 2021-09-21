@@ -9,6 +9,6 @@ router.get('/forms', mainController.forms);
 router.get('/shop', mainController.shop);
 router.get('/underconstruction', mainController.underConstruction);
 router.get('/formsadmin', mainController.formsadmin);
-
+router.get('/adminpanel', mainController.adminpanel);
 
 module.exports = router;
