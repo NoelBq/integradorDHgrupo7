@@ -9,7 +9,6 @@ const productController = {
         res.render('product', { product: productsDB.find((p) => p.id == req.params.id) });
     },
     deleteproduct: (req, res) => {
-        console.log(req.params);
         productsDB = productsDB.filter(p => p.id != req.params.id);
         try {
             fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(productsDB)); 
@@ -17,8 +16,13 @@ const productController = {
           } catch(err) {
             console.error(err);
           }
-        res.redirect('/adminpanel');
-    }
+        res.redirect('/adminpanel', {product : productsDB});
+    },
+    productEdit: (req, res) => {
+      product = productsDB.find(p => p.id != req.params.id);
+      console.log(product);
+      res.render('productEdit', {product: product});
+  }
 
 }
 

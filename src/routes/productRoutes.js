@@ -6,5 +6,6 @@ const productsDB  = require('../../db/productsDatabase.json');
 router.get('/:id', productController.product);
 router.delete('/:id/delete', productController.deleteproduct);
 
+router.get('/edit/:id', productController.productEdit);
 
 module.exports = router;

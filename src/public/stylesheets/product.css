@@ -207,3 +207,11 @@ img{
         max-height: 80%;
     }
 }
+
+/* product edit */
+
+input, textarea {
+    width: 100%;
+  }
+
+  
