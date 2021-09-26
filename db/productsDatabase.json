@@ -1,49 +1,17 @@
 [
     {
-        "id": 2,
-        "name": "Dona de Coco y Lima",
-        "description": "Un blend especial de coco y lima",
-        "category": "Donas",
-        "img": "/images/Dona2_CocoLima.png",
-        "price": 120
-    },
-    {
-        "id": 3,
-        "name": "Dona de Durazno",
-        "description": "Dulce y Fresca",
-        "category": "Donas",
-        "img": "/images/Dona3_durazno.png",
-        "price": 90
-    },
-    {
-        "id": 4,
-        "name": "Dona de Frutos del Bosque",
-        "description": "Dona rellena con crema de frutos del bosque",
-        "category": "Donas",
-        "img": "/images/Dona5_FrutosDelBosque.png",
-        "price": 110
-    },
-    {
         "id": 5,
-        "name": "Dona Te de Matcha",
-        "description": "Dona agridulce a base de matcha",
-        "category": "Donas",
-        "img": "/images/Dona4_Tematcha.png",
-        "price": 170
-    },
-    {
-        "id": 6,
-        "name": "Dona de Vainilla",
+        "name": "Dona de Chocolate",
         "description": "Un clasico ",
         "category": "Donas",
         "img": "/images/Dona6_Vainilla.png",
         "price": 180
     },
     {
-        "id": 7,
-        "name": "Medialuna",
-        "description": "Medialuna Dulce de Manteca ",
-        "category": "Medialuna",
+        "id": 6,
+        "name": "Dona de Vainilla",
+        "description": "Un clasico ",
+        "category": "Donas",
         "img": "/images/Dona6_Vainilla.png",
         "price": 180
     }

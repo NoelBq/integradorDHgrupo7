@@ -214,4 +214,24 @@ input, textarea {
     width: 100%;
   }
 
-  
+   .btn-edit {
+      background-color: var(--lightviolet);
+      border-color: var(--lightviolet);
+  }
+
+  .btn-edit:hover {
+    background-color: var(--fontcolor);
+  }
+
+  .col-category {
+      margin: 1em 0;
+  }
+
+  label {
+    font-weight: 700;
+    margin: 0.1em auto;
+  }
+
+  .custom-file {
+      margin-bottom: 0.5em;
+  }

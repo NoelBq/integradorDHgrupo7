@@ -8,13 +8,11 @@ const path = require("path");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, "../public/img"));
+    cb(null, path.join(__dirname, "../public/images"));
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix =
-      Date.now() + "-" + Math.round(Math.random() * 1e9) + file.originalname;
-    cb(null, file.fieldname + "-" + uniqueSuffix);
-  },
+    cb(null, Date.now() + "-" + file.originalname);
+  }
 });
 
 const upload = multer({ storage: storage });
@@ -22,6 +20,7 @@ const upload = multer({ storage: storage });
 router.get('/:id', productController.product);
 router.delete('/:id/delete', productController.deleteproduct);
 
-router.get('/edit/:id', productController.productEdit);
+router.get('/edit/:id', productController.productEditView);
+router.put('/edit/:id',upload.single("img"), productController.productEdit);
 
 module.exports = router;

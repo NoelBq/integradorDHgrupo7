@@ -1,5 +1,7 @@
 const testimonialsDB  = require('../../db/testimonialDatabase.json');
 const productsDB  = require('../../db/productsDatabase.json');
+const fs = require('fs');
+const path = require('path');
 
 
 const mainController = {
@@ -16,10 +18,10 @@ const mainController = {
         res.render('underconstruction');
     },
     adminpanel: (req, res) => {
-        let categories = [...new Set(productsDB.map(p => p.category))];
-        console.log(categories);
-        let products = productsDB.filter(p => p.category == req.query.categorySelection);
-        res.render('adminpanel', {products: products, categories: categories});
+        let localProductsDB = JSON.parse(fs.readFileSync(path.join(__dirname,'../../db/productsDatabase.json'), {encoding:'utf8', flag:'r'})); 
+        let categories = [...new Set(localProductsDB.map(p => p.category))];
+        let products = localProductsDB.filter(p => p.category == req.query.categorySelection);
+        res.render('adminpanel', {products: localProductsDB, categories: categories});
     },
     formsadmin: (req, res) => {
         res.render('formsadmin');

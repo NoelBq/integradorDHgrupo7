@@ -170,3 +170,7 @@ body {
 .form-select {
     border-color: var(--lightviolet);
 }
+
+.btn-admin-panel {
+     margin: 0.2em 0.4em;
+}
