@@ -1,18 +1,51 @@
 [
+    
+    {
+        "id": 1,
+        "name": "Dona de Chocolate",
+        "description": "Hecha con cacao al 70%",
+        "img" : "/images/Dona1_Chocolate.png",
+        "category" : "Donas",
+        "price": 100
+    },
+    {
+        "id": 2,
+        "name": "Dona de Coco y Lima",
+        "description": "Un blend especial de coco y lima",
+        "img" : "/images/Dona2_CocoLima.png",
+        "category" : "Donas",
+        "price": 120
+    },
+    {
+        "id": 3,
+        "name": "Dona de Durazno",
+        "description": "Dulce y Fresca",
+        "img" : "/images/Dona3_durazno.png",
+        "category" : "Donas",
+        "price": 90
+    },
+    {
+        "id": 4,
+        "name": "Dona de Frutos del Bosque",
+        "description": "Dona rellena con crema de frutos del bosque",
+        "img" : "/images/Dona5_FrutosDelBosque.png",
+        "category" : "Donas",
+        "price": 110
+    },
     {
         "id": 5,
-        "name": "Dona de Chocolate",
-        "description": "Un clasico ",
-        "category": "Donas",
-        "img": "/images/Dona6_Vainilla.png",
-        "price": 180
+        "name": "Dona Te de Matcha",
+        "description": "Dona agridulce a base de matcha",
+        "img" : "/images/Dona4_Tematcha.png",
+        "category" : "Donas",
+        "price": 170
     },
     {
         "id": 6,
         "name": "Dona de Vainilla",
         "description": "Un clasico ",
-        "category": "Donas",
-        "img": "/images/Dona6_Vainilla.png",
+        "img" : "/images/Dona6_Vainilla.png",
+        "category" : "Donas",
         "price": 180
     }
 ]
