@@ -54,6 +54,7 @@ body {
     flex-direction: column;
     letter-spacing: 0.5px;
     width: 90%;
+    margin-left: 10px;
 }
 
 .form-item label {

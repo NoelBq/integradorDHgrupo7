@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/product.css">
+</head>
+<body>
+    <header>
+        <%- include('./partials/nav') %> 
+    </header>
+    <main>
+        <section class="product-container">
+            <div class = "product-card-wrapper">
+                <div class = "product-card">
+                    <div class = "product-imgs">
+                        <div class = "img-display">
+                            <div class = "img-showcase">
+                                <img src = "<%- product.img %> " alt = "<%- product.name %> ">
+                            </div>
+                        </div>
+                    </div>          
+                    <div class = "product-content">
+                        <form action="/product/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <h2 class = "product-title"> Editar Producto </h2>
+                            <div class = "product-detail">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input class="form-control" id="name" type="text" name="name" value="<%= product.name %>" placeholder"<%= product.name %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Descripcion</label>
+                                    <input class="form-control" id="description" type="text" name="description"  value="<%= product.description %>" placeholder="<%= product.description %>">
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="price">Precio</label>
+                                        <input type="text" class="form-control" name="price" value="<%= product.price %>" placeholder="<%= product.price %>">
+                                    </div>
+                                    <div class="col col-category">
+                                        <label  for="categoria">Elegir Categoria</label>
+                                        <select name='category' id="categorySelection" class="form-select" aria-label="Default select example">
+                                            <option selected><%=product.category%> </option>
+                                            <% categories.forEach(function(category){ %>
+                                                <option value="<%- category %>"><%- category %> </option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="customFileLang">Cambiar Imagen</label>
+                                        <input type="file" value="img" name="img" class="form-control" id="customFileLang" lang="es" accept="image/*">
+                                      </div>
+                                    <input class="btn btn-primary btn-edit" type="submit" value="Enviar" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include('./partials/footer') %> 
+        </body>
+        </html>

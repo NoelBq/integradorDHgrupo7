@@ -136,6 +136,41 @@ body {
     .form-item button {
         font-size: 1em;
     }
+}
 
+/* admin panel */
+
+.admin-panel {
+    margin:1em 2em;
+    margin-bottom: 1em;
+}
+
+.product-category {
+    margin-left: 2em;
+    width: 60%;
+    display: flex;
+}
+
+.product-table-container {
+    margin: 2em;
+    width: 80%;
+}
+
+ .btn-costum {
+    background-color: var(--lightviolet);
+    color: var(--lightgrey);
+    margin-left: 1em;
     
+}
+
+.btn-display {
+    display: flex;
+}
+
+.form-select {
+    border-color: var(--lightviolet);
+}
+
+.btn-admin-panel {
+     margin: 0.2em 0.4em;
 }

@@ -1,0 +1,20 @@
+<tr>
+    <th scope="row"><%- product.id %> </th>
+    <td><%- product.name %> </td>
+    <td><%- product.description %> </td>
+    <td><%- product.price %> </td>
+    <td class="btn-display">
+        <form action="/product/edit/<%- product.id %>" method="GET">
+            <input type="hidden" value="<%- product.id %>">
+            <button type="submit" class="btn btn-costum btn-admin-panel">Modificar</button>
+        </form>
+         <form action="/product/<%- product.id %>/delete?_method=DELETE" enctype="application/x-www-form-urlencoded" name="deleteform" method="POST"> 
+            <input type="hidden" value="<%- product.id %>">
+            <button type="submit" class="btn btn-costum btn-admin-panel">Eliminar</button>
+        </form>
+        <form action="/product/<%- product.id %>"  method="GET"> 
+            <input type="hidden" value="<%- product.id %>">
+            <button type="submit" class="btn btn-costum btn-admin-panel">Detalle</button>
+        </form>
+    </td>
+  </tr>
