@@ -43,7 +43,6 @@ const productController = {
     }
     res.status(200).redirect('/adminpanel')
   }
-
 }
 
 
