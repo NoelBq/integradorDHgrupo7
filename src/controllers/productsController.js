@@ -27,10 +27,12 @@ const productController = {
   }, 
   productEdit:(req, res) => {
     let localProductsDB = JSON.parse(fs.readFileSync(path.join(__dirname,'../../db/productsDatabase.json'), {encoding:'utf8', flag:'r'})); 
+    let categories = [...new Set(productsDB.map(p => p.category))];
     const file = req.file;
     const { name, description, price, category} = req.body;
     indexProduct = productsDB.find(p => p.id == req.params.id);
-    localProductsDB[indexProduct] = {
+    console.log(indexProduct);
+    productsDB[indexProduct] = {
       id : req.params.id,
       name : name,
       description : description,
