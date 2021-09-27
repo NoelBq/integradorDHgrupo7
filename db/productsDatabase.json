@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "Dona de Chocolate",
+        "name": "Dona de Chocolate re pasadita",
         "description": "Hecha con cacao al 70%",
-        "img": "/images/Dona1_Chocolate.png",
+        "img": "/images/1632705699601-images (2).jfif",
         "category": "Donas",
-        "price": 100
+        "price": "100"
     },
     {
         "id": 2,
@@ -44,7 +44,6 @@
         "name": "Dona de Vainilla",
         "description": "Un clasico ",
         "img": "/images/Dona6_Vainilla.png",
-        "category": "Donas",
-        "price": 180
+        "category": "Donas"
     }
 ]
