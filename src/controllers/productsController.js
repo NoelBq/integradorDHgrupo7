@@ -31,7 +31,6 @@ const productController = {
     const file = req.file;
     const body = req.body;
     let product = localProductsDB.find(p => p.id == req.params.id);
-    console.log(product);
     Object.keys(product).forEach(k => {
       product[k] = body[k] || product[k];
     });
