@@ -110,6 +110,12 @@ Nuestra tienda es una herramienta critica para nuestra estrategia de retail onli
 -Poppins
 
 
+## Feedback sprint 01
+buena propuesta muchachos (10/10)
 
+## Feedback sprint 02
+Su web es extraordinaria , me encanto la parte del login , veo la dedicacion y el amor de estas , los felicito 
+- calificacion (10 /10 ) si pudiese les colocaria 100/10
+- Excelente trabajo
  
 
