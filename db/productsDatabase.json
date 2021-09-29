@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "name": "Dona de Chocolate Negro",
-        "description": "Hecha con cacao al 90%",
+        "name": "Dona de Chocolate ",
+        "description": "Hecha con cacao al 70%",
         "img": "/images/1632707261464-CHOCOLATE-TRUFFLE.jpg",
         "category": "Donas",
         "price": "100"
@@ -30,21 +30,5 @@
         "img": "/images/Dona5_FrutosDelBosque.png",
         "category": "Donas",
         "price": 110
-    },
-    {
-        "id": 5,
-        "name": "Dona Te de Matcha",
-        "description": "Dona agridulce a base de matcha",
-        "img": "/images/Dona4_Tematcha.png",
-        "category": "Donas",
-        "price": 170
-    },
-    {
-        "id": 6,
-        "name": "Dona de Vainilla",
-        "description": "Un clasico ",
-        "img": "/images/Dona6_Vainilla.png",
-        "category": "Donas",
-        "price": 120
     }
 ]

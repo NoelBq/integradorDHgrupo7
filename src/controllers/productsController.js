@@ -12,8 +12,10 @@ const productController = {
   deleteproduct: (req, res) => {
     let localProductsDB = utils.parseJS(productsDB);
     let filteredProductsDB = localProductsDB.filter(p => p.id != req.params.id);
+    let productToDelete = localProductsDB.find(p => p.id == req.params.id);
     try {
       fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(filteredProductsDB, null, 4));
+      fs.unlinkSync(path.join(__dirname, `../public/${productToDelete.img}`));
       console.log("Deleted Succesfully");
     } catch (err) {
       console.error(err);
