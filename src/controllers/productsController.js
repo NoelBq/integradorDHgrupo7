@@ -50,7 +50,7 @@ const productController = {
     }
     res.status(200).redirect('/adminpanel')
   },
-  insert: (req,res) =>{
+  productInsert: (req,res) =>{
     let {productname,description,category,addprice} = req.body;
     productsDB.push({
       id: uuid(),
@@ -63,7 +63,7 @@ const productController = {
     fs.writeFileSync(path.join(__dirname,'../../db/productsDatabase.json'),
       JSON.stringify(productsDB, null, 4),
       {encoding: "utf-8"});
-      res.redirect('/adminpanel')
+      res.status(200).redirect('/adminpanel')
   }
 }
 

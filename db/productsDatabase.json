@@ -30,5 +30,13 @@
         "img": "/images/Dona5_FrutosDelBosque.png",
         "category": "Donas",
         "price": 110
+    },
+    {
+        "id": "9bc07ce3-af82-46e5-83ff-17c5e126e90f",
+        "name": "Gatito2",
+        "description": "Soy un gatito",
+        "category": "Cookies",
+        "addimage": "1632942244941-BORRARimagen-2.jpg",
+        "price": "999"
     }
 ]
