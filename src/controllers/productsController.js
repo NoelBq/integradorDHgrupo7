@@ -57,7 +57,7 @@ const productController = {
       name: productname,
       description: description,
       category: category,
-      addimage: req.file.filename,
+      img: req.file.filename,
       price: addprice
     })
     fs.writeFileSync(path.join(__dirname,'../../db/productsDatabase.json'),
