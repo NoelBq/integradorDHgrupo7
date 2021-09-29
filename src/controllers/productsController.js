@@ -3,7 +3,7 @@ let productsDB = require('../../db/productsDatabase.json');
 const fs = require('fs');
 const path = require("path");
 const utils = require('../utils/utils');
-const { uuid } = require('uuidv4');
+const { v4: uuidv4 } = require('uuid');
 
 const productController = {
 
@@ -54,7 +54,7 @@ const productController = {
     let localProductsDB = utils.parseJS(productsDB);
     let {productname,description,category,addprice} = req.body;
     localProductsDB.push({
-      id: uuid(),
+      id: uuidv4(),
       name: productname,
       description: description,
       category: category,
