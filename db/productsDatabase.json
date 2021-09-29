@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Dona de Chocolate ",
         "description": "Hecha con cacao al 70%",
-        "img": "/images/1632707261464-CHOCOLATE-TRUFFLE.jpg",
+        "img": "1632707261464-CHOCOLATE-TRUFFLE.jpg",
         "category": "Donas",
         "price": "100"
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Dona de Coco y Lima",
         "description": "Un blend especial de coco y lima",
-        "img": "/images/Dona2_CocoLima.png",
+        "img": "Dona2_CocoLima.png",
         "category": "Donas",
         "price": 120
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "name": "Dona de Durazno",
         "description": "Dulce y Fresca",
-        "img": "/images/Dona3_durazno.png",
+        "img": "Dona3_durazno.png",
         "category": "Donas",
         "price": 90
     },
@@ -27,24 +27,8 @@
         "id": 4,
         "name": "Dona de Frutos del Bosque",
         "description": "Dona rellena con crema de frutos del bosque",
-        "img": "/images/Dona5_FrutosDelBosque.png",
+        "img": "Dona5_FrutosDelBosque.png",
         "category": "Donas",
         "price": 110
-    },
-    {
-        "id": "9bc07ce3-af82-46e5-83ff-17c5e126e90f",
-        "name": "Gatito2",
-        "description": "Soy un gatito",
-        "category": "Cookies",
-        "img": "PRODUCT-1632942725774-BORRARimagen-1.jpg",
-        "price": "999"
-    },
-    {
-        "id": "5c316532-4b94-4d20-bf0b-36572d316c7f",
-        "name": "gatito",
-        "description": "gato",
-        "category": "Helados",
-        "img": "PRODUCT-1632945692904-BORRARimagen-2.jpg",
-        "price": "112"
     }
 ]
