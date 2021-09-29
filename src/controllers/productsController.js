@@ -35,7 +35,7 @@ const productController = {
     const body = req.body;
     let product = localProductsDB.find(p => p.id == req.params.id);
     if (file != undefined) {
-      product['img'] = `/images/${file.filename}`
+      product['img'] = `${file.filename}`
     } else {
       product['img'] = product.img
     }
