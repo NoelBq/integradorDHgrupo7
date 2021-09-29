@@ -51,8 +51,9 @@ const productController = {
     res.status(200).redirect('/adminpanel')
   },
   productInsert: (req,res) =>{
+    let localProductsDB = utils.parseJS(productsDB);
     let {productname,description,category,addprice} = req.body;
-    productsDB.push({
+    localProductsDB.push({
       id: uuid(),
       name: productname,
       description: description,
@@ -61,10 +62,10 @@ const productController = {
       price: addprice
     })
     fs.writeFileSync(path.join(__dirname,'../../db/productsDatabase.json'),
-      JSON.stringify(productsDB, null, 4),
+      JSON.stringify(localProductsDB, null, 4),
       {encoding: "utf-8"});
       res.status(200).redirect('/adminpanel')
-  }
+    }
 }
 
 

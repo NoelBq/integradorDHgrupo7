@@ -4,16 +4,8 @@
         "name": "Dona de Chocolate ",
         "description": "Hecha con cacao al 70%",
         "img": "1632707261464-CHOCOLATE-TRUFFLE.jpg",
-        "category": "Donas",
+        "category": "Cookies",
         "price": "100"
-    },
-    {
-        "id": 2,
-        "name": "Dona de Coco y Lima",
-        "description": "Un blend especial de coco y lima",
-        "img": "Dona2_CocoLima.png",
-        "category": "Donas",
-        "price": 120
     },
     {
         "id": 3,
@@ -30,5 +22,13 @@
         "img": "Dona5_FrutosDelBosque.png",
         "category": "Donas",
         "price": 110
+    },
+    {
+        "id": "8f1b61ab-6cdd-484f-a776-fd7cf532f061",
+        "name": "dona rosa",
+        "description": "",
+        "category": "Donas",
+        "img": "PRODUCT-1632956563664-TONGAN-VANILLA-BEAN-GLAZE.jpg",
+        "price": "400"
     }
 ]
