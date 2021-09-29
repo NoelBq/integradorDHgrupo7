@@ -21,7 +21,7 @@ const mainController = {
         let localProductsDB = JSON.parse(fs.readFileSync(path.join(__dirname,'../../db/productsDatabase.json'), {encoding:'utf8', flag:'r'})); 
         let categories = [...new Set(localProductsDB.map(p => p.category))];
         let products = localProductsDB.filter(p => p.category == req.query.categorySelection);
-        res.render('adminpanel', {products: localProductsDB, categories: categories});
+        res.render('adminpanel', {products: products, categories: categories});
     },
     formsadmin: (req, res) => {
         res.render('formsadmin');
