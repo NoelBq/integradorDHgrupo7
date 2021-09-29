@@ -36,7 +36,15 @@
         "name": "Gatito2",
         "description": "Soy un gatito",
         "category": "Cookies",
-        "img": "PRODUCT-1632942972922-BORRARimagen-3.jpg",
+        "img": "PRODUCT-1632942725774-BORRARimagen-1.jpg",
         "price": "999"
+    },
+    {
+        "id": "5c316532-4b94-4d20-bf0b-36572d316c7f",
+        "name": "gatito",
+        "description": "gato",
+        "category": "Helados",
+        "img": "PRODUCT-1632945692904-BORRARimagen-2.jpg",
+        "price": "112"
     }
 ]
