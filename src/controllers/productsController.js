@@ -1,7 +1,8 @@
 
 let productsDB  = require('../../db/productsDatabase.json');
 const fs = require('fs');
-const path = require("path");
+const path = require('path');
+const { uuid } = require('uuidv4');
 
 
 const productController = {
@@ -22,6 +23,21 @@ const productController = {
       product = productsDB.find(p => p.id != req.params.id);
       console.log(product);
       res.render('productEdit', {product: product});
+  },
+  insert: (req,res) =>{
+    let {productname,description,category,addprice} = req.body;
+    productsDB.push({
+      id: uuid(),
+      name: productname,
+      description: description,
+      category: category,
+      addimage: req.file.filename,
+      price: addprice
+    })
+    fs.writeFileSync(path.join(__dirname,'../../db/productsDatabase.json'),
+      JSON.stringify(productsDB, null, 4),
+      {encoding: "utf-8"});
+      res.redirect('/adminpanel')
   }
 
 }

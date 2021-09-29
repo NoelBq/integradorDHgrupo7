@@ -14,11 +14,11 @@
         <section>
             <div class="wrapper-admin">
                 <div class="container">
-                    <form action="#" method="POST" class="form addproduct" autocomplete="off">
+                    <form action="/product" method="POST" enctype="multipart/form-data" class="form addproduct" autocomplete="off">
                         <h3>Agregar producto</h3>
                         <div class="form-item">
                             <label for="product-name">Nombre producto</label>
-                            <input type="text" name="product-name" class="is-input" placeholder="Nombre producto" id="product-name"
+                            <input type="text" name="productname" class="is-input" placeholder="Nombre producto" id="product-name"
                                 autocomplete="off">
                         </div>
                         <div class="form-item addproduct-description">
@@ -28,22 +28,16 @@
                         </div>
                         <div class="form-item addproduct-image">
                             <label for="addimage">Imagen</label>
-                            <input type="file" name="addimage" class="is-input" accept=".jpg , .png" 
+                            <input type="file" name="addimages" class="is-input" accept=".jpg , .png" 
                                 id="addimage">
                         </div>
                         <div class="form-item addproduct-category">
                             <label for="category">Categoría</label>
                             <select name="category" class="is-input" placeholder="Categoría"
                                 id="category">
-<option value="Donas">Donas</option>
-<option value="Cookies">Cookies</option>
-<option value="Helados">Helados</option>
-
-                        </div>
-                        <div class="form-item addproduct-price">
-                            <label for="addprice"> Precio </label>
-                            <input type="text" name="addprice" class="is-input" 
-                                id="addprice">
+                            <option value="Donas">Donas</option>
+                            <option value="Cookies">Cookies</option>
+                            <option value="Helados">Helados</option>
                         </div>
                         <div class="form-item addproduct-price">
                             <label for="addprice"> Precio </label>
