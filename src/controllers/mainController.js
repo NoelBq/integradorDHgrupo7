@@ -14,6 +14,15 @@ const mainController = {
     shop: (req, res) => {
         res.render('shop', {testimonials: testimonialsDB, products: productsDB});
     },
+    shopDonas: (req,res) =>{
+      res.render('shopDonas', {testimonials: testimonialsDB, products: productsDB})
+    },
+    shopCookies: (req,res) =>{
+        res.render('shopCookies', {testimonials: testimonialsDB, products: productsDB})
+      },
+    shopHelados: (req,res) =>{
+        res.render('shopHelados', {testimonials: testimonialsDB, products: productsDB})
+      },
     underConstruction: (req, res) => {
         res.render('underconstruction');
     },

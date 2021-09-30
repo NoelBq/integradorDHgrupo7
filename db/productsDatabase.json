@@ -19,7 +19,7 @@
         "id": 4,
         "name": "Dona de Frutos del Bosque",
         "description": "Dona rellena con crema de frutos del bosque",
-        "img": "Dona5_FrutosDelBosque.png",
+        "img": "Dona3_durazno.png",
         "category": "Donas",
         "price": 110
     },
@@ -38,5 +38,13 @@
         "category": "Donas",
         "img": "PRODUCT-1632958663499-SelectionBox_Website.jpg",
         "price": "33"
+    },
+    {
+        "id": "3f941260-6574-4a79-83cd-f5e97795ac9c",
+        "name": "GatitoCookie",
+        "description": "Soy un Gatocokie",
+        "category": "Cookies",
+        "img": "PRODUCT-1633038487329-BORRARimagen-1.jpg",
+        "price": "111"
     }
 ]
