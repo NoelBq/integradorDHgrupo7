@@ -46,3 +46,4 @@
 - Que no debo dejar todo para ultimo momento.
 ## ¿Qué se puede  mejorar?
 - La comunicacion de mi parte.
+
