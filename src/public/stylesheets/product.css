@@ -58,7 +58,7 @@ img{
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10px;
     height: 4px;
     width: 100%;
     background: var(--grey);
