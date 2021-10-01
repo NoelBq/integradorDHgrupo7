@@ -139,6 +139,10 @@ body {
 }
 
 /* admin panel */
+.admin-panel-wrapper {
+    height: 100vh;
+    padding-bottom: 2em;
+}
 
 .admin-panel {
     margin:1em 2em;
@@ -153,8 +157,9 @@ body {
 
 .product-table-container {
     margin: 2em;
-    width: 80%;
+    width: 80vw;
 }
+
 
  .btn-costum {
     background-color: var(--lightviolet);
@@ -165,6 +170,8 @@ body {
 
 .btn-display {
     display: flex;
+    flex-direction: column;
+    
 }
 
 .form-select {
@@ -173,4 +180,13 @@ body {
 
 .btn-admin-panel {
      margin: 0.2em 0.4em;
+}
+
+
+@media screen and (min-width:768px) {
+    .btn-display {
+        display: flex;
+        flex-direction: row;
+    }
+    
 }
