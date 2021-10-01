@@ -33,6 +33,7 @@ img{
 }
 .img-select{
     display: flex;
+    margin-left: -5px;
 }
 .img-item{
     margin: 0.3rem;
