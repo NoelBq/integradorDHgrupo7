@@ -19,12 +19,36 @@
         <h2 class="product-card-headerTitle">Productos</h2>
         <h4 class="product-card-headerSubtitle">Hechos con amor <i class="fas fa-heart"></i></h4>
       </div>
-      <div class="Product-cards">
-        <% products.forEach(function(product){ %>
-            <%- include('partials/product',{product: product}) %>
-          <% }); %>
-        </div>
-      </section>
+      <div class="product-cards categorias-cards">
+          <div class="card cat-card">
+              <div class="card-imagebox">
+                  <a href="/shop/donas"><img src="/images/Dona1_Chocolate.png" class="card-img-top" alt="..."></a>
+              </div>
+              <div class="product-card-body">
+                  <h5 class="product-card-title">Donas</h5>
+                  <a href="/shop/donas" class="product-card-btn">Visitar ahora</a>
+              </div>
+          </div>
+          <div class="card cat-card">
+              <div class="card-imagebox">
+                  <a href="/shop/cookies"><img src="/images/cookie.jpg" class="card-img-top" alt="..."></a>
+              </div>
+              <div class="product-card-body">
+                  <h5 class="product-card-title">Galletitas</h5>
+                  <a href="/shop/cookies" class="product-card-btn">Visitar ahora</a>
+              </div>
+          </div>
+          <div class="card cat-card">
+              <div class="card-imagebox">
+                  <a href="/shop/helados"><img src="/images/helado.jpg" class="card-img-top" alt="..."></a>
+              </div>
+              <div class="product-card-body">
+                  <h5 class="product-card-title">Helados</h5>
+                  <a href="/shop/helados" class="product-card-btn">Visitar ahora</a>
+              </div>
+          </div>
+      </div>
+  </section>
       <!-- Incio de la OfferBox-->
       <section>
         <div class="offerbox-box">
