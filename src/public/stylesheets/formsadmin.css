@@ -4,6 +4,9 @@
 
 body {
     font-family: 'Poppins' , sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper-admin {
@@ -171,7 +174,7 @@ body {
 .btn-display {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .form-select {
