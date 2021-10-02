@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "fullname": "Ricardo Lopez",
+        "email": "riqui@gmail.com",
+        "password": "1240"
+    },
+    {
+        "id": 2,
+        "fullname": "Lalo Romer",
+        "password": "1240"
+    },
+    {
+        "id": 4,
+        "fullname": "Noelia",
+        "email": "noe@all.com"
+    },
+    {
+        "id": 5,
+        "fullname": "xvd",
+        "email": "k@gmai.com",
+        "password": "2334"
+    },
+    {
+        "id": 6,
+        "fullname": "hhh",
+        "email": "hhh",
+        "password": "$2a$10$C5FSQvve3lCuNVzTpgnlO.2Yez3CpjGAHcnZsNekB2T6rpK1TJbXa"
+    },
+    {
+        "id": 7,
+        "fullname": "JoJo",
+        "email": "jojo@ym.com",
+        "password": "$2a$10$MC718m1OBY.1Fi.zGV6HUuUWRHswV0D2ov2VJbZblc3anKDcjZXeO"
+    }
+]
