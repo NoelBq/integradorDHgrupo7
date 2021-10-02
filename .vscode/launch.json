@@ -9,9 +9,10 @@
             "internalConsoleOptions": "neverOpen",
             "name": "nodemon",
             "program": "${workspaceFolder}/src/index.js",
+            "start": "${workspaceFolder}/src/index.js",
             "request": "launch",
             "restart": true,
-            "runtimeExecutable": "nodemon",
+            "runtimeExecutable": "node",
             "skipFiles": [
                 "<node_internals>/**"
             ],

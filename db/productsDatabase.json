@@ -1,50 +1,50 @@
 [
     {
-        "id": 2,
-        "name": "Dona de Coco y Lima",
-        "description": "Un blend especial de coco y lima",
-        "category": "Donas",
-        "img": "/images/Dona2_CocoLima.png",
-        "price": 120
+        "id": 1,
+        "name": "Dona de Chocolate ",
+        "description": "Hecha con cacao al 70%",
+        "img": "1632707261464-CHOCOLATE-TRUFFLE.jpg",
+        "category": "Cookies",
+        "price": "100"
     },
     {
         "id": 3,
         "name": "Dona de Durazno",
         "description": "Dulce y Fresca",
+        "img": "Dona3_durazno.png",
         "category": "Donas",
-        "img": "/images/Dona3_durazno.png",
         "price": 90
     },
     {
         "id": 4,
         "name": "Dona de Frutos del Bosque",
         "description": "Dona rellena con crema de frutos del bosque",
+        "img": "Dona5_FrutosDelBosque.png",
         "category": "Donas",
-        "img": "/images/Dona5_FrutosDelBosque.png",
         "price": 110
     },
     {
-        "id": 5,
-        "name": "Dona Te de Matcha",
-        "description": "Dona agridulce a base de matcha",
+        "id": "8f1b61ab-6cdd-484f-a776-fd7cf532f061",
+        "name": "dona rosa",
+        "description": "",
         "category": "Donas",
-        "img": "/images/Dona4_Tematcha.png",
-        "price": 170
+        "img": "PRODUCT-1632956563664-TONGAN-VANILLA-BEAN-GLAZE.jpg",
+        "price": "400"
     },
     {
-        "id": 6,
-        "name": "Dona de Vainilla",
-        "description": "Un clasico ",
+        "id": "cd9847f5-59c2-416a-a2ca-94c393ff7e58",
+        "name": "dddd",
+        "description": "",
         "category": "Donas",
-        "img": "/images/Dona6_Vainilla.png",
-        "price": 180
+        "img": "PRODUCT-1632958663499-SelectionBox_Website.jpg",
+        "price": "33"
     },
     {
-        "id": 7,
-        "name": "Medialuna",
-        "description": "Medialuna Dulce de Manteca ",
-        "category": "Medialuna",
-        "img": "/images/Dona6_Vainilla.png",
-        "price": 180
+        "id": "c77a4758-3b68-4a9e-91fd-2ae6ebc89cbf",
+        "name": "jkjij",
+        "description": "jijijoj",
+        "category": "Donas",
+        "img": "PRODUCT-1633045333069-Chocolate-Orange.jpg",
+        "price": "888"
     }
 ]

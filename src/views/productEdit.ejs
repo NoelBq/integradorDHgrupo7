@@ -17,52 +17,48 @@
                     <div class = "product-imgs">
                         <div class = "img-display">
                             <div class = "img-showcase">
-                                <img src = "<%- product.img %> " alt = "<%- product.name %> ">
+                                <img src = "/images/<%- product.img %> " alt = "<%- product.name %> ">
                             </div>
                         </div>
                     </div>          
                     <div class = "product-content">
-                        <form action="">
+                        <form action="/product/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <h2 class = "product-title"> Editar Producto </h2>
                             <div class = "product-detail">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
-                                    <input class="form-control" id="name" type="text" name="name" value="<%= product.name %> placeholder"<%= product.name %>">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input class="form-control" id="email" type="email" name="Email">
-                                  </div>
-                                  <input class="btn" type="submit" value="Submit" />
-                                  </div>
-                                <label >Nombre</label>
-                                <input type="text" name="nombre" value="<%= product.name %> placeholder:"<%= product.name %>">
+                                    <input class="form-control" id="name" type="text" name="name" value="<%= product.name %>" placeholder"<%= product.name %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Descripcion</label>
+                                    <input class="form-control" id="description" type="text" name="description"  value="<%= product.description %>" placeholder="<%= product.description %>">
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="price">Precio</label>
+                                        <input type="text" class="form-control" name="price" value="<%= product.price %>" placeholder="<%= product.price %>">
+                                    </div>
+                                    <div class="col col-category">
+                                        <label  for="categoria">Elegir Categoria</label>
+                                        <select name='category' id="categorySelection" class="form-select" aria-label="Default select example">
+                                            <option selected><%=product.category%> </option>
+                                            <% categories.forEach(function(category){ %>
+                                                <option value="<%- category %>"><%- category %> </option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="customFileLang">Cambiar Imagen</label>
+                                        <input type="file" value="img" name="img" class="form-control" id="customFileLang" lang="es" accept="image/*">
+                                      </div>
+                                    <input class="btn btn-primary btn-edit" type="submit" value="Enviar" />
+                                </form>
                             </div>
-                            <div class = "product-price">
-                                <p class = "price">Precio: <span>$ <%- product.price %> </span></p>
-                            </div>
-                            <div class = "product-detail">
-                                <h2>Mas Informacion: </h2>
-                                <p> <%- product.description %> </p>
-                            </div>
-                            <div class = "product-detail">
-                                <div class="input-group mb-3">
-                                    <label class="input-group-text">Cambiar Imagen</label>
-                                    <input type="file" name="img" class="form-control">
-                                  </div>
-                            </div>
-                            <div class = "purchase-info">
-                                <input type = "number" min = "0" value = "1">
-                                <button type = "button" class = "btn cart">
-                                  
-                                </button>
-                            </div>
-                       </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <%- include('./partials/footer') %> 
-</body>
-</html>
+                </section>
+            </main>
+            <%- include('./partials/footer') %> 
+        </body>
+        </html>
