@@ -1,5 +1,6 @@
 const testimonialsDB  = require('../../db/testimonialDatabase.json');
 const productsDB  = require('../../db/productsDatabase.json');
+const utils = require('../utils/utils');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,13 +16,16 @@ const mainController = {
         res.render('shop', {testimonials: testimonialsDB, products: productsDB});
     },
     shopDonas: (req,res) =>{
-      res.render('shopDonas', {testimonials: testimonialsDB, products: productsDB})
+        let localProductsDB = utils.parseJS(productsDB);
+      res.render('shopDonas', {testimonials: testimonialsDB, products: localProductsDB})
     },
     shopCookies: (req,res) =>{
-        res.render('shopCookies', {testimonials: testimonialsDB, products: productsDB})
+        let localProductsDB = utils.parseJS(productsDB);
+        res.render('shopCookies', {testimonials: testimonialsDB, products: localProductsDB})
       },
     shopHelados: (req,res) =>{
-        res.render('shopHelados', {testimonials: testimonialsDB, products: productsDB})
+        let localProductsDB = utils.parseJS(productsDB);
+        res.render('shopHelados', {testimonials: testimonialsDB, products: localProductsDB})
       },
     underConstruction: (req, res) => {
         res.render('underconstruction');
