@@ -4,7 +4,7 @@
 - [Diego Delachaux] - 
 - [Juan Manuel Marengo] - 
 
-### Trelo [ https://trello.com/b/4oWQHMWe/tareas ]
+### Trelo [ https://grupo-7-sweettreats.atlassian.net/jira/software/projects/TAR/boards/1 ]
 
 # ENGLISH
 :doughnut: ## About Us :lollipop:
