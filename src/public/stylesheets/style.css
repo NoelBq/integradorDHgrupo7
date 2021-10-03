@@ -120,7 +120,6 @@
 
 .shopNow-btn a {
     background-color: var(--darkblue);
-    box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.58);
     border-radius: 10px;
     padding: 10px;
     color: #ffffff;
@@ -357,7 +356,7 @@
     .shopNow-img {
         position: absolute;
         width: 360px;
-        left: 10vw;
+        left: calc(25% - 109px);
         top: 30px;
     }
     .shopNow-img img {
@@ -365,15 +364,17 @@
     }
     .shopNow-Textbox {
         position: absolute;
-        color: black;
-        left: 60vw;
+        color: var(--lightgrey);
+        left: calc(77% - 145px);
         font-size: 18px;
-        top: 52px;
-        width: 286px;
+        top: 53px;
+        width: 306px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 21px;
     }
     .shopNow-btn {
         bottom: 120px;
-        left: 69vw;
+        left: calc(77% - 60px);
     }
     .shopNow-btn a {
         font-size: 18px;
