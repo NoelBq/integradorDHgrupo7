@@ -2,50 +2,52 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head') %> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <%- include('./partials/head') %>
     <link rel="stylesheet" href="./stylesheets/formsadmin.css">
 </head>
 
 <body>
-    <header>
-        <%- include('./partials/nav') %> 
-    </header>
-    <main>
-        <h1 class="admin-panel">Admin Panel</h1>
-        <section class="product-category">
-          <a href="formsadmin"><button type="submit" class="btn btn-costum"><i class="fas fa-plus"></i> Nuevo Producto</button></a>
-          <form class="product-category" action="/adminpanel" method="get">
-            <select name='categorySelection' id="categorySelection" class="form-select" aria-label="Default select example">
-              <option selected>Categoria</option>
-              <% categories.forEach(function(category){ %>
-                <option value="<%- category %>"><%- category %> </option>
-                <% }); %>
+  <header>
+    <%- include('./partials/nav') %>
+  </header>
+  <main>
+    <h1 class="admin-panel">Admin Panel</h1>
+    <section>
+      <div class="admin-menu">
+        <div class="admin-card">
+          <a href="formsadmin"><button type="submit" class="btn-forms"><i class="fas fa-plus"></i> Nuevo
+              Producto</button></a>
+        </div>
+        <div class="admin-card">
+          <form action="/adminpanel" method="get">
+            <div class="select-search">
+              <select name='categorySelection' id="categorySelection" class="form-select"
+                aria-label="Default select example">
+                <option selected>Categoria</option>
+                <% categories.forEach(function(category){ %>
+                  <option value="<%- category %>">
+                    <%- category %>
+                  </option>
+                  <% }); %>
               </select>
-              <button type="submit" class="btn btn-costum">Buscar</button>
-            </form>
-          </section>
-          <section class="product-table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Producto</th>
-                  <th scope="col">Descripcion</th>
-                  <th scope="col">Precio</th>
-                  <th scope="col">Accion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% products.forEach(function(product){ %>
-                  <%- include('partials/tableProduct', {product: product}) %>
-                <% }); %>
-                </tbody>
-              </table>
-            </section>
-    </main>
-    <%- include('./partials/footer') %> 
-    
+              <button type="submit" class="btn-forms btn-search">Buscar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+    <section>
+      <div class="admin-product-container">
+
+        <% products.forEach(function(product){ %>
+          <%- include('partials/tableProduct', {product: product}) %>
+            <% }); %>
+      </div>
+    </section>
+  </main>
+  <%- include('./partials/footer') %>
+
 </body>
+
 </html>
