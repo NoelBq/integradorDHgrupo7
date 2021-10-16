@@ -62,7 +62,7 @@
 
 .about-box {
     position: relative;
-    background-image: url("/images/About-BS3.jpg");
+    background-image: url("/images/About-BS1.jpg");
     width: 100vw;
     height: 400px;
     background-size: cover;
@@ -70,11 +70,10 @@
 
 .about-box-icon {
     position: relative;
-    width: 200px;
-    height: 200px;
 }
 
 .about-box-icon img {
+    display: none;
     position: absolute;
 }
 
@@ -156,6 +155,8 @@
     justify-content: center;
     align-items: center;
     background: url("/images/TBG4.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .testimonial-container {
@@ -200,70 +201,6 @@
 
 .stars .emptystar {
     font-size: 1em;
-}
-
-.tendencias {
-    width: 100%;
-    height: 50%;
-    position: relative;
-}
-
-.textotendencias {
-    position: absolute;
-    top: 2vw;
-    left: 2vw;
-    color: white;
-    padding-top: 0.87%;
-    padding-bottom: 0.2%;
-    padding-right: 1%;
-    padding-left: 1%;
-    background-color: #7e33e0;
-    border-radius: 5px;
-    font-family: Poppins;
-    font-size: 3.5vw;
-    font-weight: 200;
-}
-
-.tendencias img {
-    position: relative;
-    width: 100%;
-}
-
-.masinfo {
-    position: absolute;
-    background-color: #a88fc9;
-    font-family: Poppins;
-    border-radius: 15px;
-    padding: 10px;
-    top: 70vw;
-    left: 10vw;
-    color: white;
-    font-size: 3.5vw;
-    font-weight: 200;
-}
-
-.lima {
-    position: absolute;
-    font-family: poppins;
-    font-weight: 700;
-    color: white;
-    left: 68vw;
-    top: 60vw;
-    font-size: 7.5vw;
-}
-
-.coco {
-    position: absolute;
-    font-family: poppins;
-    font-weight: 700;
-    color: white;
-    left: 68vw;
-    top: 66.5vw;
-    font-size: 7.5vw;
-}
-
-.desktop-tendencia {
-    display: none;
 }
 
 @media only screen and (max-width: 295px) {
@@ -337,14 +274,19 @@
     .about-text {
         height: 360px;
         width: 329px;
-        top: 30px;
-        left: calc(50% - 161px);
+        left: 51vw;
     }
     .about-text-title {
         font-size: 26px;
     }
     .about-text-paragraph {
         font-size: 18px;
+    }
+    .about-box-icon img {
+        display: block;
+        width: 420px;
+        top: 4vh;
+        left: calc(50% - 470px);
     }
     /*testimonials*/
     .testimonials {
@@ -366,7 +308,7 @@
     .shopNow-img {
         position: absolute;
         width: 360px;
-        left: calc(25% - 109px);
+        left: calc(50% - 368px);
         top: 30px;
     }
     .shopNow-img img {
@@ -375,7 +317,7 @@
     .shopNow-Textbox {
         position: absolute;
         color: var(--lightgrey);
-        left: calc(77% - 145px);
+        left: 56vw;
         font-size: 18px;
         top: 53px;
         width: 306px;
@@ -384,68 +326,13 @@
     }
     .shopNow-btn {
         bottom: 120px;
-        left: calc(77% - 60px);
+        left: calc(56vw - -14px);
+        width: 317px;
     }
     .shopNow-btn a {
-        font-size: 18px;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .tendencias {
-        display: none;
-    }
-    .desktop-tendencia {
-        display: initial;
-    }
-    .desktop-tendencia {
-        background-color: rgb(206, 198, 235);
-        justify-content: space-around;
-        align-items: center;
-        height: 500px;
-        display: flex;
-    }
-    .desktop-t-header {
-        font-family: Poppins;
-        font-weight: 400;
-        top: 6vw;
-        left: 13vw;
-        font-size: 3.5vw;
-        color: #1d252c;
-    }
-    .desktop-t-p {
-        color: #7e33e0;
-        top: 16vw;
-        left: 13vw;
-        font-size: 1.5vw;
-        font-family: "Poppins";
-    }
-    .desktop-tendencia-paragraph {
-        font-weight: 300;
-        padding: 10px;
-        margin-top: 12px;
-        text-align: left;
-        line-height: 34px;
-    }
-    .desktop-text-btn a {
-        background-color: #a88fc9;
-        line-height: 13px;
-        letter-spacing: 1px;
-        text-decoration: none;
-        color: #fff;
-        display: inline-block;
-        padding: 15px 12px 15px 15px;
-        transition: all 200ms;
-        border-radius: 4px;
-    }
-    .desktop-text-btn a:hover {
-        background: var(--lightviolet);
-    }
-    .desktop-tendencias-img {
-        top: 9vw;
-        left: 65vw;
-        height: 90%;
-        box-shadow: 5px 5px 15px -1px #000000;
+        font-size: 2.5em;
+        color: var(--lightgrey);
+        background-color: rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -473,13 +360,19 @@
     .about-text {
         height: 454px;
         width: 400px;
-        left: calc(50% - -170px);
     }
     .about-text-title {
         font-size: 36px;
     }
     .about-text-paragraph {
         font-size: 22px;
+    }
+    .about-box-icon img {
+        width: 450px;
+        left: calc(50% - 516px);
+    }
+    .shopNow-img {
+        left: calc(50% - 411px);
     }
     /* testimonials */
     .testimonial-container {
@@ -504,12 +397,19 @@
     .about-text {
         height: 492px;
         width: 480px;
-        left: calc(50% - -400px);
+        left: 51vw;
     }
     .about-text-paragraph {
         font-size: 26px;
     }
     .about-box {
         background-position: center;
+    }
+    .about-box-icon img {
+        left: calc(50% - 590px);
+        top: 6vh;
+    }
+    .shopNow-img {
+        left: calc(50% - 490px);
     }
 }
