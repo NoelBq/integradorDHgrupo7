@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/stylesheets/formslogin.css" />
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/nav') %>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div class="btn-register"></div>
+                    <a href="/login"><button type="button" class="toggle-btn">Log In</button></a>
+                    <button type="button" class="toggle-btn">Register</button>
+                </div>
+                <div class="social-icons">
+                    <img src="/images/formslogin/fb.png" alt="facebook-icon" />
+                    <img src="/images/formslogin/tw.png" alt="twitter-icon" />
+                    <img src="/images/formslogin/gp.png" alt="google-icon" />
+                </div>
+                <form id="register" action="" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required />
+                    <input type="email" class="input-field" placeholder="Email Id" required />
+                    <input type="text" class="input-field" placeholder="Enter Password" required />
+                    <input type="checkbox" class="check-box" />
+                    <a href="/terms"><span class="form-span">I Agree to the terms & conditions</span></a>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+</html>

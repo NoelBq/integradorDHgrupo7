@@ -1,0 +1,25 @@
+@import url(_colorpalette.css);
+@import url(_nav.css);
+@import url(_footer.css);
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.terms-text {
+    display: block;
+    margin-left: 78px;
+    margin-right: 42px;
+}
+
+.back-to-register a {
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 34px;
+    color: var(--strongviolet);
+}
+
+h1 {
+    text-decoration: underline;
+}

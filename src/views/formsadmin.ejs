@@ -3,9 +3,8 @@
 
 <head>
     <%- include('./partials/head') %>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./stylesheets/formsadmin.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./stylesheets/formsadmin.css">
 </head>
 
 <body>
@@ -16,28 +15,25 @@
         <section>
             <div class="wrapper-admin">
                 <div class="container">
-                    <form action="/product" method="POST" enctype="multipart/form-data" class="form addproduct"
-                    autocomplete="off">
-                    <h3>Agregar producto</h3>
-                    <div class="form-item">
-                        <label for="product-name">Nombre producto</label>
-                        <input type="text" name="productname" class="is-input" placeholder="Nombre producto"
-                        id="product-name" autocomplete="off" required>
-                    </div>
-                    <div class="form-item addproduct-description">
-                        <label for="description">Descripción</label>
-                        <input type="text" name="description" class="is-input" placeholder="Descripción producto"
-                        id="description">
-                    </div>
-                    <div class="form-item addproduct-image">
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="customFileLang">Imagen</label>
-                            <input type="file" name="addimages" class="is-input" accept=".jpg , .png" id="addimage" required>
-                          </div>
-                    </div>
-                    <div class="form-item addproduct-category">
-                        <label for="category">Categoría</label>
-                        <select name="category" class="is-input" placeholder="Categoría" id="category" required>
+                    <form action="/product" method="POST" enctype="multipart/form-data" class="form addproduct" autocomplete="off">
+                        <h3>Agregar producto</h3>
+                        <div class="form-item">
+                            <label for="product-name">Nombre producto</label>
+                            <input type="text" name="productname" class="is-input" placeholder="Nombre producto" id="product-name" autocomplete="off" required>
+                        </div>
+                        <div class="form-item addproduct-description">
+                            <label for="description">Descripción</label>
+                            <input type="text" name="description" class="is-input" placeholder="Descripción producto" id="description">
+                        </div>
+                        <div class="form-item addproduct-image">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="customFileLang">Imagen</label>
+                                <input type="file" name="addimages" class="is-input" accept=".jpg , .png" id="addimage" required>
+                            </div>
+                        </div>
+                        <div class="form-item addproduct-category">
+                            <label for="category">Categoría</label>
+                            <select name="category" class="is-input" placeholder="Categoría" id="category" required>
                             <option value="Donas">Donas</option>
                             <option value="Cookies">Cookies</option>
                             <option value="Helados">Helados</option>
@@ -59,7 +55,6 @@
     </section>
 </main>
 <%- include('./partials/footer') %>
-
 </body>
 
 </html>
