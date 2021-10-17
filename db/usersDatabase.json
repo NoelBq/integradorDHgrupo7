@@ -3,7 +3,8 @@
         "id": 1,
         "fullname": "Ricardo Lopez",
         "email": "riqui@gmail.com",
-        "password": "1240"
+        "password": "1240",
+        "rol": "basic"
     },
     {
         "id": 2,
