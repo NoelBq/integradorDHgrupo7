@@ -111,3 +111,12 @@ body {
         color: var(--grey);
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .logo {
+        margin-left: calc(39% - 250px);
+    }
+    .main-nav {
+        margin-right: 15vw;
+    }
+}
