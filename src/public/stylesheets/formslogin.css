@@ -10,9 +10,9 @@
 .hero {
     height: 600px;
     width: 100vw;
-    background-color: lightblue;
+    background-image: url(/images/formslogin/banner.jpg);
     background-position: center;
-    background-size: cover;
+    background-size: repeat;
     position: relative;
 }
 
