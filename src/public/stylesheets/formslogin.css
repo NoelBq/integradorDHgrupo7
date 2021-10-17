@@ -52,7 +52,7 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right, #b96ac9, #e5a9a9);
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -63,7 +63,7 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to left, #ff105f, #ffad06);
+    background: linear-gradient(to left, #b96ac9, #e5a9a9);
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -107,7 +107,8 @@
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to left, #b96ac9, #e5a9a9);
+    /*E5A9A9 ffd2fc*/
     border: 0;
     outline: none;
     border-radius: 30px;
@@ -122,4 +123,8 @@
     font-size: 12px;
     bottom: 68px;
     position: absolute;
+}
+
+.to-terms span:hover {
+    text-decoration: underline;
 }
