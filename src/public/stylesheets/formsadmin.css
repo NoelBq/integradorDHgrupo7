@@ -122,8 +122,6 @@ body {
 
 
 
-
-
 /* admin panel */
 .admin-panel-wrapper {
     height: 100vh;
@@ -135,10 +133,21 @@ body {
     margin-bottom: 1em;
 }
 
+.admin-panel i {
+    margin-right: 10px;
+    color: var(--strongviolet);
+}
 
 .product-table-container {
     margin: 2em;
     width: 80vw;
+}
+
+.admin-product-header {
+    width: 100%;
+    height: 50px;
+    background-color: var(--darkblue);
+    color: var(--lightgrey);
 }
 
 .btn-forms {
@@ -163,18 +172,32 @@ body {
     align-items: center;
 }
 
-
-select {
+.select-search select {
+    border:none;
+    border-bottom: 1px solid;
+    border-color: var(--lightviolet);
     width: 200px;
     background: none;
-    border: 2px solid;
     font: inherit;
     line-height: 1;
     padding: 1em;
-  color: var(--lightviolet);
-  width: 200px;
-  margin: 0;
+    color: var(--lightviolet);
+    width: 200px;
+    margin: 0;
 }
+
+.select-search select:focus {
+    outline: none !important;
+}
+
+.select-search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+}
+
+
 
 .admin-product-container {
     border-radius: 8px;
@@ -182,7 +205,20 @@ select {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    border: 0.5px solid;
+    border-color: var(--darkblue);
   }
+
+  .admin-product-header {
+    width: 100%;
+    height: 20px;
+    background-color: var(--darkblue);
+    color: var(--lightgrey);
+    font-weight: 600;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
  
   .admin-product-card {
     position: relative;
@@ -193,6 +229,7 @@ select {
     width: 400px;
     background: white;
     border-radius: 8px;
+    margin-top: 0.5em;
   }
   .admin-product-card:before {
     content: "";
@@ -256,13 +293,11 @@ select {
         .container {
             width: 40vw;
             min-height: 420px;
-        
         }
        
         .form-item button {
             font-size: 1em;
         }
-
 
         /*admin panel*/
 
@@ -277,6 +312,10 @@ select {
             flex-direction: row;
         }
 
+        .admin-product-header {    
+            height: 50px;
+            font-size: 2em;
+        }
     }
 
 

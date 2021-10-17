@@ -11,7 +11,7 @@
     <%- include('./partials/nav') %>
   </header>
   <main>
-    <h1 class="admin-panel">Admin Panel</h1>
+    <h1 class="admin-panel"> <i class="fas fa-th-large"></i>Admin Panel</h1>
     <section>
       <div class="admin-menu">
         <div class="admin-card">
@@ -30,7 +30,7 @@
                   </option>
                   <% }); %>
               </select>
-              <button type="submit" class="btn-forms btn-search">Buscar</button>
+              <button type="submit" class="btn-forms"><i class="fas fa-search"></i></button>
             </div>
           </form>
         </div>
@@ -39,7 +39,7 @@
     </section>
     <section>
       <div class="admin-product-container">
-
+        <div class="admin-product-header">Productos</div>
         <% products.forEach(function(product){ %>
           <%- include('partials/tableProduct', {product: product}) %>
             <% }); %>
