@@ -25,38 +25,13 @@
     font-family: "Pacifico";
 }
 
-.welcome-btn {
-    position: absolute;
-    width: 140px;
-    left: calc(50% - 70px);
-}
-
-.welcome-btn a {
-    top: 330px;
-    background-color: var(--darkblue);
-    box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.58);
-    border-radius: 10px;
-    padding: 10px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 20px;
-}
-
-.welcome-btn a:hover {
-    background-color: rgba(126, 51, 224, 90);
-}
-
-
-/*BUTTON*/
-
 button {
     position: absolute;
     display: inline-block;
     cursor: pointer;
     outline: none;
-    top: 500px;
-    left: calc(50% - 107px);
+    top: 440px;
+    left: calc(50% - 93px);
     border: 0;
     vertical-align: middle;
     text-decoration: none;
@@ -68,7 +43,7 @@ button.learn-more {
     font-weight: 600;
     color: #382b22;
     text-transform: uppercase;
-    padding: 1.25em 2em;
+    padding: 1em 1.5em;
     background: #fff0f0;
     border: 2px solid #a69cf1;
     border-radius: 0.75em;
@@ -192,7 +167,7 @@ button.learn-more:hover::before {
 .shopNow-btn a:hover {
     background-color: wheat;
     color: #000000;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 
@@ -267,17 +242,6 @@ button.learn-more:hover::before {
     }
 }
 
-.welcome-btn {
-    top: 350px;
-    width: 140px;
-    padding: 6px;
-    left: calc(50% - 70px);
-}
-
-.welcome-btn a {
-    font-size: 16px;
-}
-
 @media only screen and (min-width: 295px) {
     /*WELCOME BOX STYLES*/
     .welcome-box {
@@ -286,9 +250,6 @@ button.learn-more:hover::before {
     .welcome-title {
         font-size: 40px;
         top: 0px;
-    }
-    .welcome-btn {
-        top: 479px;
     }
 }
 
@@ -312,13 +273,8 @@ button.learn-more:hover::before {
         font-size: 50px;
         top: 45px;
     }
-    .welcome-btn {
-        width: 190px;
-        padding: 10px;
-        left: calc(50% - 95px);
-    }
-    .welcome-btn a {
-        font-size: 22px;
+    .learn-more {
+        top: 537px;
     }
     /*ABOUT US STYLES*/
     .about-box {
@@ -397,14 +353,9 @@ button.learn-more:hover::before {
     .welcome-title {
         font-size: 80px;
     }
-    .welcome-btn {
-        top: 567px;
-        width: 260px;
-        padding: 17px;
-        left: calc(50% - 130px);
-    }
-    .welcome-btn a {
-        font-size: 32px;
+    .learn-more {
+        top: 604px;
+        left: calc(50% - 95px);
     }
     /*ABOUT US STYLES*/
     .about-box {
@@ -464,5 +415,10 @@ button.learn-more:hover::before {
     }
     .shopNow-img {
         left: calc(50% - 490px);
+    }
+    .learn-more {
+        top: 571px;
+        font-size: 23px;
+        left: calc(50% - 152px);
     }
 }
