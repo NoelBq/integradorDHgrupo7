@@ -12,19 +12,19 @@
     width: 100vw;
     background-image: url(/images/formslogin/banner.jpg);
     background-position: center;
-    background-size: repeat;
+    background-size: cover;
     position: relative;
 }
 
 .form-box {
-    width: 380px;
+    width: 270px;
     height: 480px;
     position: absolute;
     margin: 6% auto;
     margin-top: 0px;
     background: #fff;
     padding: 5px;
-    left: calc(50% - 140px);
+    left: calc(50% - 135px);
     top: 50px;
 }
 
@@ -84,7 +84,7 @@
 .input-group {
     top: 180px;
     position: absolute;
-    width: 280px;
+    width: 206px;
     transition: 0.5s;
     left: 50px;
 }
@@ -127,4 +127,14 @@
 
 .to-terms span:hover {
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 500px) {
+    .form-box {
+        width: 350px;
+        left: calc(50% - 125px);
+    }
+    .input-group {
+        width: 250px;
+    }
 }
