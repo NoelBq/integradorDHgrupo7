@@ -15,8 +15,8 @@
             <div class="form-box">
                 <div class="button-box">
                     <div class="btn-login"></div>
-                    <button type="button" class="toggle-btn">Log In</button>
-                    <a href="/register"><button type="button" class="toggle-btn">Register</button></a>
+                    <button type="button" class="toggle-btn">Iniciar Sesion</button>
+                    <a href="/register"><button type="button" class="toggle-btn">Registro</button></a>
                 </div>
                 <div class="social-icons">
                     <img src="/images/formslogin/fb.png" alt="facebook-icon" />
@@ -24,11 +24,13 @@
                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                 </div>
                 <form id="login" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="User Id" required />
-                    <input type="text" class="input-field" placeholder="Enter Password" required />
+                    <label for="email"></label>
+                    <input name="email" type="text" class="input-field" placeholder="Email" required />
+                    <label for="password"></label>
+                    <input  name="password" type="text" class="input-field" placeholder="Contraseña" required />
                     <input type="checkbox" class="check-box" />
-                    <span class="form-span">Remember password</span>
-                    <button type="submit" class="submit-btn">Log In</button>
+                    <span class="form-span">Recordar Contraseña</span>
+                    <button type="submit" class="submit-btn">Iniciar Sesion</button>
                 </form>
             </div>
         </div>

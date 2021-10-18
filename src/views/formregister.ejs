@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/head') %>
-        <link rel="stylesheet" href="/stylesheets/formslogin.css" />
+    <link rel="stylesheet" href="/stylesheets/formslogin.css" />
 </head>
 
 <body>
@@ -15,8 +15,8 @@
             <div class="form-box">
                 <div class="button-box">
                     <div class="btn-register"></div>
-                    <a href="/login"><button type="button" class="toggle-btn">Log In</button></a>
-                    <button type="button" class="toggle-btn">Register</button>
+                    <a href="/login"><button type="button" class="toggle-btn">Iniciar Sesion</button></a>
+                    <button type="button" class="toggle-btn">Registro</button>
                 </div>
                 <div class="social-icons">
                     <img src="/images/formslogin/fb.png" alt="facebook-icon" />
@@ -24,19 +24,28 @@
                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                 </div>
                 <form action="/user" method="POST" class="input-group" id="register" autocomplete="off">
-                    <input type="text" name="fullname" class="input-field" placeholder="User Id" required />
-                    <input type="email" class="input-field" placeholder="Email Id" required />
-                    <input type="text" class="input-field" placeholder="Enter Password" required />
-                    <input type="checkbox" class="check-box" />
-                    <a class="to-terms" href="/terms"><span class="form-span">I Agree to the terms & conditions</span></a>
-                    <button type="submit" class="submit-btn">Register</button>
+                    <label for="name"></label>
+                    <input type="text" name="fullname" class="input-field" placeholder="Nombre Completo" required />
+                    <div class="input-field">
+                        <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
+                        <input type="file" clas
+                        id="avatar" name="avatar"
+                        accept="image/png, image/jpeg">
+                    </div>
+                    <label for="email"></label>
+                    <input type="email" name="email" class="input-field" placeholder="Email" required />
+                    <label for="password"></label>
+                    <input  name="password" nametype="text" class="input-field" placeholder="Contraseña" required />
+                    <input name="accept" type="checkbox" class="check-box" />
+                    <a class="to-terms" href="/terms"><span class="form-span">Acepto terminos y condiciones</span></a>
+                    <button type="submit" class="submit-btn">Registrarse</button>
                 </form>
             </div>
         </div>
     </main>
-
+    
     <%- include('./partials/footer') %>
-
+    
 </body>
 
 </html>

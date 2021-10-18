@@ -18,7 +18,7 @@
 
 .form-box {
     width: 270px;
-    height: 480px;
+    height: 520px;
     position: absolute;
     margin: 6% auto;
     margin-top: 0px;
@@ -37,7 +37,7 @@
 }
 
 .toggle-btn {
-    padding: 10px 30px;
+    padding: 10px 15px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -87,6 +87,29 @@
     width: 206px;
     transition: 0.5s;
     left: 50px;
+}
+
+
+input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+
+label > i{
+    color: #b96ac9;
+    margin-right: 5px;
+}
+
+input[type="file"] + label {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
 }
 
 .input-field {
