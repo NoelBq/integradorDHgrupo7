@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/stylesheets/formslogin.css" />
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/nav') %>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div class="btn-login"></div>
+                    <button type="button" class="toggle-btn">Iniciar Sesion</button>
+                    <a href="/register"><button type="button" class="toggle-btn">Registro</button></a>
+                </div>
+                <div class="social-icons">
+                    <img src="/images/formslogin/fb.png" alt="facebook-icon" />
+                    <img src="/images/formslogin/tw.png" alt="twitter-icon" />
+                    <img src="/images/formslogin/gp.png" alt="google-icon" />
+                </div>
+                <form id="login" action="" class="input-group">
+                    <label for="email"></label>
+                    <input name="email" type="text" class="input-field" placeholder="Email" required />
+                    <label for="password"></label>
+                    <input  name="password" type="text" class="input-field" placeholder="Contraseña" required />
+                    <input type="checkbox" class="check-box" />
+                    <span class="form-span">Recordar Contraseña</span>
+                    <button type="submit" class="submit-btn">Iniciar Sesion</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+</body>
+
+</html>
