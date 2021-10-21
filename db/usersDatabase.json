@@ -33,5 +33,28 @@
         "fullname": "JoJo",
         "email": "jojo@ym.com",
         "password": "$2a$10$MC718m1OBY.1Fi.zGV6HUuUWRHswV0D2ov2VJbZblc3anKDcjZXeO"
+    },
+    {
+        "id": 8,
+        "fullname": "Ricardo",
+        "avatar": "",
+        "email": "ricardo@gmail.com",
+        "password": "$2a$10$aiJrKOJiAQCNquZJ.hIPW.1ra2/V1Zy4ixPItvV16O2gFBJGnYWVK"
+    },
+    {
+        "id": 9,
+        "fullname": "fff",
+        "avatar": "",
+        "email": "mnk@hot.com",
+        "password": "$2a$10$a2Q2ef/DL1isAWAsR3c1KeaOQo3mnqUFo3trdQbkbHSuRlRdD4Gna",
+        "rol": "basic"
+    },
+    {
+        "id": 10,
+        "fullname": "",
+        "avatar": "",
+        "email": "",
+        "password": "$2a$10$ANVuZzadutnrPj1Cm7AJrOKPBwEDxKOY9jgT3C.FzVxcnOkN5j3Ia",
+        "rol": "basic"
     }
 ]
