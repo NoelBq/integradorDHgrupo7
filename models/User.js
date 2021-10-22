@@ -35,6 +35,16 @@ const User = {
        
     },
 
+    findByField : function (field, text) {
+        let allUsers = this.findAllUsers();
+        let userFound = allUsers.find(oneUser => oneUser[field] === text);
+        if(userFound != undefined) {
+            return userFound;
+        } else {
+            console.log('User not found');
+        }
+    },
+
     createUser: function (userData) {
         let allUsers = this.findAllUsers();
         let newUser = {
