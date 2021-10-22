@@ -24,7 +24,7 @@
                     <img src="/images/formslogin/tw.png" alt="twitter-icon" />
                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                 </div>
-                <form action="/" method="POST" class="input-group" id="register" autocomplete="off">
+                <form action="/user" method="POST" class="input-group" id="register" autocomplete="off">
                     
                     <% if(typeof validations != 'undefined') { %>
                         <% validations.forEach((validation) => { %>
@@ -50,12 +50,6 @@
                     </div>
                 </div>
             </main>
-            
-            <%- include('./partials/footer') %>
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="js/bootstrap.min.js"></script>
         </body>
         
         </html>
