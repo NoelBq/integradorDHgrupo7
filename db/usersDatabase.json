@@ -8,53 +8,62 @@
     },
     {
         "id": 2,
-        "fullname": "Lalo Romer",
-        "password": "1240"
-    },
-    {
-        "id": 4,
-        "fullname": "Noelia",
-        "email": "noe@all.com"
-    },
-    {
-        "id": 5,
-        "fullname": "xvd",
-        "email": "k@gmai.com",
-        "password": "2334"
-    },
-    {
-        "id": 6,
-        "fullname": "hhh",
-        "email": "hhh",
-        "password": "$2a$10$C5FSQvve3lCuNVzTpgnlO.2Yez3CpjGAHcnZsNekB2T6rpK1TJbXa"
-    },
-    {
-        "id": 7,
-        "fullname": "JoJo",
-        "email": "jojo@ym.com",
-        "password": "$2a$10$MC718m1OBY.1Fi.zGV6HUuUWRHswV0D2ov2VJbZblc3anKDcjZXeO"
-    },
-    {
-        "id": 8,
-        "fullname": "Ricardo",
-        "avatar": "",
-        "email": "ricardo@gmail.com",
-        "password": "$2a$10$aiJrKOJiAQCNquZJ.hIPW.1ra2/V1Zy4ixPItvV16O2gFBJGnYWVK"
-    },
-    {
-        "id": 9,
-        "fullname": "fff",
-        "avatar": "",
-        "email": "mnk@hot.com",
-        "password": "$2a$10$a2Q2ef/DL1isAWAsR3c1KeaOQo3mnqUFo3trdQbkbHSuRlRdD4Gna",
+        "fullname": "alla",
+        "avatar": "avatar.jpeg",
+        "email": "lla@mail.com",
+        "password": "$2a$10$UBVZiMc9I8IDNs/2Hfy/j.yscb0pulwIOh5pmahjow94DAHHceXiS",
+        "accept": "on",
         "rol": "basic"
     },
     {
-        "id": 10,
-        "fullname": "",
+        "id": 3,
+        "fullname": "rg",
+        "email": "hh@gmail.com",
+        "password": "$2a$10$r085xcOuhm81FiUJC9iVh.hSeW/CmAYTX9C8FgWKrcvcl/l4ZPbDa",
+        "accept": "on",
+        "rol": "basic"
+    },
+    {
+        "id": 4,
+        "fullname": "lopez",
+        "email": "lopez@hotmail.com",
+        "password": "$2a$10$GoGCLpU/BwELMScxyf9ZV.tLo1qedGqa4pAYmQNy0wPqvLBTNNiaO",
+        "accept": "on",
+        "rol": "basic"
+    },
+    {
+        "id": 5,
+        "rol": "basic"
+    },
+    {
+        "id": 6,
+        "rol": "basic"
+    },
+    {
+        "id": 7,
+        "fullname": "hola",
         "avatar": "",
-        "email": "",
-        "password": "$2a$10$ANVuZzadutnrPj1Cm7AJrOKPBwEDxKOY9jgT3C.FzVxcnOkN5j3Ia",
+        "email": "hola@hola.com",
+        "password": "1234",
+        "accept": "on",
+        "rol": "basic"
+    },
+    {
+        "id": 8,
+        "fullname": "noe",
+        "avatar": "",
+        "email": "noe@hola.com",
+        "password": "$2a$10$F0nu26Gyppqp0XGNHTjSROHyrZgjPXX45RSCEtY03eLYbpBmZdl8K",
+        "accept": "on",
+        "rol": "admin"
+    },
+    {
+        "id": 9,
+        "fullname": "Rich",
+        "avatar": "",
+        "email": "ri@ri.com",
+        "password": "$2a$10$wP/dNq2c8ggHU0FQAaIEZufWgzAoDthRPbkjNRlT9hG7nemziWEqW",
+        "accept": "on",
         "rol": "basic"
     }
 ]

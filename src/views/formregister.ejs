@@ -24,10 +24,13 @@
                     <img src="/images/formslogin/tw.png" alt="twitter-icon" />
                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                 </div>
-                <form action="/user" method="POST" class="input-group" id="register" autocomplete="off">
-                    
+                <form action="/user" method="POST"  class="input-group" id="register" autocomplete="off">
+                    <% if(typeof errors != 'undefined') { %> 
+                        <p><%= errors.email.msg %> </p>
+                     <% } %>
                     <% if(typeof validations != 'undefined') { %>
                         <% validations.forEach((validation) => { %>
+
                             <p><%= validation.msg %> </p>
                             <% }) %>
                             <% } %>
@@ -37,12 +40,12 @@
                                 <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
                                 <input type="file" clas 
                                 id="avatar" name="avatar"
-                                accept="image/png, image/jpeg">
+                                accept="image/png, image/jpeg", image/jgp">
                             </div>
                             <label for="email"></label>
                             <input type="email" name="email" class="input-field" placeholder="Email"/>
                             <label for="password"></label>
-                            <input  name="password" type="password" nametype="text" class="input-field" placeholder="Contraseña"/>
+                            <input  name="password" type="password" nametype="password" class="input-field" placeholder="Contraseña"/>
                             <input id="accept" name="accept" type="checkbox" class="check-box" />
                             <a class="to-terms" href="/terms"><span class="form-span">Acepto terminos y condiciones</span></a>
                             <button type="submit" class="submit-btn">Registrarse</button>
