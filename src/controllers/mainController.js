@@ -9,7 +9,7 @@ const mainController = {
         res.render("home", { testimonials: testimonialsDB });
     },
     login: (req, res) => {
-        res.render("formlogin");
+        res.render("formlogin", {registered: req.query.registered});
     },
     register: (req, res) => {
         res.render("formregister");

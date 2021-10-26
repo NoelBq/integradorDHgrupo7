@@ -1,0 +1,76 @@
+@import url(_colorpalette.css);
+@import url(_nav.css);
+@import url(_footer.css);
+
+body {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .title-pen {
+    color: #333;
+    text-align: center;
+  }
+  .title-pen span {
+    color: #55acee;
+  }
+  
+  .user-profile {
+    margin: auto;
+      width: 25em; 
+    height: 11em;
+    background: #fff;
+    border-radius: .3em;
+  }
+  
+  .user-profile  .username {
+    margin: auto;
+    text-transform: uppercase;
+    margin-top: -4.40em;
+    margin-left: 5.80em;
+    color: #658585;
+    font-size: 1.53em;
+    font-weight: bold;
+  }
+
+  .user-profile > .description {
+    margin: auto;
+    margin-top: 1.35em;
+    margin-right: 4.43em;
+    width: 14em;
+    color: #c0c5c5; 
+    font-size: .87em;
+  }
+  .user-profile > img.avatar {
+      padding: .7em;
+    margin-left: .3em;
+    margin-top: .3em;
+    height: 6.23em;
+    width: 6.23em;
+    border-radius: 18em;
+  }
+  
+  .user-profile ul.data {
+      margin: 2em auto;
+      height: 3.70em;
+    background: var(--lightviolet);
+    text-align: center;
+    border-radius: 0 0 .3em .3em;
+  }
+  .user-profile li {
+      margin: 0 auto;
+    padding: 1.30em; 
+    width: 33.33334%;
+    display: table-cell;
+    text-align: center;
+  }
+  
+  .user-profile span {
+    color: #e3eeee;
+    white-space: nowrap;
+    font-size: 1.27em;
+    font-weight: bold;
+  }
+  .user-profile span:hover {
+    color: #daebea;
+  }
+  

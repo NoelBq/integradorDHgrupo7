@@ -12,6 +12,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </header>
     <main>
+        <% if(typeof errors != 'undefined') { %> 
+            <div class="registered-banner">
+                <%= errors.email.msg %> 
+            </div>
+         <% } %>
+         
+        <% if(typeof validations != 'undefined') { %>
+            <% validations.forEach((validation) => { %>
+                <div class="registered-banner">
+                    <ul>
+                        <li>
+                            <%= validation.msg %>
+                        </li>
+                    </ul>
+                </div>
+                <% }) %>
+                <% } %>
         <div class="hero">
             <div class="form-box">
                 <div class="button-box">
@@ -24,16 +41,7 @@
                     <img src="/images/formslogin/tw.png" alt="twitter-icon" />
                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                 </div>
-                <form action="/user" method="POST"  class="input-group" id="register" autocomplete="off">
-                    <% if(typeof errors != 'undefined') { %> 
-                        <p><%= errors.email.msg %> </p>
-                     <% } %>
-                    <% if(typeof validations != 'undefined') { %>
-                        <% validations.forEach((validation) => { %>
-
-                            <p><%= validation.msg %> </p>
-                            <% }) %>
-                            <% } %>
+                <form action="/user" method="POST" enctype="multipart/form-data" class="input-group" id="register" autocomplete="off">
                             <label for="name"></label>
                             <input type="text" name="fullname" class="input-field" placeholder="Nombre Completo"/>
                             <div class="input-field">
@@ -53,6 +61,6 @@
                     </div>
                 </div>
             </main>
+            <%- include('./partials/footer') %>
         </body>
-        
-        </html>
+    </html>

@@ -23,31 +23,33 @@ const userController = {
         } 
 
         if(userInDB) {
-            res.render('formregister', {
+            res.status(409).render('formregister', {
                 errors: 
                 {
                     email: {
                         msg: "Usuario ya registrado"
                     }
                 },
-                oldData: req.body // to keep data previously
+                oldData: req.body // to keep data previously added
             })
-        } 
-
-        let userToCreate = {
-            ...req.body,
-            rol: "basic",
-            password: hashedPassword
+        } else {
+            let userToCreate = {
+                ...req.body,
+                rol: "basic",
+                password: hashedPassword,
+                image: req.file.filename
+            }
+            User.createUser(userToCreate);
+            res.status(200).redirect('login?registered=1')
         }
-        User.createUser(userToCreate);
-        res.status(200).redirect('login')
     
     },
 
     loginProcess: (req, res) => {
-        let userToLoggin = User.findByField('email', req.body.email)
+        let userToLogin = User.findByField('email', req.body.email)
         if(userToLoggin) {
-            let passwordOK = bcryptjs.compareSync(req.body.password, userToLoggin.password);
+            req.session.userLoged = userToLogin; 
+            let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(passwordOK) {
                 if(userToLoggin.rol == 'admin') {
                     res.redirect('/adminpanel')

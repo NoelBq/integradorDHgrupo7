@@ -3,11 +3,18 @@ const app = express();
 const path = require("path");
 const fs = require('fs');
 const bodyParser = require('body-parser')
+const session = require('express-session');
 
 const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const methodOverride  = require('method-override');
+
+app.use(session({
+    secret: "It's a secret",
+    resave: false, 
+    saveUninitialized: false
+}));
 app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(methodOverride ("_method"));
 app.use(express.urlencoded({ extended: false }));

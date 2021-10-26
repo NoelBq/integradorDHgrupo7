@@ -124,6 +124,18 @@ input[type="file"] + label {
     background: transparent;
 }
 
+.registered-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 45px;
+    color: var(--lightviolet);
+    background:#FFF;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
 .submit-btn {
     width: 85%;
     padding: 10px 30px;

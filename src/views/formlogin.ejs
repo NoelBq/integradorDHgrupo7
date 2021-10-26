@@ -11,6 +11,12 @@
         <%- include('./partials/nav') %>
     </header>
     <main>
+        <% if(locals.registered) { %>
+        <div class="registered-banner">
+            Gracias por registrarse! Ingrese con su usuario y contraseña.
+        </div>
+        <% } %>
+
         <div class="hero">
             <div class="form-box">
                 <div class="button-box">

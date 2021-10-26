@@ -4,6 +4,7 @@
 <head>
   <%- include('./partials/head') %>
     <link rel="stylesheet" href="../stylesheets/formsadmin.css">
+    <link rel="stylesheet" href="../stylesheets/userprofile.css">
 </head>
 
 <body>
@@ -11,11 +12,17 @@
     <%- include('./partials/nav') %>
   </header>
   <main>
-    <h1 class="admin-panel"> <i class="fas fa-user-astronaut"></i>Bienvenido <%= user.fullname %></h1>
-     
+    <h1 class="title-pen"> <i class="fas fa-user-astronaut"></i>Bienvenido <%= user.fullname %></h1>
+<div class="user-profile">
+	<img class="avatar" src= "/images/avatars/<%= user.image %>" alt="avatar" />
+    <div class="username"><%= user.fullname %></div>
+  <ul class="data">
+    <li>
+      <span class="entypo-heart"> Mail: <%= user.email %></span>
+    </li>
+ </ul>
+</div>
   </main>
   <%- include('./partials/footer') %>
-
 </body>
-
 </html>
