@@ -1,12 +1,9 @@
-
-const User = require('../../models/User'); 
-const bcryptjs = require('bcryptjs');
-const {validationResult} = require('express-validator');
-
-
+const User = require("../../models/User");
+const bcryptjs = require("bcryptjs");
+const { validationResult } = require("express-validator");
+const e = require("express");
 
 const userController = {
-
     userProfile: (req, res) => {
         res.render('userprofile')
         user: req.session.userLoged;
@@ -16,22 +13,23 @@ const userController = {
         let userInDB = User.findByField('email', req.body.email);
         if (!errors.isEmpty()) {
             const validations = errors.array();
-            let filteredValidations = validations.filter(err => err.msg != 'Invalid value')
+            let filteredValidations = validations.filter(
+                (err) => err.msg != "Invalid value"
+            );
             const oldData = req.body;
-            res.render('formregister', { validations: filteredValidations })
-            console.log(errors)
-        } 
+            res.render("formregister", { validations: filteredValidations });
+            console.log(errors);
+        }
 
-        if(userInDB) {
-            res.status(409).render('formregister', {
-                errors: 
-                {
+        if (userInDB) {
+            res.status(409).render("formregister", {
+                errors: {
                     email: {
-                        msg: "Usuario ya registrado"
-                    }
+                        msg: "Usuario ya registrado",
+                    },
                 },
-                oldData: req.body // to keep data previously added
-            })
+                oldData: req.body, // to keep data previously added
+            });
         } else {
             let userToCreate = {
                 ...req.body,
@@ -40,9 +38,8 @@ const userController = {
                 image: req.file.filename
             }
             User.createUser(userToCreate);
-            res.status(200).redirect('login?registered=1')
+            res.status(200).redirect("login?registered=1");
         }
-    
     },
 
     loginProcess: (req, res) => {
@@ -57,19 +54,17 @@ const userController = {
                 } else {
                     res.render('userprofile',{ user: userToLogin})
                 }
-            }
-        } else {
-            return res.render('formlogin', {
-                errors: 
-                    {
+            } else {
+                return res.render("formlogin", {
+                    errors: {
                         email: {
-                            msg: "Credenciales Invalidas"
-                        }
+                            msg: "Credenciales Invalidas",
+                        },
                     },
-            })
+                });
+            }
         }
-    }
-}
+    },
+};
 
 module.exports = userController;
-
