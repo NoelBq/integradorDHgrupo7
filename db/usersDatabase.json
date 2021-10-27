@@ -101,5 +101,14 @@
         "accept": "on",
         "rol": "basic",
         "image": "AVATAR-1635301949324-avatar.jpeg"
+    },
+    {
+        "id": 14,
+        "fullname": "roberto lopex",
+        "email": "rob22@hola.com",
+        "password": "$2a$10$4eh5Ddf/jyryhQwsO32vEue7PR5jBe5.AOdXbLDc5T929ZYfRBV5.",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635302266963-avatar.jpeg"
     }
 ]
