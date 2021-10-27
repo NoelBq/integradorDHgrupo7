@@ -17,7 +17,12 @@
           <div class="profile-card">
               <div class="profile-card-header">
                   <div class="avatar-card-photo">
-                      <img src="<%= user.image %>" alt="avatar">
+                    <% if(user.image){ %>
+                      <img src="../public/images/avatars/<%= user.image %>" alt="avatar">
+                    <% } else{ %>  
+                      <img src="../public/images/AB-ICON.png" alt="avatar">
+                   <% } %>
+                   
                   </div>
               </div>
               <div class="profile-card-body">
