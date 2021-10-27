@@ -6,7 +6,7 @@ const validations = require('../middleware/validation')
 const upload = require('../middleware/userMulterMidd');
 
 // This router is for /user prefix "/" is /user
-router.post('/', upload.single('avatar'), userController.processRegister);
+router.post('/', upload.single('avatar'), validations, userController.processRegister);
 router.post('/login' ,userController.loginProcess);
 router.get('/profile', userController.userProfile);
 
