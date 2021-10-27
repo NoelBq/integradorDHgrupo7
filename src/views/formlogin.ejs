@@ -11,6 +11,11 @@
         <%- include('./partials/nav') %>
     </header>
     <main>
+        <% if(locals.errors && errors.email) { %>
+            <div class="registered-banner">
+                <%= errors.email.msg  %>
+            </div>
+        <%  } %>
         <% if(locals.registered) { %>
         <div class="registered-banner">
             Gracias por registrarse! Ingrese con su usuario y contraseña.
@@ -30,9 +35,7 @@
                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                 </div>
                 <form method="POST" id="login" action="/user/login" class="input-group">
-                    <% if(locals.errors && errors.email) { %>
-                        <p> <%= errors.email.msg  %></p>
-                    <%  } %>
+
                     <label for="email"></label>
                     <input name="email" type="email" class="input-field" placeholder="Email" required />
                     <label for="password"></label>
