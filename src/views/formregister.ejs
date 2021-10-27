@@ -9,75 +9,83 @@
 <body>
     <header>
         <%- include('./partials/nav') %>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
     </header>
     <main>
-        <% if(typeof errors != 'undefined') { %> 
+        <% if(typeof errors !='undefined' ) { %>
             <div class="registered-banner">
-                <%= errors.email.msg %> 
+                <%= errors.email.msg %>
             </div>
-         <% } %>
-         
-        <% if(typeof validations != 'undefined') { %>
-            <% validations.forEach((validation) => { %>
-                <div class="registered-banner">
-                    <ul>
-                        <li>
-                            <%= validation.msg %>
-                        </li>
-                    </ul>
-                </div>
-                <% }) %>
-                <% } %>
-        <div class="hero">
-            <div class="form-box">
-                <div class="button-box">
-                    <div class="btn-register"></div>
-                    <a href="/login"><button type="button" class="toggle-btn">Iniciar Sesion</button></a>
-                    <button type="button" class="toggle-btn">Registro</button>
-                </div>
-                <div class="social-icons">
-                    <img src="/images/formslogin/fb.png" alt="facebook-icon" />
-                    <img src="/images/formslogin/tw.png" alt="twitter-icon" />
-                    <img src="/images/formslogin/gp.png" alt="google-icon" />
-                </div>
-                <form action="/user" method="POST" class="input-group" id="register" autocomplete="off">
-                    <% if(typeof errors != 'undefined') { %>
-                        <p>
-                            <%= errors.email.msg %>
-                        </p>
-                        <% } %>
-                            <% if(typeof validations != 'undefined') { %>
-                                <% validations.forEach((validation) => { %>
+            <% } %>
+                <% if(typeof validations !='undefined' ) { %>
+                    <% validations.forEach((validation)=> { %>
+                        <div class="registered-banner">
+                            <ul>
+                                <li>
+                                    <%= validation.msg %>
+                                </li>
+                            </ul>
+                        </div>
+                        <% }) %>
+                            <% } %>
+                                <div class="hero">
+                                    <div class="form-box">
+                                        <div class="button-box">
+                                            <div class="btn-register"></div>
+                                            <a href="/login"><button type="button" class="toggle-btn">
+                                                    Iniciar Sesion
+                                                </button></a>
+                                            <button type="button" class="toggle-btn">Registro</button>
+                                        </div>
+                                        <div class="social-icons">
+                                            <img src="/images/formslogin/fb.png" alt="facebook-icon" />
+                                            <img src="/images/formslogin/tw.png" alt="twitter-icon" />
+                                            <img src="/images/formslogin/gp.png" alt="google-icon" />
+                                        </div>
+                                        <form action="/user" method="POST" class="input-group" id="register" autocomplete="off">
+                                            <% if(typeof errors !='undefined' ) { %>
+                                                <p>
+                                                    <%= errors.email.msg %>
+                                                </p>
+                                                <% } %>
+                                                    <% if(typeof validations !='undefined' ) { %>
+                                                        <% validations.forEach((validation)=> { %>
 
-                                    <p>
-                                        <%= validation.msg %>
-                                    </p>
-                                    <% }) %>
-                                        <% } %>
-                                            <label for="name"></label>
-                                            <input type="text" name="fullname" class="input-field" placeholder="Nombre Completo" />
-                                            <div class="input-field">
-                                                <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
-                                                <input type="file" clas id="avatar" name="avatar" accept="image/png, image/jpeg" , image/jgp ">
-                            </div>
-                            <label for="email "></label>
-                            <input type="email " name="email " class="input-field " placeholder="Email "/>
-                            <label for="password "></label>
-                            <input  name="password " type="password " nametype="password " class="input-field " placeholder="Contraseña "/>
-                            <input id="accept " name="accept " type="checkbox " class="check-box " />
-                            <a class="to-terms " href="/terms "><span class="form-span ">Acepto terminos y condiciones</span></a>
-                            <button type="submit " class="submit-btn ">Registrarse</button>
-                        </form>
-                    </div>
-                </div>
-            </main>
-<<<<<<< HEAD
-            <%- include('./partials/footer') %>
-=======
-             <footer>
-                 <%- include('./partials/footer') %>
-            </footer>
->>>>>>> 7f8a6791542cfb46d5906e47ae08eb2278416a8d
-        </body>
-    </html>
+                                                            <p>
+                                                                <%= validation.msg %>
+                                                            </p>
+                                                            <% }) %>
+                                                                <% } %>
+                                                                    <label for="name"></label>
+                                                                    <input type="text" name="fullname" class="input-field" placeholder="Nombre Completo" />
+                                                                    <div class="input-field">
+                                                                        <label for="avatar">
+                                                                            <i class="fas fa-plus"></i>Imagen de
+                                                                            Perfil</label>
+                                                                        <input type="file" clas id="avatar" name="avatar" accept="image/png, image/jpeg" , image/jgp ">
+            </div>
+            <label for=" email "></label>
+            <input
+              type=" email "
+              name=" email "
+              class=" input-field " placeholder=" Email " />
+                                                                        <label for=" password "></label>
+                                                                        <input name=" password " type=" password "
+                                                                            nametype=" password " class="input-field "
+                                                                            placeholder=" Contraseña " />
+                                                                        <input id=" accept " name=" accept "
+                                                                            type="checkbox " class="check-box " />
+                                                                        <input type=" checkbox " class="check-box " />
+                                                                        <a class="to-terms " href=" /terms "><span
+                                                                                class="form-span ">Acepto terminos y
+                                                                                condiciones</span></a>
+                                                                        <button type=" submit "
+                                                                            class="submit-btn ">Registrarse</button>
+                                        </form>
+                                    </div>
+                                </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
