@@ -65,5 +65,50 @@
         "accept": "on",
         "rol": "basic",
         "image": "avatar1.jpg"
+    },
+    {
+        "id": 10,
+        "fullname": "mks",
+        "avatar": "",
+        "email": "ri@ri.com",
+        "password": "$2a$10$XhozV502JTP0HKWMyJ.eLuXM9SBcW1ubxVl/vnaswO0b.MKriJxem",
+        "accept": "on",
+        "rol": "basic"
+    },
+    {
+        "id": 11,
+        "fullname": "Ale",
+        "email": "al@j.com",
+        "password": "$2a$10$87c27trhhLwKKu4cFW3hqehberYP6/We/7tarnrfqBPSSeXFRxelO",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635301113478-avatar.jpeg"
+    },
+    {
+        "id": 12,
+        "fullname": "Julio",
+        "email": "julio22@hola.com",
+        "password": "$2a$10$aKPDcoLa/6FFk70mHNCeVuGvRqoBfpuYf3scWw9/AKoyuwjPeiFLW",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635301858863-avatar.jpeg"
+    },
+    {
+        "id": 13,
+        "fullname": "Martina ",
+        "email": "m22@gmail.com",
+        "password": "$2a$10$el4r/wveiiY/QT.cAi.b9Oy2151.CG2/E4YagEimb.d68/qiR11OW",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635301949324-avatar.jpeg"
+    },
+    {
+        "id": 14,
+        "fullname": "roberto lopex",
+        "email": "rob22@hola.com",
+        "password": "$2a$10$4eh5Ddf/jyryhQwsO32vEue7PR5jBe5.AOdXbLDc5T929ZYfRBV5.",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635302266963-avatar.jpeg"
     }
 ]

@@ -11,6 +11,7 @@ const userController = {
     processRegister: (req, res) => {
         const errors = validationResult(req);
         let userInDB = User.findByField('email', req.body.email);
+        let hashedPassword = bcryptjs.hashSync(req.body.password, 10);
         if (!errors.isEmpty()) {
             const validations = errors.array();
             let filteredValidations = validations.filter(
@@ -33,13 +34,12 @@ const userController = {
                 let userToCreate = {
                     ...req.body,
                     rol: "basic",
-                    password: bcryptjs.hashSync(req.body.password, 10),
+                    password: hashedPassword,
                     image: req.file.filename
                 }
                 User.createUser(userToCreate);
                 res.status(200).redirect("login?registered=1");
             }
-  
     },
 
     loginProcess: (req, res) => {

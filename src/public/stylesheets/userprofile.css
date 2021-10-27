@@ -43,20 +43,20 @@ main {
 }
 
 .avatar-card-photo{
-  height: 120px;
-  width:120px;
+  height: 100px;
+  width:110px;
   border-radius: 50%;
   border: 1px solid #1f1a32;
   padding: 7px;
   background-color: #292343;
   overflow: hidden;
-  transform: translateY(calc(50% + 40px));
+  transform: translateY(calc(50% + 60px));
 }
 
 .avatar-card-photo img{
   display: inline-block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 50%;
 }
 

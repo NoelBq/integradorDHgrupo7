@@ -43,20 +43,25 @@
                                     <img src="/images/formslogin/gp.png" alt="google-icon" />
                                 </div>
                                 <form action="/user" method="POST" class="input-group" id="register"
-                                autocomplete="on">
+                                autocomplete="on" enctype="multipart/form-data">
                                 
                                 <label for="name"></label>
                                 <input type="text" name="fullname" class="input-field"
                                 placeholder="Nombre Completo" />
                                 <div class="input-field">
                                     <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
+<<<<<<< HEAD
                                     <input type="file" clas id="avatar" name="avatar"
                                     accept="image/png, image/jpeg , image/jgp ">
+=======
+                                    <input type="file"  id="avatar" name="avatar"
+                                    accept="image/png, image/jpeg" , image/jgp">
+>>>>>>> c79ab25154e481a032110bcca2833e5d24a0128a
                                 </div>
                                 <label for=" email"></label>
-                                <input type=" email" name=" email" class="input-field" placeholder=" Email"/>
+                                <input type=" email" name="email" class="input-field" placeholder=" Email"/>
                                 <label for=" password "></label>
-                                <input  name=" password" type="password" nametype="password" class="input-field"
+                                <input  name="password" type="password" nametype="password" class="input-field"
                                 placeholder="Contraseña" />
                                 <input id="accept" name="accept" type="checkbox" class="check-box" />
                                 <a class="to-terms" href="/terms "><span class="form-span ">Acepto
