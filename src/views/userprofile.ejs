@@ -12,16 +12,31 @@
     <%- include('./partials/nav') %>
   </header>
   <main>
-    <h1 class="title-pen"> <i class="fas fa-user-astronaut"></i>Bienvenido <%= user.fullname %></h1>
-<div class="user-profile">
-	<img class="avatar" src= "/images/avatars/<%= user.image %>" alt="avatar" />
-    <div class="username"><%= user.fullname %></div>
-  <ul class="data">
-    <li>
-      <span class="entypo-heart"> Mail: <%= user.email %></span>
-    </li>
- </ul>
-</div>
+    <div class="container-profile">
+      <div>
+          <div class="profile-card">
+              <div class="profile-card-header">
+                  <div class="avatar-card-photo">
+                    <% if(user.image){ %>
+                      <img src="../images/avatars/<%= user.image %>" alt="avatar">
+                    <% } else{ %>  
+                      <img src="../images/AB-ICON.png" alt="avatar">
+                   <% } %>
+                   
+                  </div>
+              </div>
+              <div class="profile-card-body">
+                  <h3 class="profile-card-name"><%= user.fullname %> </h3>
+                  <p class="profile-card-description"> <br/><%= user.email %> </p>
+                  <div class="card-button">
+                      <button class="btn btn-primary"><a href="/">Home</a></button>
+                      <button class="btn btn-outline-primary">  <a href="/shop">Shop</a></button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
   </main>
   <%- include('./partials/footer') %>
 </body>

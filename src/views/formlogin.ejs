@@ -11,6 +11,11 @@
         <%- include('./partials/nav') %>
     </header>
     <main>
+        <% if(locals.errors && errors.email) { %>
+            <div class="registered-banner">
+                <%= errors.email.msg  %>
+            </div>
+        <%  } %>
         <% if(locals.registered) { %>
             <div class="registered-banner">
                 Gracias por registrarse! Ingrese con su usuario y contraseña.
@@ -45,6 +50,18 @@
                         </form>
                     </div>
                 </div>
+                <form method="POST" id="login" action="/user/login" class="input-group">
+
+                    <label for="email"></label>
+                    <input name="email" type="email" class="input-field" placeholder="Email" required />
+                    <label for="password"></label>
+                    <input  name="password" type="password" class="input-field" placeholder="Contraseña" required />
+                    <input type="checkbox" class="check-box" />
+                    <span class="form-span">Recordar Contraseña</span>
+                    <button type="submit" class="submit-btn">Iniciar Sesion</button>
+                </form>
+            </div>
+        </div>
     </main>
     <footer>
         <%- include('./partials/footer') %>
