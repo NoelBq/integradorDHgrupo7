@@ -11,9 +11,9 @@
             </li>
             <li>
                 <% if(user.rol == "basic"){ %>
-                    <a href="/userprofile" class="nav-links">Perfil</a>
+                    <a href="/user/login" class="nav-links">Mi Perfil</a>
                     <% } else{ %>  
-                        <a href="/adminpanel" class="nav-links">Admin</a>
+                        <a href="/adminpanel" class="nav-links">Admin Panel</a>
                         <% } %>
                     </li>
                     <li>
@@ -48,10 +48,6 @@
                                     <a href="/#footer" class="nav-links">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="/register" class="nav-links">
-                                        <i class="far fa-user"></i>
-                                    </a>
-                                    
                                     <a href="/register" class="nav-links">
                                         <i class="far fa-user"></i>
                                     </a>
