@@ -5,26 +5,28 @@ const fs = require("fs");
 const path = require("path");
 
 const mainController = {
+     
     home: (req, res) => {
-        res.render("home", { testimonials: testimonialsDB });
+        res.render("home", { testimonials: testimonialsDB , user: req.session.userLoged });
     },
     login: (req, res) => {
-        res.render("formlogin", {registered: req.query.registered});
+        res.render("formlogin", {registered: req.query.registered, user: req.session.userLoged});
     },
     register: (req, res) => {
-        res.render("formregister");
+        res.render("formregister", {user: req.session.userLoged });
     },
     terms: (req, res) => {
         res.render("terms");
     },
     shop: (req, res) => {
-        res.render("shop", { testimonials: testimonialsDB, products: productsDB });
+        res.render("shop", { testimonials: testimonialsDB, products: productsDB, user: req.session.userLoged });
     },
     shopDonas: (req, res) => {
         let localProductsDB = utils.parseJS(productsDB);
         res.render("shopDonas", {
             testimonials: testimonialsDB,
             products: localProductsDB,
+            user: req.session.userLoged
         });
     },
     shopCookies: (req, res) => {
@@ -32,6 +34,7 @@ const mainController = {
         res.render("shopCookies", {
             testimonials: testimonialsDB,
             products: localProductsDB,
+            user: req.session.userLoged
         });
     },
     shopHelados: (req, res) => {
@@ -39,10 +42,11 @@ const mainController = {
         res.render("shopHelados", {
             testimonials: testimonialsDB,
             products: localProductsDB,
+            user: req.session.userLoged
         });
     },
     underConstruction: (req, res) => {
-        res.render("underconstruction");
+        res.render("underconstruction"), {user: req.session.userLoged};
     },
     adminpanel: (req, res) => {
         let localProductsDB = JSON.parse(
@@ -55,7 +59,7 @@ const mainController = {
         let products = localProductsDB.filter(
             (p) => p.category == req.query.categorySelection
         );
-        res.render("adminpanel", { products: products, categories: categories });
+        res.render("adminpanel", { products: products, categories: categories, user: req.session.userLoged});
     },
     formsadmin: (req, res) => {
         res.render("formsadmin");
