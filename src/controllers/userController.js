@@ -43,16 +43,14 @@ const userController = {
 
     loginProcess: (req, res) => {
         let userToLogin = User.findByField('email', req.body.email);
-        if(userToLogin) {
-            console.log(req.session);
+        if(userToLogin) { 
             req.session.userLoged = userToLogin;
-            console.log(userToLogin)
             let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(passwordOK) {
                 if(userToLogin.rol == 'admin') {
                     res.redirect('/adminpanel')
                 } else {
-                    res.render('userprofile',{ user: userToLogin})
+                    res.redirect('/user/profile')
                 }
             } 
         } else {
