@@ -92,7 +92,7 @@ body {
     margin-left: 5px;
 }
 
-.user-name span::first-letter {
+.user-name::first-letter {
     text-transform: uppercase;
 }
 
