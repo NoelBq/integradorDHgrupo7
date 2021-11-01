@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require('fs');
 const bodyParser = require('body-parser')
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -20,6 +21,7 @@ app.use(methodOverride ("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.json());
+app.use(cookies());
 
 
 app.set('view engine', 'ejs');
