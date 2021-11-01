@@ -26,7 +26,13 @@
                   </div>
               </div>
               <div class="profile-card-body">
-                  <h3 class="profile-card-name"><%= user.fullname %> </h3>
+                  <h3 class="profile-card-name">
+                    <% if(user.fullname.length > 7){ %>
+                      <h3> <%= user.fullname.substring(0, 7)+ "..." %> </h3>
+                    <% } else{ %>  
+                     <h3> <%= user.fullname %> </h3>
+                   <% } %>
+                    
                   <p class="profile-card-description"> <br/>Mail: <%= user.email %> </p>
                   <div class="card-button">
                       <button class="btn btn-outline-primary"><a href="/">Home</a></button>

@@ -62,7 +62,7 @@ const mainController = {
         res.render("adminpanel", { products: products, categories: categories, user: req.session.userLogged});
     },
     formsadmin: (req, res) => {
-        res.render("formsadmin");
+        res.render("formsadmin", {user: req.session.userLogged});
     },
 };
 

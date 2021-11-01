@@ -9,7 +9,11 @@
 
 <body>
     <header>
-        <%- include('./partials/nav') %>
+        <% if (typeof user != 'undefined') { %>
+            <%- include('./partials/nav', { user: user }) %>
+        <% } else { %>
+            <%- include('./partials/nav', { user: false }) %>
+        <% } %>
     </header>
     <main>
         <section>

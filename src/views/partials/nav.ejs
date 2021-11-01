@@ -24,7 +24,11 @@
                                     <% } else{ %>  
                                         <img class="avatar-nav" src="../images/AB-ICON.png" alt="avatar">
                                         <% } %>
-                                        <span class="user-name">Hola, <%= user.fullname %></span>
+                                        <% if(user.fullname.length > 7){ %>
+                                            <span class="user-name"> Hola, <%= user.fullname.substring(0, 7)+ "..." %> </span>
+                                          <% } else{ %>  
+                                            <span class="user-name">Hola, <%= user.fullname %></span>
+                                         <% } %>
                                     </div>
                                 </div>
                             </li>
