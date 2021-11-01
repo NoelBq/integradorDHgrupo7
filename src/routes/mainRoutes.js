@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const mainController = require("../controllers/mainController");
-const guestMiddleware = require('../middleware/guestMiddleware')
-
+const guestMiddleware = require('../middleware/guestMiddleware');
+const adminMiddleware = require('../middleware/adminMiddleware');
 
 
 router.get("/", mainController.home);
@@ -15,6 +15,6 @@ router.get("/shop/helados", mainController.shopHelados);
 router.get("/shop/cookies", mainController.shopCookies);
 router.get("/underconstruction", mainController.underConstruction);
 router.get("/formsadmin", mainController.formsadmin);
-router.get("/adminpanel", mainController.adminpanel);
+router.get("/adminpanel", adminMiddleware,mainController.adminpanel);
 
 module.exports = router;
