@@ -4,6 +4,7 @@ const mainController = require("../controllers/mainController");
 const guestMiddleware = require('../middleware/guestMiddleware')
 
 
+
 router.get("/", mainController.home);
 router.get("/login", guestMiddleware, mainController.login);
 router.get("/register", guestMiddleware,  mainController.register);

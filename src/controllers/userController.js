@@ -5,6 +5,7 @@ const { validationResult } = require("express-validator");
 
 const userController = {
     userProfile: (req, res) => {
+        console.log(req.cookies.userEmail);
         res.render('userprofile', {user: req.session.userLogged})  
     },
     processRegister: (req, res) => {
@@ -42,10 +43,14 @@ const userController = {
     },
 
     loginProcess: (req, res) => {
-        console.log(req.body);
         let userToLogin = User.findByField('email', req.body.email);
         if(userToLogin) { 
             req.session.userLogged = userToLogin;
+
+            if(req.body.remember) {
+                res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 3})
+            }
+
             let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(passwordOK) {
                 if(userToLogin.rol == 'admin') {
@@ -65,6 +70,7 @@ const userController = {
         }
     },
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         console.log(req.session);
         return res.redirect('/');
