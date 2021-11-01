@@ -19,7 +19,7 @@
         <h2 class="product-card-headerTitle">Donas</h2>
         <h4 class="product-card-headerSubtitle">Hechas con amor <i class="fas fa-heart"></i></h4>
       </div>
-      <div class="Product-cards">
+      <div class="product-cards">
         <% let newArrayDonas = products.filter(item => item.category == "Donas");%>
         <% if(newArrayDonas.length==0){ %>
         <%- include('partials/productSinStock') %>
