@@ -8,7 +8,7 @@ const { v4: uuidv4 } = require('uuid');
 const productController = {
 
   product: (req, res) => {
-    res.render('product', { product: productsDB.find((p) => p.id == req.params.id) });
+    res.render('product', { product: productsDB.find((p) => p.id == req.params.id), user: req.session.userLogged });
   },
   deleteproduct: (req, res) => {
     let localProductsDB = utils.parseJS(productsDB);
