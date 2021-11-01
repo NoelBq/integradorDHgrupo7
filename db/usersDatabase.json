@@ -111,5 +111,31 @@
         "accept": "on",
         "rol": "admin",
         "image": "AVATAR-1635733161947-avatar.jpeg"
+    },
+    {
+        "id": 16,
+        "fullname": "tony",
+        "email": "tony@h.com",
+        "password": "$2a$10$aoTeVBCksTH/ZGV0Cqn/GehJ3DZlogUowRzQ1Cv.nHUlxVEFy/Kji",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635774153707-cat cookie.jpeg"
+    },
+    {
+        "id": 17,
+        "fullname": "jose",
+        "email": "jose",
+        "password": "$2a$10$OuG8NR9djQtAGb.RNJ6iruu10fYaAR9RvlMKZfV45.n6PJNW640HW",
+        "rol": "basic",
+        "image": " "
+    },
+    {
+        "id": 18,
+        "fullname": "ana",
+        "email": "an@hola.com",
+        "password": "$2a$10$VIIUi95Y9m8kT4EvsqFyxe4Y3UAaxIM7b9QuevQuGbHzg4WGdvOKq",
+        "accept": "on",
+        "rol": "basic",
+        "image": " "
     }
 ]

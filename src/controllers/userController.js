@@ -11,6 +11,7 @@ const userController = {
     processRegister: (req, res) => {
         const errors = validationResult(req);
         let userInDB = User.findByField('email', req.body.email);
+        let file = req.file;
         let hashedPassword = bcryptjs.hashSync(req.body.password, 10);
         if (!errors.isEmpty()) {
             const validations = errors.array();
@@ -21,6 +22,11 @@ const userController = {
             res.render("formregister", { validations: filteredValidations });
             console.log(errors);
         } 
+        if (file != undefined) {
+            image = req.file.filename
+        } else {
+            image = " ";
+        }
             if (userInDB) {
                 res.status(409).render("formregister", {
                     errors: {
@@ -35,7 +41,7 @@ const userController = {
                     ...req.body,
                     rol: "basic",
                     password: hashedPassword,
-                    image: req.file.filename
+                    image: image
                 }
                 User.createUser(userToCreate);
                 res.status(200).redirect("login?registered=1");
