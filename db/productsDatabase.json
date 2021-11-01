@@ -21,7 +21,7 @@
         "description": "Dona rellena con crema de frutos del bosque",
         "img": "Dona3_durazno.png",
         "category": "Donas",
-        "price": 110
+        "price": "120"
     },
     {
         "id": "8f1b61ab-6cdd-484f-a776-fd7cf532f061",

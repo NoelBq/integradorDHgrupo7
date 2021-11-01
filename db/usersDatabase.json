@@ -109,7 +109,7 @@
         "email": "nadia@hotmail.com",
         "password": "$2a$10$KYS2YRcQJV.D.DolOy8Y3OnqaPvgAYFGd2ZVOBNZ2ZJqzyoYXTp9a",
         "accept": "on",
-        "rol": "basic",
+        "rol": "admin",
         "image": "AVATAR-1635733161947-avatar.jpeg"
     }
 ]
