@@ -100,7 +100,6 @@ main {
 
 .btn  a {
   text-decoration: none;  
-
 }
 
 .btn-outline-primary a {
@@ -127,6 +126,14 @@ main {
 .btn-outline-primary{
   background-color: transparent;
   color: var(--lightviolet);
+}
+
+.btn-primary a:hover {
+  color: var(--lightviolet)
+}
+
+.btn-outline-primary a:hover {
+  color: #231e39;
 }
 
 

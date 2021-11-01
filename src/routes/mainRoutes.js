@@ -5,8 +5,8 @@ const guestMiddleware = require('../middleware/guestMiddleware')
 
 
 router.get("/", mainController.home);
-router.get("/login",  mainController.login);
-router.get("/register", mainController.register);
+router.get("/login", guestMiddleware, mainController.login);
+router.get("/register", guestMiddleware,  mainController.register);
 router.get("/terms", mainController.terms);
 router.get("/shop", mainController.shop);
 router.get("/shop/donas", mainController.shopDonas);

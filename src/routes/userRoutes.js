@@ -10,6 +10,7 @@ const userMiddleware = require('../middleware/userMiddleware');
 router.post('/', upload.single('avatar'), validations, userController.processRegister);
 router.post('/login' ,userController.loginProcess);
 router.get('/profile', userMiddleware, userController.userProfile);
+router.get('/logout', userController.logout);
 
 
 module.exports = router;
