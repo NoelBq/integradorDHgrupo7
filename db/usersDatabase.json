@@ -137,5 +137,14 @@
         "accept": "on",
         "rol": "basic",
         "image": " "
+    },
+    {
+        "id": 19,
+        "fullname": "Maria Antonia Lopez",
+        "email": "ma@hola.com",
+        "password": "$2a$10$Eu9skjLA5c7kv5BmdafTZuvu/yCW/wp8.CxgBXDKiuF3H3UUlOSuq",
+        "accept": "on",
+        "rol": "basic",
+        "image": "AVATAR-1635785417985-cat cookie.jpeg"
     }
 ]
