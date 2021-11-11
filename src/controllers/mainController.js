@@ -64,6 +64,10 @@ const mainController = {
     formsadmin: (req, res) => {
         res.render("formsadmin", {user: req.session.userLogged});
     },
+    checkout: (req, res) => {
+        res.render("checkout", {user: req.session.userLogged});
+    }
+
 };
 
 module.exports = mainController;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+  <link rel="stylesheet" href="/stylesheets/cart.css">
+   
+</head>
+
+<body>
+  <header>  
+    <%- include('./partials/nav') %>
+  </header>
+  <main>
+    <div class="checkoutWrapper cf">
+        <h1 class="projTitle">Checkout</h1>
+        <div class="heading cf">
+          <h2>Mi Carro</h2>
+          <a href="#" class="continue">Continuar Comprando</a>
+        </div>
+        <div class="cart">
+          <ul class="cartWrap">
+            <li class="items even">
+              <div class="infoWrap"> 
+                <div class="cartSection">
+                  <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                  <p class="itemNumber">#QUE-007544-002</p>
+                  <h3>Articulo  1</h3>
+                  <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                  <p class="stockStatus"> Stock</p>
+                </div>  
+                <div class="prodTotal cartSection">
+                  <p>$15.00</p>
+                </div>
+                <div class="cartSection removeWrap">
+                  <a href="#" class="remove"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+            </li>
+            <li class="items odd">
+              <div class="infoWrap"> 
+                <div class="cartSection">
+                  <h3>Articulo 2</h3>
+                  <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                  
+                  <p class="stockStatus out"> Sin Stock</p>
+                </div>  
+                <div class="prodTotal cartSection">
+                  <p>$15.00</p>
+                </div>
+                <div class="cartSection removeWrap">
+                  <a href="#" class="remove"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        
+        <div><a href="#" class="btn"></a></div>
+        
+        <div class="subtotal cf">
+          <ul>
+            <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
+            
+            <li class="totalRow"><span class="label">Envio</span><span class="value">$5.00</span></li>
+            
+            <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
+            <li class="totalRow"><a href="#" class="btn continue">Comprar</a></li>
+          </ul>
+        </div>
+      </div>    
+  </main>
+  <%- include('./partials/footer') %>
+</body>
+</html>
