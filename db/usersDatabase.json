@@ -146,5 +146,13 @@
         "accept": "on",
         "rol": "basic",
         "image": "AVATAR-1635785417985-cat cookie.jpeg"
+    },
+    {
+        "id": 20,
+        "fullname": "Juan",
+        "email": "juan@hola.com",
+        "password": "$2a$10$VXdipefYFYzLRta.PIDue.egTgZV884i1SAYyTYxPtbOg50oVE3ki",
+        "rol": "basic",
+        "image": "AVATAR-1635302266963-avatar.jpeg"
     }
 ]
