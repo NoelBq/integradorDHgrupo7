@@ -67,7 +67,6 @@ const mainController = {
     checkout: (req, res) => {
         res.render("checkout", {user: req.session.userLogged});
     }
-
 };
 
 module.exports = mainController;
