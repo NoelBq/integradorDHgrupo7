@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "1234",
-    "database": "dbsweettreats",
+    "password": "root",
+    "database": "`DBSweetTreats",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "3306"
