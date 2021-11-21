@@ -3,7 +3,6 @@ const router = express.Router();
 const mainController = require("../controllers/mainController");
 const guestMiddleware = require('../middleware/guestMiddleware');
 const adminMiddleware = require('../middleware/adminMiddleware');
-const pruebaController = require("../controllers/pruebaController");
 
 
 router.get("/", mainController.home);
@@ -18,6 +17,5 @@ router.get("/shop/checkout", mainController.checkout);
 router.get("/underconstruction", mainController.underConstruction);
 router.get("/formsadmin", mainController.formsadmin);
 router.get("/adminpanel", adminMiddleware,mainController.adminpanel);
-router.get("/pruebadb",pruebaController.getAll);
 
 module.exports = router;

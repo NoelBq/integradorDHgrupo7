@@ -1,9 +1,19 @@
+const userModel = require("../../models/User")
 const User = require("../../models/User");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
 
 const userController = {
+    
+    getUsers:  async function(req,res,next){
+        try{
+            const result = await userModel.getUsers()
+             res.status(200).json({data: result ,error: null, succes: true})
+        }catch(error){
+            res.status(500).json({data: null ,error:error, succes: false})
+        }
+    },
     userProfile: (req, res) => {
         console.log(req.cookies.userEmail);
         res.render('userprofile', {user: req.session.userLogged})  

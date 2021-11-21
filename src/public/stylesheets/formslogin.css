@@ -8,7 +8,7 @@
 }
 
 .hero {
-    height: 600px;
+    height: 72vh;
     width: 100vw;
     background-image: url(/images/formslogin/banner.jpg);
     background-position: center;
@@ -20,13 +20,13 @@
 
 .form-box {
     width: 270px;
-    height: 520px;
+    height: 550px;
     position: absolute;
     margin: 6% auto;
     margin-top: 0px;
     background: #fff;
     padding: 5px;
-    top: 50px;
+    top: calc(50% - 289px);
 }
 
 .button-box {
@@ -75,21 +75,36 @@
 }
 
 .social-icons img {
-    width: 30px;
-    margin: 0 12px;
+    width: 40px;
+    margin: 0 13px;
     box-shadow: 0 0 20px 0 #7f7f7f3d;
     cursor: pointer;
     border-radius: 50%;
 }
 
-.input-group {
-    top: 180px;
+.input-login{
+    top: 212px;
     position: absolute;
     width: 206px;
     transition: 0.5s;
     left: 50px;
 }
 
+.input-register {
+    top: 165px;
+    position: absolute;
+    width: 206px;
+    transition: 0.5s;
+    left: 50px;
+}
+
+.input-field-register{
+    margin: 7px 0;
+}
+
+.input-field-login{
+    margin: 12px 0;
+}
 
 input[type="file"] {
     display: none;
@@ -116,7 +131,6 @@ input[type="file"] + label {
 .input-field {
     width: 100%;
     padding: 10px 0;
-    margin: 5px 0;
     border-left: 0;
     border-top: 0;
     border-right: 0;
@@ -152,11 +166,12 @@ input[type="file"] + label {
 
 .check-box {
     margin: 30px 10px 30px 0;
+    height: 13px;
 }
 
 .form-span {
     color: #777;
-    font-size: 12px;
+    font-size: 13px;
     bottom: 68px;
     position: absolute;
 }
