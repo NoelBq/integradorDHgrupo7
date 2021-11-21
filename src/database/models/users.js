@@ -32,6 +32,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false
     },
+    image: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
     role: {
       type: DataTypes.STRING(45),
       allowNull: false

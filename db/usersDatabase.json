@@ -154,5 +154,16 @@
         "password": "$2a$10$VXdipefYFYzLRta.PIDue.egTgZV884i1SAYyTYxPtbOg50oVE3ki",
         "rol": "basic",
         "image": "AVATAR-1635302266963-avatar.jpeg"
+    },
+    {
+        "id": 21,
+        "fullname": "",
+        "userAdress": "",
+        "city": "",
+        "email": "",
+        "password": "$2a$10$hiC6b.l1dz9NP/N56UU8eeYjGerNbYPs8V33Trm0YMN3N2v35bHHG",
+        "accept": "on",
+        "rol": "basic",
+        "image": " "
     }
 ]

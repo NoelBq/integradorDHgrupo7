@@ -1,5 +1,6 @@
 const userModel = require("../../models/User")
 const User = require("../../models/User");
+const userModeldb = require("../../models/userModeldb")
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
@@ -18,11 +19,9 @@ const userController = {
         console.log(req.cookies.userEmail);
         res.render('userprofile', {user: req.session.userLogged})  
     },
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
+        
         const errors = validationResult(req);
-        let userInDB = User.findByField('email', req.body.email);
-        let file = req.file;
-        let hashedPassword = bcryptjs.hashSync(req.body.password, 10);
         if (!errors.isEmpty()) {
             const validations = errors.array();
             let filteredValidations = validations.filter(
@@ -31,31 +30,27 @@ const userController = {
             const oldData = req.body;
             res.render("formregister", { validations: filteredValidations });
             console.log(errors);
-        } 
-        if (file != undefined) {
-            image = req.file.filename
-        } else {
-            image = " ";
-        }
-            if (userInDB) {
-                res.status(409).render("formregister", {
-                    errors: {
-                        email: {
-                            msg: "Usuario ya registrado",
+        }else{
+            try{
+                let resultado = await userModeldb.findMail(req.body.email);
+                console.log(resultado)
+                if(resultado == false){
+                    userModeldb.createUser(req.body)
+                        .then(res.status(200).redirect("login?registered=1"))
+                }else{
+                    res.status(409).render("formregister", {
+                        errors: {
+                            email: {
+                                msg: "Ups!! El mail ya esta registrado por otro usuario",
+                            },
                         },
-                    },
-                    oldData: req.body, // to keep data previously added
-                });
-            } else {
-                let userToCreate = {
-                    ...req.body,
-                    rol: "basic",
-                    password: hashedPassword,
-                    image: image
+                        oldData: req.body, // to keep data previously added
+                    });
                 }
-                User.createUser(userToCreate);
-                res.status(200).redirect("login?registered=1");
+            }catch(error){
+                res.status(500).json({data: null ,error:error, succes: false})
             }
+        }
     },
 
     loginProcess: (req, res) => {

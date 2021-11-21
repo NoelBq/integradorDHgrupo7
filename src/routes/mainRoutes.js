@@ -1,13 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const mainController = require("../controllers/mainController");
-const guestMiddleware = require('../middleware/guestMiddleware');
 const adminMiddleware = require('../middleware/adminMiddleware');
 
 
 router.get("/", mainController.home);
-router.get("/login", guestMiddleware, mainController.login);
-router.get("/register", guestMiddleware,  mainController.register);
 router.get("/terms", mainController.terms);
 router.get("/shop", mainController.shop);
 router.get("/shop/donas", mainController.shopDonas);
