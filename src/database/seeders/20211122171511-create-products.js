@@ -7,7 +7,7 @@ module.exports = {
         productName: 'Dona de Canela',
         stock: true,
         price:120,
-        image: '/public/images/donas/donaCinamon.jpg', 
+        image: '/images/donas/donaCinamon.jpg', 
         description: 'Dona de Canela description',
         categoryId: 1
       },
@@ -15,7 +15,7 @@ module.exports = {
         productName: 'Cookie',
         stock: true,
         price:120,
-        image: '/public/images/cookies/darkCookie.jpg', 
+        image: '/images/cookies/darkCookie.jpg', 
         description: 'Cookie description',
         categoryId: 2
       },
@@ -23,7 +23,7 @@ module.exports = {
         productName: 'Helado',
         stock: true,
         price: 200,
-        image: '/public/images/helado/pistachioIce.jpg', 
+        image: '/images/helado/pistachioIce.jpg', 
         description: 'Healado de pistachio description',
         categoryId: 3
       }

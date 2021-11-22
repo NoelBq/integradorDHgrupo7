@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
+const Category = require('./categories');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('products', {
+  const Products = sequelize.define('products', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -27,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    productCreated: {
+    createdAt: {
       type: DataTypes.DATE,
       allowNull: false
     },
@@ -61,4 +62,6 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  Products.belongsTo(sequelize.models.categories, {as: 'Category', foreignKey: 'categoryId'});
+  return Products;
 };

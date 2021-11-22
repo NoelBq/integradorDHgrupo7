@@ -1,5 +1,5 @@
 const bcryptjs = require("bcryptjs");
-const db = require('../src/database/models')
+const db = require('../database/models')
 
 const userModeldb = {
 createUser: async function(body){

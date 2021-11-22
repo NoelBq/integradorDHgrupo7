@@ -5,6 +5,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser')
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const Sequelize = require('sequelize');
 
 const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const utils = require('../src/utils/utils.js');
+const utils = require('../utils/utils.js');
 
 
 const User = {

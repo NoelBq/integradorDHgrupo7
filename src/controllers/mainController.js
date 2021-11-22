@@ -1,11 +1,10 @@
 const testimonialsDB = require("../../db/testimonialDatabase.json");
-const productsDB = require("../../db/productsDatabase.json");
+const product = require("../models/Product");
 const utils = require("../utils/utils");
 const fs = require("fs");
 const path = require("path");
 
 const mainController = {
-     
     home: (req, res) => {
         res.render("home", { testimonials: testimonialsDB , user: req.session.userLogged });
     },
@@ -18,14 +17,15 @@ const mainController = {
     terms: (req, res) => {
         res.render("terms");
     },
-    shop: (req, res) => {
-        res.render("shop", { testimonials: testimonialsDB, products: productsDB, user: req.session.userLogged });
+    shop: async (req, res) => {
+        const products = await product.getAllProducts();
+        res.render("shop", { testimonials: testimonialsDB, products: products, user: req.session.userLogged });
     },
-    shopDonas: (req, res) => {
-        let localProductsDB = utils.parseJS(productsDB);
+    shopDonas: async (req, res) => {
+        const products = await product.getAllProducts();
         res.render("shopDonas", {
             testimonials: testimonialsDB,
-            products: localProductsDB,
+            products: products,
             user: req.session.userLogged
         });
     },
