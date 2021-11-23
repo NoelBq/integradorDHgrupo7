@@ -52,34 +52,38 @@ const userController = {
             }
         }
     },
-
-    loginProcess: (req, res) => {
-        let userToLogin = User.findByField('email', req.body.email);
-        if(userToLogin) { 
-            req.session.userLogged = userToLogin;
-
-            if(req.body.remember) {
-                res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 3})
-            }
-
-            let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if(passwordOK) {
-                if(userToLogin.rol == 'admin') {
-                    res.redirect('/adminpanel')
-                } else {
-                    res.redirect('/user/profile')
-                }
-            } 
-        } else {
-            return res.render("formlogin", {
-                errors: {
-                    email: {
-                        msg: "Credenciales Invalidas",
-                    },
-                },
-            });
-        }
-    },
+    loginProcess: async (req, res) => {
+        try{
+              let userToLogin = await userModeldb.findMail(req.body.email) //me traigo el user
+              let userPassword = await userModeldb.getPassword(req.body.email) //me traigo la password hashiada
+              let passwordOK = bcryptjs.compareSync(req.body.password, userPassword); //comparo si es la misma que en la db
+              if(passwordOK) {
+                  if(userToLogin.role == 'admin') {
+                      res.redirect('/adminpanel')
+                  } else {
+                      res.redirect('/')
+                  }
+              }else {
+                  return res.status(409).render("formlogin", {
+                      errors: {
+                          email: {
+                              msg: "Credenciales Invalidas",
+                          },
+                      },
+                  })
+              }
+              if(userToLogin) { 
+                  req.session.userLogged = userToLogin;
+                      if(req.body.remember) {
+                          res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 3})
+                      }
+                      
+                  }
+              
+      }catch(error){
+          res.status(500).json({data: null ,error:error, succes: false})
+      }
+  },
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();

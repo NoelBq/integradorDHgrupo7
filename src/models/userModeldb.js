@@ -10,7 +10,7 @@ createUser: async function(body){
          password: bcryptjs.hashSync(body.password, 10),
          email: body.email,
          city: body.city,
-         userCreated: Date.now(),
+         createdAt: Date.now(),
          role: "basic",
          image: "default"
         })}
