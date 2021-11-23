@@ -1,15 +1,18 @@
 
 let productsDB = require('../../db/productsDatabase.json');
 const fs = require('fs');
+const product = require("../models/Product");
 const path = require("path");
 const utils = require('../utils/utils');
 const { v4: uuidv4 } = require('uuid');
 
 const productController = {
 
-  product: (req, res) => {
-    res.render('product', { product: productsDB.find((p) => p.id == req.params.id), user: req.session.userLogged });
+  product: async (req, res) => {
+    const productByPk = await product.getProductByPk(req.params.id);
+    res.render('product', { product: productByPk, user: req.session.userLogged });
   },
+
   deleteproduct: (req, res) => {
     let localProductsDB = utils.parseJS(productsDB);
     let filteredProductsDB = localProductsDB.filter(p => p.id != req.params.id);

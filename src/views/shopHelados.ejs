@@ -18,8 +18,8 @@
       <div class="product-card-header">
         <h2 class="product-card-headerTitle">Helados</h2>
         <h4 class="product-card-headerSubtitle">Hechos con amor <i class="fas fa-heart"></i></h4>
-      </div>
-      <% let newArrayHelados = products.filter(item => item.category == "Helados");%>
+      </div>  
+      <% let newArrayHelados = products.filter(item => item.category.categorieName == "Helado");%>
       <% if(newArrayHelados.length==0){ %>
         <%- include('partials/productSinStock') %>
       <%}else{%>

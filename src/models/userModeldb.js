@@ -18,12 +18,28 @@ createUser: async function(body){
             console.log(error)
         }
     },
-findMail: async function(email){
+
+    getAllUsers: async function () {
+        const res = await db.users.findAll();
+        return res;
+       
+    },
+    findUserByEmail: async function(email) {
+        const res = await db.user.findOne({
+            where: {
+                email: email
+            }
+        })
+        return res;
+
+    },
+   
+  findMail: async function(email){
     return await db.users.findAll({
         where: {
             email: email
         }
-    })
+    });
 }
 }
 

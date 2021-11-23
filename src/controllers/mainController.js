@@ -29,19 +29,19 @@ const mainController = {
             user: req.session.userLogged
         });
     },
-    shopCookies: (req, res) => {
-        let localProductsDB = utils.parseJS(productsDB);
+    shopCookies: async (req, res) => {
+        const products = await product.getAllProducts();
         res.render("shopCookies", {
             testimonials: testimonialsDB,
-            products: localProductsDB,
+            products: products,
             user: req.session.userLogged
         });
     },
-    shopHelados: (req, res) => {
-        let localProductsDB = utils.parseJS(productsDB);
+    shopHelados: async (req, res) => {
+        const products = await product.getAllProducts();
         res.render("shopHelados", {
             testimonials: testimonialsDB,
-            products: localProductsDB,
+            products: products,
             user: req.session.userLogged
         });
     },

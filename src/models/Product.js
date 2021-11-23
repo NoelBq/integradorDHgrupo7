@@ -6,10 +6,14 @@ const Product = {
                     model: db.sequelize.models.categories, as: "category"
                 } ] } );
         return res;
+       
     },
-    getProduct: async function() {
-        // get one product
+    getProductByPk: async function(id) {
+        const res = await db.products.findByPk(id);
+return res;
     }
 }
 
+
 module.exports = Product;
+console.log(Product.getAllProducts());

@@ -32,8 +32,10 @@ const userController = {
             console.log(errors);
         }else{
             try{
+                let result = await userModeldb.findUserByEmail(req.body.email);
+                console.log(result);
                 let resultado = await userModeldb.findMail(req.body.email);
-                console.log(resultado)
+               
                 if(resultado == false){
                     userModeldb.createUser(req.body)
                         .then(res.status(200).redirect("login?registered=1"))
@@ -54,6 +56,7 @@ const userController = {
     },
 
     loginProcess: (req, res) => {
+        
         let userToLogin = User.findByField('email', req.body.email);
         if(userToLogin) { 
             req.session.userLogged = userToLogin;
