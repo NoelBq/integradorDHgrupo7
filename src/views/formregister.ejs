@@ -42,7 +42,7 @@
                                     <button type="button" class="toggle-btn">Registro</button>
                                 </div>
 
-                                <form action="/user" method="POST" class="input-group" id="register"
+                                <form action="/user/register" method="POST" class="input-group" id="register"
                                 autocomplete="on" enctype="multipart/form-data">
                                 
                                 <label for="name"></label>
@@ -50,13 +50,16 @@
                                 placeholder="Nombre Completo" />
                                 <div class="input-field">
                                     <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
-                                    <input type="file" clas id="avatar" name="avatar"
+                                    <input type="file" id="avatar" name="avatar"
                                     accept="image/png, image/jpeg , image/jgp ">
                                 </div>
+                                <label for="userAddress"></label>
+                                <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion"/>
+                                
+                                <label for="city"></label>
+                                <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad"/>
                                 <label for=" email"></label>
                                 <input type=" email" name="email" class="input-field" placeholder=" Email"/>
-
-                                
                                 <label for=" password "></label>
                                 <input  name="password" type="password" nametype="password" class="input-field"
                                 placeholder="Contraseña" />

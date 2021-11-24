@@ -27,17 +27,26 @@ const userController = {
             let filteredValidations = validations.filter(
                 (err) => err.msg != "Invalid value"
             );
-            const oldData = req.body;
+            
             res.render("formregister", { validations: filteredValidations });
-            console.log(errors);
+        
         }else{
             try{
                 let resultado = await userModeldb.findUserByEmail(req.body.email);
                 console.log(resultado.fullname);
 
-               
-                if(resultado == false){
-                    userModeldb.createUser(req.body)
+                if(resultado == null){
+                    let image = req.file;
+                    let password = bcryptjs.hashSync(body.password, 10);
+                    let user = {
+                        fullname: req.body.fullname,
+                        userAddres: req.body.userAddres,    
+                        password: password,
+                        city: req.body.city,
+                        image: image,
+                        role: "basic"
+                    }
+                    userModeldb.createUser(user)
                         .then(res.status(200).redirect("login?registered=1"))
                 }else{
                     res.status(409).render("formregister", {

@@ -70,6 +70,10 @@
 }
 
 
+.login-inputs {
+    margin-top: 50px;
+}
+
 .input-group {
     top: 100px;
     position: absolute;
