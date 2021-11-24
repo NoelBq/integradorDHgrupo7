@@ -3,6 +3,7 @@ const User = require("../../models/User");
 const userModeldb = require("../../models/userModeldb")
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const { parseJS } = require("../utils/utils");
 
 
 const userController = {
@@ -20,7 +21,7 @@ const userController = {
         res.render('userprofile', {user: req.session.userLogged})  
     },
     processRegister: async (req, res) => {
-        
+
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             const validations = errors.array();
@@ -53,32 +54,38 @@ const userController = {
         }
     },
 
-    loginProcess: (req, res) => {
-        let userToLogin = User.findByField('email', req.body.email);
-        if(userToLogin) { 
-            req.session.userLogged = userToLogin;
-
-            if(req.body.remember) {
-                res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 3})
-            }
-
-            let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if(passwordOK) {
-                if(userToLogin.rol == 'admin') {
-                    res.redirect('/adminpanel')
-                } else {
-                    res.redirect('/user/profile')
+    loginProcess: async (req, res) => {
+          try{
+                let userToLogin = await userModeldb.findMail(req.body.email) //me traigo el user
+                let userPassword = await userModeldb.getPassword(req.body.email) //me traigo la password hashiada
+                let passwordOK = bcryptjs.compareSync(req.body.password, userPassword); //comparo si es la misma que en la db
+                console.log(passwordOK)
+                if(passwordOK) {
+                    console.log(userToLogin.role)
+                    if(userToLogin.role == 'admin') {
+                        res.redirect('/adminpanel')
+                    } else {
+                        res.redirect('/')
+                    }
+                }else {
+                    return res.status(409).render("formlogin", {
+                        errors: {
+                            email: {
+                                msg: "Credenciales Invalidas",
+                            },
+                        },
+                    })
                 }
-            } 
-        } else {
-            return res.render("formlogin", {
-                errors: {
-                    email: {
-                        msg: "Credenciales Invalidas",
-                    },
-                },
-            });
-        }
+
+                if(userToLogin) { 
+                    req.session.userLogged = userToLogin;
+                        if(req.body.remember) {
+                            res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 3})
+                        }
+                        
+                    }
+        }catch(error){
+            console.log(error)};
     },
     logout: (req, res) => {
         res.clearCookie('userEmail');
