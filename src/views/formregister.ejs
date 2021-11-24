@@ -4,16 +4,16 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%- include('./partials/head') %>
-        <link rel="stylesheet" href="../stylesheets/formslogin.css" />
+    <link rel="stylesheet" href="/stylesheets/formslogin.css" />
 </head>
 
 <body>
     <header>
-        <% if (typeof user !='undefined' ) { %>
+        <% if (typeof user != 'undefined') { %>
             <%- include('./partials/nav', { user: user }) %>
-                <% } else { %>
-                    <%- include('./partials/nav', { user: false }) %>
-                        <% } %>
+        <% } else { %>
+            <%- include('./partials/nav', { user: false }) %>
+        <% } %>
     </header>
     <main>
         <% if(typeof errors !='undefined' ) { %>
@@ -21,65 +21,58 @@
                 <%= errors.email.msg %>
             </div>
             <% } %>
-
-                <% if(typeof validations !='undefined' ) { %>
-                    <% validations.forEach((validation)=> { %>
-                        <div class="registered-banner">
-                            <ul>
-                                <li>
-                                    <%= validation.msg %>
-                                </li>
-                            </ul>
-                        </div>
-                        <% }) %>
-                            <% } %>
-                                <div class="hero">
-                                    <div class="form-container">
-                                        
-                                    </div>
-                                    <div class="form-box">
-                                        <div class="button-box">
-                                            <div class="btn-register"></div>
-                                            <a href="/user/login"><button type="button" class="toggle-btn">Iniciar
-                                                    Sesion</button></a>
-                                            <button type="button" class="toggle-btn">Registro</button>
-                                        </div>
-
-                                    <!-- FORM-->
-                                        <form action="/user/register" method="POST" class="input-group input-register" id="register"
-                                            autocomplete="on" enctype="x-www-form-urlencoded">
-
-                                            <label for="name"></label>
-                                            <input type="text" name="fullname" class="input-field input-field-register" placeholder="Nombre Completo" />
-
-                                            <label for="userAddress"></label>
-                                            <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion"/>
-                                            
-                                            <label for="city"></label>
-                                            <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad"/>
-
-                                            <label for="email"></label>
-                                            <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" />
-
-                                            <div class="input-field">
-                                                <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
-                                                <input type="file" clas id="avatar" name="avatar"
-                                                accept="image/png, image/jpeg , image/jgp ">
-                                            </div>
-
-                                            <label for="password"></label>
-                                            <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" />
-
-                                            <input id="accept" name="accept" type="checkbox" class="check-box" />
-                                            <a class="to-terms" href="/terms "><span class="form-span ">Acepto terminos y condiciones</span></a>
-                                            <button type="submit " class="submit-btn ">Registrarse</button>
-                                        </form>
-                                    </div>
+            
+            <% if(typeof validations !='undefined' ) { %>
+                <% validations.forEach((validation)=> { %>
+                    <div class="registered-banner">
+                        <ul>
+                            <li>
+                                <%= validation.msg %>
+                            </li>
+                        </ul>
+                    </div>
+                    <% }) %>
+                    <% } %>
+                    <div class="hero">
+                        <div class="form-box">
+                            <div class="button-box">
+                                <div class="btn-register"></div>
+                                <a href="/login"><button type="button" class="toggle-btn">Iniciar
+                                    Sesion</button></a>
+                                    <button type="button" class="toggle-btn">Registro</button>
                                 </div>
-    </main>
-    <footer>
-        <%- include('./partials/footer') %>
-    </footer>
-</body>
-
-</html>
+                                <div class="social-icons">
+                                    <img src="/images/formslogin/fb.png" alt="facebook-icon" />
+                                    <img src="/images/formslogin/tw.png" alt="twitter-icon" />
+                                    <img src="/images/formslogin/gp.png" alt="google-icon" />
+                                </div>
+                                <form action="/user" method="POST" class="input-group" id="register"
+                                autocomplete="on" enctype="multipart/form-data">
+                                
+                                <label for="name"></label>
+                                <input type="text" name="fullname" class="input-field"
+                                placeholder="Nombre Completo" />
+                                <div class="input-field">
+                                    <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
+                                    <input type="file" clas id="avatar" name="avatar"
+                                    accept="image/png, image/jpeg , image/jgp ">
+                                </div>
+                                <label for=" email"></label>
+                                <input type=" email" name="email" class="input-field" placeholder=" Email"/>
+                                <label for=" password "></label>
+                                <input  name="password" type="password" nametype="password" class="input-field"
+                                placeholder="Contraseña" />
+                                <input id="accept" name="accept" type="checkbox" class="check-box" />
+                                <a class="to-terms" href="/terms "><span class="form-span ">Acepto
+                                    terminos y condiciones</span></a>
+                                    <button type="submit " class="submit-btn ">Registrarse</button>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                    <footer>
+                        <%- include('./partials/footer') %>
+                    </footer>
+                </body>
+                
+                </html>
