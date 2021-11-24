@@ -1,11 +1,12 @@
-const User = require('../models/User');
+const User = require('../models/userModeldb')
 
 
 function rememberUser(req, res, next)  {
     let emailCookie = req.cookies.userEmail;
-    let userFromCookie = User.findByField('email', emailCookie);
-    if(userFromCookie) {
-        req.session.userLogged = userFromCookie;
+    if(emailCookie != undefined){
+        let userFromCookie = User.findMail(emailCookie);
+        if(userFromCookie) {
+            req.session.userLogged = userFromCookie;}
     }
     next();
 }

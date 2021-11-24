@@ -31,6 +31,7 @@
 
 .button-box {
     width: 220px;
+    top: -21px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
@@ -70,7 +71,7 @@
 }
 
 .social-icons {
-    margin: 30px auto;
+    margin: -34px auto;
     text-align: center;
 }
 
@@ -91,11 +92,11 @@
 }
 
 .input-register {
-    top: 165px;
+    top: 125px;
     position: absolute;
     width: 206px;
     transition: 0.5s;
-    left: 50px;
+    left: 55px;
 }
 
 .input-field-register{

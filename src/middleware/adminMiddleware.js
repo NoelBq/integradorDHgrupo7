@@ -5,7 +5,7 @@ function adminMiddleware(req, res, next) {
             return res.redirect('/user/profile');
         } 
     } else {
-        return res.redirect('/login')
+        return res.redirect('/user/login')
     }
     next();
 }

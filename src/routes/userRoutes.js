@@ -10,12 +10,13 @@ const userMiddleware = require('../middleware/userMiddleware');
 
 
 // This router is for /user prefix "/" is /user
-router.post('/register', validations, userController.processRegister);
+router.post('/register',upload.single('avatar'),validations, userController.processRegister);
 router.post('/login' ,userController.loginProcess);
 router.get('/profile', userMiddleware, userController.userProfile);
 router.get('/logout', userController.logout);
 router.get("/login", guestMiddleware, mainController.login);
 router.get("/register", guestMiddleware,  mainController.register);
+router.get("/getusers",userController.getUsers)
 
 
 module.exports = router;

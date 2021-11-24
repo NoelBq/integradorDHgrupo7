@@ -7,9 +7,9 @@ const { validationResult } = require("express-validator");
 
 const userController = {
     
-    getUsers:  async function(req,res,next){
+    getUsers: async (req,res) =>{
         try{
-            const result = await userModel.getUsers()
+            const result = await userModeldb.getUsers()
              res.status(200).json({data: result ,error: null, succes: true})
         }catch(error){
             res.status(500).json({data: null ,error:error, succes: false})
@@ -20,8 +20,13 @@ const userController = {
         res.render('userprofile', {user: req.session.userLogged})  
     },
     processRegister: async (req, res) => {
-        
+        let file = req.file;
         const errors = validationResult(req);
+        if (file != undefined) {
+            image = req.file.filename
+        } else {
+            image = "default";
+        }
         if (!errors.isEmpty()) {
             const validations = errors.array();
             let filteredValidations = validations.filter(
@@ -33,9 +38,9 @@ const userController = {
         }else{
             try{
                 let resultado = await userModeldb.findMail(req.body.email);
-                console.log(resultado)
+                console.log(`soy el resultado de findmail ${resultado}`)
                 if(resultado == false){
-                    userModeldb.createUser(req.body)
+                    userModeldb.createUser(req.body,file)
                         .then(res.status(200).redirect("login?registered=1"))
                 }else{
                     res.status(409).render("formregister", {
