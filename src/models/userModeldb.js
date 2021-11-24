@@ -22,10 +22,10 @@ createUser: async function(body){
     getAllUsers: async function () {
         const res = await db.users.findAll();
         return res;
-       
     },
+
     findUserByEmail: async function(email) {
-        const res = await db.user.findOne({
+        const res = await db.users.findOne({
             where: {
                 email: email
             }
@@ -42,5 +42,7 @@ createUser: async function(body){
     });
 }
 }
+
+console.log(userModeldb.findUserByEmail('martin@gmail.com'));
 
 module.exports = userModeldb;

@@ -32,9 +32,9 @@ const userController = {
             console.log(errors);
         }else{
             try{
-                let result = await userModeldb.findUserByEmail(req.body.email);
-                console.log(result);
-                let resultado = await userModeldb.findMail(req.body.email);
+                let resultado = await userModeldb.findUserByEmail(req.body.email);
+                console.log(resultado.fullname);
+
                
                 if(resultado == false){
                     userModeldb.createUser(req.body)
