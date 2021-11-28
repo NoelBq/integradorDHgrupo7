@@ -25,8 +25,8 @@
                 aria-label="Default select example">
                 <option selected>Categoria</option>
                 <% categories.forEach(function(category){ %>
-                  <option value="<%- category %>">
-                    <%- category %>
+                  <option value="<%- category.id %>">
+                    <%- category.categorieName %>
                   </option>
                   <% }); %>
               </select>
