@@ -16,8 +16,28 @@ const Product = {
             { where: { categoryId: id } }
         )
         return res;
-    }
+    },
+    createProduct: async function(product) {
+        const res = await db.products.create(
+           product
+        )
+        return res;
+    },
+    deleteProduct: async function(id) {
+        const res = await db.products.destroy(
+            { 
+                where: {
+                    id : id
+                } 
+            }
+        )
+        return res;
+    },
+    
+
 }
+
+
 
 
 module.exports = Product;

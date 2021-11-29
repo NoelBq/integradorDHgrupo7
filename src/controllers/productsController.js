@@ -2,35 +2,48 @@
 let productsDB = require('../../db/productsDatabase.json');
 const fs = require('fs');
 const product = require("../models/Product");
+const categories = require("../models/Categories");
 const path = require("path");
 const utils = require('../utils/utils');
+
 const { v4: uuidv4 } = require('uuid');
 
 const productController = {
-
+  
   product: async (req, res) => {
     const productByPk = await product.getProductByPk(req.params.id);
     res.render('product', { product: productByPk, user: req.session.userLogged });
   },
-
-  deleteproduct: (req, res) => {
-    let localProductsDB = utils.parseJS(productsDB);
-    let filteredProductsDB = localProductsDB.filter(p => p.id != req.params.id);
-    let productToDelete = localProductsDB.find(p => p.id == req.params.id);
+  
+  deleteproduct: async (req, res) => {
+    // let productToDelete = await product.getProductByPk(req.params.id)
+    // let localProductsDB = utils.parseJS(productsDB);
+    // let filteredProductsDB = localProductsDB.filter(p => p.id != req.params.id);
+    // let productToDelete = localProductsDB.find(p => p.id == req.params.id);
     try {
-      fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(filteredProductsDB, null, 4));
-      fs.unlinkSync(path.join(__dirname, `../public/images/${productToDelete.img}`));
+     let productDelete = await product.getProductByPk(req.params.id);
+     let productImage = productDelete.image;
+     console.log(productImage);
+      // fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(filteredProductsDB, null, 4));
+      fs.unlinkSync(path.join(__dirname, `../public/${productImage}`));
+      product.deleteProduct(req.params.id);
       console.log("Deleted Succesfully");
+      res.status(200).redirect('/adminpanel')
     } catch (err) {
       console.error(err);
     }
-    res.status(200).redirect('/adminpanel')
+   
   },
-  productEditView: (req, res) => {
-    let localProductsDB = utils.parseJS(productsDB);
-    let categories = [...new Set(localProductsDB.map(p => p.category))];
-    let product = localProductsDB.find(p => p.id == req.params.id);
-    res.render('productEdit', { product: product, categories: categories });
+  productEditView: async (req, res) => {
+    try {
+      let categoriesDTO = await categories.getAllCategories();
+      let productDTO = await product.getProductByPk(req.params.id);
+      res.render('productEdit', { product: productDTO, categories: categoriesDTO });
+    } catch (error) {
+      
+    }
+    console.log(error);
+    
   },
   productEdit: (req, res) => {
     let localProductsDB = utils.parseJS(productsDB);
@@ -51,25 +64,33 @@ const productController = {
     } catch (err) {
       console.error(err);
     }
-    res.status(200).redirect('/adminpanel')
+    res.status(200).render('/adminpanel')
   },
-  productInsert: (req,res) =>{
-    let localProductsDB = utils.parseJS(productsDB);
-    let {productname,description,category,addprice} = req.body;
-    localProductsDB.push({
-      id: uuidv4(),
-      name: productname,
-      description: description,
-      category: category,
-      img: req.file.filename,
-      price: addprice
-    })
-    fs.writeFileSync(path.join(__dirname,'../../db/productsDatabase.json'),
-      JSON.stringify(localProductsDB, null, 4),
-      {encoding: "utf-8"});
-      res.status(200).redirect('/adminpanel')
+  productInsert: async (req, res) => {
+    let stock = parseInt(req.body.stock);
+    let price = parseInt(req.body.price);
+    let category = parseInt(req.body.category);
+    let image = `/images/${req.file.filename}`;
+    
+    let productDTO = {
+      productName: req.body.productname,
+      stock: stock,
+      price: price,
+      image: image,
+      description: req.body.description,
+      categoryId: category,
+      createdAt: new Date()
     }
+    console.log(productDTO);
+    
+    try {
+      await product.createProduct(productDTO);
+      res.status(200).redirect('/adminpanel')
+    } catch (error) {
+      console.log(error);
+    }
+    
+  }
 }
-
 
 module.exports = productController;

@@ -12,7 +12,8 @@ const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const methodOverride  = require('method-override');
 const cookieMiddleware = require('./middleware/cookieMiddleware');
-
+const moment = require('moment');
+app.locals.moment = moment;
 
 app.use(session({
     secret: "It's a secret",

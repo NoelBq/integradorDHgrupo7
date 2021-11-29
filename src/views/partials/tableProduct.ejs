@@ -3,7 +3,10 @@
     
     <div class="content">Precio: $<%- product.price %></div>
     <div class="date">   
-        <%-product.createdAt %></div>
+
+
+        <%= moment(product.createdAt).format('DD/MM/YYYY hh:mm')%>
+    </div>
     <div class="content-btn">
         <div class="btn-display">
             <form action="/product/edit/<%- product.id %>" method="GET">

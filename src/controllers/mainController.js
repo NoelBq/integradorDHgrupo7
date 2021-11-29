@@ -1,5 +1,5 @@
 const testimonialsDB = require("../../db/testimonialDatabase.json");
-const products = require("../models/Product");
+const product = require("../models/Product");
 const categories = require('../models/Categories');
 const utils = require("../utils/utils");
 const fs = require("fs");
@@ -53,19 +53,18 @@ const mainController = {
 	adminpanel: async (req, res) => {
 		let productsData;
 		let categoriesData;
-		let selectedCategory =req.query.categorySelection;
+		let selectedCategory = parseInt(req.query.categorySelection);
 		console.log(req.query.categorySelection);
 		try {
-			productsData = await products.getAllProducts();
 			categoriesData = await categories.getAllCategories();
-		
-			// if(req.query.categorySelection) {
-			// 	productsData = await products.getProductByCategoryId(req.querySelection)
-			// }
-			// let categorySelection = [...new Set(categories.map((p) => p.category))];
-			// let productsFiltered = products.filter(
-			//     (p) => p.category == req.query.categorySelection
-			// );
+			if(isNaN(selectedCategory)) {
+				selectedCategory = false;
+			}
+			if(selectedCategory) {
+				productsData = await product.getProductByCategoryId(selectedCategory);
+			} else {
+				productsData = await product.getAllProducts();
+			}
 			
 		} catch (error) {
 			console.log(error)
