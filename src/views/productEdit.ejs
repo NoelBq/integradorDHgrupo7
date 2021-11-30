@@ -21,7 +21,7 @@
                     <div class = "product-imgs">
                         <div class = "img-display">
                             <div class = "img-showcase">
-                                <img src = "/images/<%- product.image %> " alt = "<%- product.productName %> ">
+                                <img src = "<%- product.image %> " alt = "<%- product.productName %> ">
                             </div>
                         </div>
                     </div>          
@@ -30,12 +30,16 @@
                             <h2 class = "product-title"> Editar Producto </h2>
                             <div class = "product-detail">
                                 <div class="form-group">
-                                    <label for="name">Nombre</label>
-                                    <input class="form-control" id="name" type="text" name="name" value="<%= product.productName %>" placeholder"<%= product.name %>">
+                                    <label for="productName">Nombre</label>
+                                    <input class="form-control" id="productName" type="text" name="productName" value="<%= product.productName %>" placeholder"<%= product.name %>">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Descripcion</label>
                                     <input class="form-control" id="description" type="text" name="description"  value="<%= product.description %>" placeholder="<%= product.description %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stock">Stock</label>
+                                    <input class="form-control" id="stock" type="number" name="stock"  value="<%= product.stock %>" placeholder="<%= product.stock %>">
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
@@ -45,7 +49,7 @@
                                     <div class="col col-category">
                                         <label  for="categoria">Elegir Categoria</label>
                                         <select name='category' id="categorySelection" class="form-select" aria-label="Default select example">
-                                            <option selected><%=product.category%> </option>
+                                            <option><%=product.category%> </option>
                                             <% categories.forEach(function(category){ %>
                                                 <option value="<%- category.id %>">
                                                   <%- category.categorieName %>
@@ -56,7 +60,7 @@
                                     </div>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="customFileLang">Cambiar Imagen</label>
-                                        <input type="file" value="img" name="img" class="form-control" id="customFileLang" lang="es" accept="image/*">
+                                        <input type="file" value="image" name="image" class="form-control" id="customFileLang" lang="es" accept="image/*">
                                       </div>
                                     <input class="btn btn-primary btn-edit" type="submit" value="Enviar" />
                                 </form>

@@ -33,6 +33,17 @@ const Product = {
         )
         return res;
     },
+    updateProduct: async function(product, id) {
+        const res = await db.products.update(product,
+            { 
+                where: {
+                    id : id
+                } 
+            }
+        )
+        return res;
+    },
+    
     
 
 }

@@ -13,6 +13,7 @@ const userRoutes = require('./routes/userRoutes');
 const methodOverride  = require('method-override');
 const cookieMiddleware = require('./middleware/cookieMiddleware');
 const moment = require('moment');
+const multer  = require('multer')
 app.locals.moment = moment;
 
 app.use(session({

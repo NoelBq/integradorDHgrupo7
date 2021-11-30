@@ -16,15 +16,10 @@ const productController = {
   },
   
   deleteproduct: async (req, res) => {
-    // let productToDelete = await product.getProductByPk(req.params.id)
-    // let localProductsDB = utils.parseJS(productsDB);
-    // let filteredProductsDB = localProductsDB.filter(p => p.id != req.params.id);
-    // let productToDelete = localProductsDB.find(p => p.id == req.params.id);
     try {
-     let productDelete = await product.getProductByPk(req.params.id);
-     let productImage = productDelete.image;
-     console.log(productImage);
-      // fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(filteredProductsDB, null, 4));
+      let productDelete = await product.getProductByPk(req.params.id);
+      let productImage = productDelete.image;
+      console.log(productImage);
       fs.unlinkSync(path.join(__dirname, `../public/${productImage}`));
       product.deleteProduct(req.params.id);
       console.log("Deleted Succesfully");
@@ -32,7 +27,7 @@ const productController = {
     } catch (err) {
       console.error(err);
     }
-   
+    
   },
   productEditView: async (req, res) => {
     try {
@@ -40,31 +35,52 @@ const productController = {
       let productDTO = await product.getProductByPk(req.params.id);
       res.render('productEdit', { product: productDTO, categories: categoriesDTO });
     } catch (error) {
-      
+      console.log(error)
     }
-    console.log(error);
     
   },
-  productEdit: (req, res) => {
-    let localProductsDB = utils.parseJS(productsDB);
-    const file = req.file;
-    const body = req.body;
-    let product = localProductsDB.find(p => p.id == req.params.id);
-    if (file != undefined) {
-      product['img'] = `${file.filename}`
+  productEdit: async (req, res) => {
+    let productDTO = await product.getProductByPk(req.params.id);
+    let stock = parseInt(req.body.stock);
+    let price = parseInt(req.body.price);
+    let category;
+    let imageForm = req.file;
+    if (category != undefined) {
+      category = req.params.category;
     } else {
-      product['img'] = product.img
+      category = productDTO.categoryId;
     }
-    Object.keys(product).forEach(k => {
-      product[k] = body[k] || product[k];
-    });
+  
+    // let product = localProductsDB.find(p => p.id == req.params.id);
+    if (imageForm != undefined) {
+      image = `/images/${req.file.filename}`;
+    } else {
+      image = productDTO.image;
+    }
+    
+    let productToUpdate = {
+      productName: req.body.productName,
+      stock: stock,
+      price: price,
+      image: image,
+      description: req.body.description,
+      categoryId: category,
+    }
+    
+    console.log(productToUpdate);
+    
+    // Object.keys(productToUpdate).forEach(k => {
+    //   productToUpdate[k] = body[k] || productToUpdate[k];
+    // });
     try {
-      fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(localProductsDB, null, 4));
+      product.updateProduct(productToUpdate, req.params.id)
+      // fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(localProductsDB, null, 4));
       console.log("Product Changed Succesfully");
+      res.status(200).redirect('/adminpanel');
+      
     } catch (err) {
       console.error(err);
     }
-    res.status(200).render('/adminpanel')
   },
   productInsert: async (req, res) => {
     let stock = parseInt(req.body.stock);
