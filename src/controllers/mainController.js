@@ -17,7 +17,7 @@ const mainController = {
 		res.render("formregister", {user: req.session.userLogged });
 	},
 	terms: (req, res) => {
-		res.render("terms");
+		res.render("terms", {user: req.session.userLogged });
 	},
 	shop: async (req, res) => {
 		const products = await product.getAllProducts();

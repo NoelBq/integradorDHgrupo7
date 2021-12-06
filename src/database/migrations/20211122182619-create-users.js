@@ -10,12 +10,13 @@ module.exports = {
         primaryKey: true
       },
       fullname: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(100),
         allowNull: false
       },
       userAddress: {
-        type: Sequelize.STRING(45),
-        allowNull: true
+        type: Sequelize.STRING(100),
+        allowNull: false,
+        defaultValue:"unknown address"
       },
       password: {
         type: Sequelize.STRING(100),
@@ -31,7 +32,7 @@ module.exports = {
         allowNull: true
       },
       image: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(250),
         allowNull: true
       },
       role: {

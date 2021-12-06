@@ -10,7 +10,7 @@ module.exports = {
         primaryKey: true
       },
       productName: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(100),
         allowNull: false
       },
       stock: {
@@ -26,7 +26,7 @@ module.exports = {
         allowNull: true
       },
       description: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(256),
         allowNull: false
       },
       categoryId: {

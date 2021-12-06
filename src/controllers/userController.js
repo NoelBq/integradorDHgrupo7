@@ -7,9 +7,9 @@ const { validationResult } = require("express-validator");
 
 const userController = {
     
-    getUsers:  async function(req,res,next){
+    getUsers: async (req,res) =>{
         try{
-            const result = await userModel.getUsers()
+            const result = await userModeldb.getUsers()
              res.status(200).json({data: result ,error: null, succes: true})
         }catch(error){
             res.status(500).json({data: null ,error:error, succes: false})
@@ -20,34 +20,44 @@ const userController = {
         res.render('userprofile', {user: req.session.userLogged})  
     },
     processRegister: async (req, res) => {
-        
+        let file = req.file;
+        console.log(file);
+        const hashedPassword = bcryptjs.hashSync(req.body.password, 10);
         const errors = validationResult(req);
+        if (file != undefined) {
+            image  = `/images/avatars/${req.file.filename}`;
+        } else {
+            image = "default";
+        }
         if (!errors.isEmpty()) {
             const validations = errors.array();
             let filteredValidations = validations.filter(
                 (err) => err.msg != "Invalid value"
             );
-            
+            const oldData = req.body;
             res.render("formregister", { validations: filteredValidations });
-        
+            console.log(errors);
         }else{
+            let userDTO = {
+                fullname: req.body.fullname,
+                userAddres: req.body.userAddress,
+                password: hashedPassword,
+                email: req.body.email,
+                city: req.body.city,
+                image: image,
+                role: "basic",
+                createdAt: new Date()
+            }
+            console.log(userDTO);
             try{
-                let resultado = await userModeldb.findUserByEmail(req.body.email);
-                console.log(resultado.fullname);
-
-                if(resultado == null){
-                    let image = req.file;
-                    let password = bcryptjs.hashSync(body.password, 10);
-                    let user = {
-                        fullname: req.body.fullname,
-                        userAddres: req.body.userAddres,    
-                        password: password,
-                        city: req.body.city,
-                        image: image,
-                        role: "basic"
+                let resultado = await userModeldb.findMail(req.body.email);
+                if(resultado.length === 0){
+                    try {
+                        await userModeldb.createUser(userDTO)
+                        res.status(200).redirect("login?registered=1")
+                    } catch (error) {
+                        console.log(error);
                     }
-                    userModeldb.createUser(user)
-                        .then(res.status(200).redirect("login?registered=1"))
                 }else{
                     res.status(409).render("formregister", {
                         errors: {
@@ -55,7 +65,6 @@ const userController = {
                                 msg: "Ups!! El mail ya esta registrado por otro usuario",
                             },
                         },
-                        oldData: req.body, // to keep data previously added
                     });
                 }
             }catch(error){
@@ -63,10 +72,8 @@ const userController = {
             }
         }
     },
-
-    loginProcess: (req, res) => {
-        
-        let userToLogin = User.findByField('email', req.body.email);
+    loginProcess: async (req, res) => {
+        let userToLogin = await userModeldb.findUserByEmail(req.body.email)
         if(userToLogin) { 
             req.session.userLogged = userToLogin;
 
