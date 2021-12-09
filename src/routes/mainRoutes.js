@@ -13,6 +13,6 @@ router.get("/shop/cookies", mainController.shopCookies);
 router.get("/shop/checkout", mainController.checkout);
 router.get("/underconstruction", mainController.underConstruction);
 router.get("/formsadmin", mainController.formsadmin);
-router.get("/adminpanel",mainController.adminpanel);
+router.get("/adminpanel",adminMiddleware ,mainController.adminpanel);
 
 module.exports = router;

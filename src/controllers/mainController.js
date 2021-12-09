@@ -1,14 +1,16 @@
 const testimonialsDB = require("../../db/testimonialDatabase.json");
 const product = require("../models/Product");
 const categories = require('../models/Categories');
+const testimonials = require('../models/Testimonials')
 const utils = require("../utils/utils");
 const fs = require("fs");
 const path = require("path");
 const { ResultWithContext } = require("express-validator/src/chain");
 
 const mainController = {
-	home: (req, res) => {
-		res.render("home", { testimonials: testimonialsDB , user: req.session.userLogged });
+	home: async(req, res) => {
+		const testimonialsDTO = await testimonials.getTestimonials();
+		res.render("home", { testimonials: testimonialsDTO , user: req.session.userLogged });
 	},
 	login: (req, res) => {
 		res.render("formlogin", {registered: req.query.registered, user: req.session.userLogged});
@@ -21,28 +23,32 @@ const mainController = {
 	},
 	shop: async (req, res) => {
 		const products = await product.getAllProducts();
-		res.render("shop", { testimonials: testimonialsDB, products: products, user: req.session.userLogged });
+		const testimonialsDTO = testimonials.getTestimonials();
+		res.render("shop", { testimonials: testimonialsDTO, products: products, user: req.session.userLogged });
 	},
 	shopDonas: async (req, res) => {
 		const products = await product.getAllProducts();
+		const testimonialsDTO = testimonials.getTestimonials();
 		res.render("shopDonas", {
-			testimonials: testimonialsDB,
+			testimonials: testimonialsDTO,
 			products: products,
 			user: req.session.userLogged
 		});
 	},
 	shopCookies: async (req, res) => {
 		let products = await product.getAllProducts();
+		const testimonialsDTO = testimonials.getTestimonials();
 		res.render("shopCookies", {
-			testimonials: testimonialsDB,
+			testimonials: testimonialsDTO,
 			products: products,
 			user: req.session.userLogged
 		});
 	},
 	shopHelados: async (req, res) => {
 		const products = await product.getAllProducts();
+		const testimonialsDTO = testimonials.getTestimonials();
 		res.render("shopHelados", {
-			testimonials: testimonialsDB,
+			testimonials: testimonialsDTO,
 			products: products,
 			user: req.session.userLogged
 		});
