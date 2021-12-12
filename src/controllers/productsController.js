@@ -2,6 +2,7 @@
 const fs = require('fs');
 const product = require("../models/Product");
 const categories = require("../models/Categories");
+const cart = require("../models/Cart");
 const path = require("path");
 
 const productController = {
@@ -12,12 +13,25 @@ const productController = {
   },
 
   cart: async (req, res) => {
-    try {
-      let data = req.body;
-      const productByPk = await product.getProductByPk(req.params.id);
-      console.log(productByPk);  
-    } catch (error) {
-      console.log(error);
+    let user = req.session.userLogged; 
+    if(!user) {
+      res.render('formlogin');
+    } else {
+      try {
+        let id = req.body.id;
+        const productByPk = await product.getProductByPk(id);
+        let cartDTO = {
+          usersId: user.id, 
+          productId: id,
+          quantity: req.body.quantity,
+          price: productByPk.price, 
+          createdAt: Date.now(),  
+        }  
+       const cartToCreate = await cart.createCart(cartDTO);
+       console.log('added to cart');
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
 
@@ -73,12 +87,6 @@ const productController = {
       description: req.body.description,
       categoryId: category,
     }
-    
-    console.log(productToUpdate);
-    
-    // Object.keys(productToUpdate).forEach(k => {
-    //   productToUpdate[k] = body[k] || productToUpdate[k];
-    // });
     try {
       product.updateProduct(productToUpdate, req.params.id)
       // fs.writeFileSync(path.join(__dirname, '../../db/productsDatabase.json'), JSON.stringify(localProductsDB, null, 4));
