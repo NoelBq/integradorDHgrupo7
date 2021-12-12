@@ -5,21 +5,24 @@ module.exports = {
 
   let users = [
     {
-      fullname: "Martin Lopez",
-      userAddress: "Calle 2 1245",
-      password: "1234",
-      email: "martin@gmail.com",
+      fullname: "Julieta",
+      userAddress: "Calle 2 567",
+      password: "$2a$10$DnKU0YRYBDUgkmswVJuQJe6I.xWcNRdIY7JjbR9oHO0/.l8.yBn7G",
+      email: "ju@gmail.com",
       city: "Lavalle",
-      role: "admin"
+      role: "admin",
     },
     {
-      fullname: "Lorena Mont",
-      userAddress: "Calle 6 1245",
-      password: "1234",
-      email: "lore@gmail.com",
-      city: "San Martin",
+      fullname:"Martin Lopez",
+      userAddress: "Calle 34 n 99",
+      password: "$2a$10$WhZxdTbK7RB4hNn4CGrJuu2ft4qwrR1sqOmLUSzZjnscVydHeC1OO",
+      email: "marti@gmail.com",
+      city: "Tandil",
       role: "basic"
-    }
+    },
+
+
+
   ]
   return await queryInterface.bulkInsert('users',users , {});
 
