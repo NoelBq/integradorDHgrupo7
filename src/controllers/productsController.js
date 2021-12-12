@@ -1,12 +1,8 @@
 
-let productsDB = require('../../db/productsDatabase.json');
 const fs = require('fs');
 const product = require("../models/Product");
 const categories = require("../models/Categories");
 const path = require("path");
-const utils = require('../utils/utils');
-
-const { v4: uuidv4 } = require('uuid');
 
 const productController = {
   
@@ -14,6 +10,17 @@ const productController = {
     const productByPk = await product.getProductByPk(req.params.id);
     res.render('product', { product: productByPk, user: req.session.userLogged });
   },
+
+  cart: async (req, res) => {
+    try {
+      let data = req.body;
+      const productByPk = await product.getProductByPk(req.params.id);
+      console.log(productByPk);  
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
   
   deleteproduct: async (req, res) => {
     try {

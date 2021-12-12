@@ -149,7 +149,11 @@ img{
 }
 
 .purchase-info .btn:last-of-type{
-    background: var(--lightviolet);
+    background: linear-gradient(
+        to right,
+        #6480ef,
+        #7775e8,
+        #806ce8);
 }
 .purchase-info .btn:hover{
     opacity: 0.9;

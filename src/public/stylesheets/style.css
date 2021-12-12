@@ -274,7 +274,7 @@ button.learn-more:hover::before {
         top: 45px;
     }
     .learn-more {
-        top: 537px;
+        top: 500px;
     }
     /*ABOUT US STYLES*/
     .about-box {
@@ -354,7 +354,7 @@ button.learn-more:hover::before {
         font-size: 80px;
     }
     .learn-more {
-        top: 604px;
+        top: 600px;
         left: calc(50% - 95px);
     }
     /*ABOUT US STYLES*/

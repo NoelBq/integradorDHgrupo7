@@ -55,10 +55,13 @@
               </ul>
             </div>
             <div class = "purchase-info">
-              <input type = "number" min = "0" value = "1">
-              <button type = "button" class = "btn cart">
-                Agregar al Carro <i class = "fas fa-shopping-cart"></i>
-              </button>
+              <form action="cart" method="POST">
+                <input type="hidden" name="id" value="<%- product.id -%>" id="">
+                <input type ="number" min="0" value ="1" name="quantity">
+                <button type ="submit" class ="btn cart">
+                  Agregar al Carro <i class ="fas fa-shopping-cart"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>

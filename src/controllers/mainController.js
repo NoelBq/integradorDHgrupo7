@@ -1,10 +1,8 @@
-const testimonialsDB = require("../../db/testimonialDatabase.json");
+
 const product = require("../models/Product");
 const categories = require('../models/Categories');
 const testimonials = require('../models/Testimonials')
-const utils = require("../utils/utils");
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
 const { ResultWithContext } = require("express-validator/src/chain");
 
 const mainController = {
@@ -23,12 +21,12 @@ const mainController = {
 	},
 	shop: async (req, res) => {
 		const products = await product.getAllProducts();
-		const testimonialsDTO = testimonials.getTestimonials();
+		const testimonialsDTO = await testimonials.getTestimonials();
 		res.render("shop", { testimonials: testimonialsDTO, products: products, user: req.session.userLogged });
 	},
 	shopDonas: async (req, res) => {
 		const products = await product.getAllProducts();
-		const testimonialsDTO = testimonials.getTestimonials();
+		const testimonialsDTO = await testimonials.getTestimonials();
 		res.render("shopDonas", {
 			testimonials: testimonialsDTO,
 			products: products,
@@ -37,7 +35,7 @@ const mainController = {
 	},
 	shopCookies: async (req, res) => {
 		let products = await product.getAllProducts();
-		const testimonialsDTO = testimonials.getTestimonials();
+	    const testimonialsDTO = await testimonials.getTestimonials();
 		res.render("shopCookies", {
 			testimonials: testimonialsDTO,
 			products: products,
@@ -46,7 +44,7 @@ const mainController = {
 	},
 	shopHelados: async (req, res) => {
 		const products = await product.getAllProducts();
-		const testimonialsDTO = testimonials.getTestimonials();
+		const testimonialsDTO = await testimonials.getTestimonials();
 		res.render("shopHelados", {
 			testimonials: testimonialsDTO,
 			products: products,

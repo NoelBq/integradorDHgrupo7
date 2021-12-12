@@ -12,7 +12,8 @@
     <%- include('./partials/nav') %>
   </header>
   <main>
-    <div class="checkoutWrapper cf">
+    <div class="main-wrapper">
+      <div class="checkoutWrapper cf">
         <h1 class="projTitle">Checkout</h1>
         <div class="heading cf">
           <h2>Mi Carro</h2>
@@ -66,10 +67,76 @@
             <li class="totalRow"><span class="label">Envio</span><span class="value">$5.00</span></li>
             
             <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
-            <li class="totalRow"><a href="#" class="btn continue">Comprar</a></li>
           </ul>
         </div>
       </div>    
+      <div class="mainContainer">
+        <div class="cardHolder">
+          <div class="header">
+            <div class="heading center">Opciones de Pago</div>
+
+            <div class="card">
+              <div class="top part">
+                <img src="../images/visalogo.png" alt="visa-1.png" border="0" />
+              </div>
+              <div class="middle part">
+                <div class="infoheader vcenter">Numero de Tarjeta</div>
+                <div class="infocontent number vcenter">
+                  <div class="num center">****</div>
+                  <div class="num center">****</div>
+                  <div class="num center">4658</div>
+                  <div class="num center">****</div>
+                </div>
+              </div>
+              <div class="bottom part">
+                <div class="holderInfo">
+                   <div class="infoheader vcenter">Titular</div>
+                  <div class="infocontent name vcenter">Roberto Lopez</div>
+                </div>
+                <div class="expDate">
+                  <div class="infoheader vcenter">Vencimiento</div>
+                  <div class="infocontent date vcenter">09/2023</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="status vcenter"> <i class="fa fa-check" aria-hidden="true"></i>
+          Option : Credito/Debito
+        </div>
+        <h5 class="center">OTRAS OPCIONES</h5>
+        <div class="options vcenter">
+          <div class="opt">
+            <div class="icon center">
+              <i class="far fa-money-bill-alt"></i>
+            </div>
+            <div class="optname center">Efectivo</div>
+          </div>
+           <div class="opt">
+            <div class="icon center">
+              <i class="fas fa-money-check-alt"></i>
+            </div>
+            <div class="optname center">Transf.</div>
+          </div>
+           <div class="opt">
+            <div class="icon center">
+              <i class="fas fa-money-check"></i>
+            </div>
+            <div class="optname center">Cheque</div>
+          </div>
+        </div>
+        <div class="payment vcenter">
+          <div class="amount">
+            <div class="infoheader vcenter">Total</div>
+            <div class="infocontent val vcenter">$ 1,960</div>
+          </div>
+          <div class="button center">PAGAR</div>
+        </div>
+      </div>
+
+
+    </div>
+    
   </main>
   <%- include('./partials/footer') %>
 </body>
