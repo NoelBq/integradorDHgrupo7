@@ -33,6 +33,7 @@
     "sequelize": "^6.9.0",
     "sequelize-auto": "^0.8.5",
     "sequelize-cli": "^6.3.0",
+    "sweetalert2": "^11.3.0",
     "uuidv4": "^6.2.12"
   },
   "devDependencies": {

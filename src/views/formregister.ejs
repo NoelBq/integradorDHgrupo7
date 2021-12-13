@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%- include('./partials/head') %>
         <link rel="stylesheet" href="/stylesheets/formslogin.css" />
+        
+        
 </head>
 
 <body>
@@ -46,25 +48,27 @@
                                             <img src="/images/formslogin/tw.png" alt="twitter-icon"/>
                                             <img src="/images/formslogin/gp.png" alt="google-icon"/>
                                         </div>
-
+                                        <div class="errores">
+                                            <ul></ul>
+                                        </div>
                                     <!-- FORM-->
                                         <form action="/user/register" method="POST" class="input-group input-register" id="register"
-                                            autocomplete="on" enctype="multipart/form-data">
+                                            autocomplete="on" enctype="multipart/form-data" autocomplete="off">
 
-                                            <label for="name"></label>
-                                            <input type="text" name="fullname" class="input-field input-field-register" placeholder="Nombre Completo" />
+                                            <label for="fullname"></label>
+                                            <input type="text" name="fullname" class="input-field input-field-register" placeholder="Nombre Completo" id="fullname" autocomplete="off"/>
 
                                             <label for="userAddress"></label>
-                                            <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion"/>
+                                            <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion" id="userAddress" autocomplete="off"/>
                                             
                                             <label for="city"></label>
-                                            <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad"/>
+                                            <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad" id="city" autocomplete="off"/>
                                             
                                             <label for="email"></label>
-                                            <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" />
+                                            <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" id="email" autocomplete="off"/>
 
                                             <label for="password"></label>
-                                            <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" />
+                                            <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" id="password" autocomplete="off"/>
 
                                             <div class="input-field">
                                                 <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
@@ -78,6 +82,7 @@
                                     </div>
                                 </div>
     </main>
+    <script src="/js/formregister.js"></script>
     <footer>
         <%- include('./partials/footer') %>
     </footer>
