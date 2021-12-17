@@ -1,4 +1,4 @@
-let formulario = document.querySelector("form.input-register")
+let formulario = document.querySelector("form.input-login")
     let inputs = document.querySelectorAll("form input")
    
     const expresiones = {
