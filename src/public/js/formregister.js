@@ -1,65 +1,67 @@
-
-
     let formulario = document.querySelector("form.input-register")
     let inputs = document.querySelectorAll("form input")
-    let inputFullname = document.getElementById("fullname")
-    let inputUserAddress = document.getElementById("userAddress")
-    let inputCity = document.getElementById("city")
-    let inputEmail = document.getElementById("email")
-    let inputPassword = document.getElementById("password")
-
-
+   
     const expresiones = {
-        fullname: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        userAddress: /^[a-zA-Z0-9\s\_\-]{4,16}$/, // Letras y espacios, pueden llevar acentos.
-        city: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        password: /^.{4,12}$/, // 4 a 12 digitos.
+        fullname: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+        userAddress: /^[a-zA-Z0-9\s\_\-]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+        city: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+        password: /^.{8,40}$/, // 4 a 12 digitos.
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-
+        avatar: (/\.(jpg|png|gif)$/i)
     }
-  
+    
     const campos = {
-
-        
+        fullname: false,
+        userAddress: false,
+        city: false,
+        password: false,
+        email: false
     }
+    
+    /*let o = document.querySelector("#avatar")
+    let uploadFile = o.files[0];
+    const validarImagen = function(){
+        console.log(uploadFile)
 
+        if (o.files.length==0 || !expresiones.avatar.test(uploadFile.name) ){
+            console.log("estoy vacio")
+        }else{
+            console.log("tengo una imageeeen")
+        }
+    }*/
+    
     const validarFormulario = (e) => {
         switch (e.target.name) {
             case "fullname":
-                if(expresiones.fullname.test(e.target.value)){
-                    inputFullname.style.color = "green"
-                }else{
-                    inputFullname.style.color = "red"
-                }
+                validarCampo(expresiones.fullname, e.target, "fullname")
             break;
             case "userAddress":
-                if(expresiones.userAddress.test(e.target.value)){
-                    inputUserAddress.style.color = "green"
-                }else{
-                    inputUserAddress.style.color = "red"
-                }
+                validarCampo(expresiones.userAddress, e.target, "userAddress")
             break;
             case "city":
-                if(expresiones.city.test(e.target.value)){
-                    inputCity.style.color = "green"
-                }else{
-                    inputCity.style.color = "red"
-                }
+                validarCampo(expresiones.city, e.target, "city")
             break;
             case "password":
-                if(expresiones.password.test(e.target.value)){
-                    inputFullname.style.color = "green"
-                }else{
-                    inputFullname.style.color = "red"
-                }
+                validarCampo(expresiones.password, e.target, "password")
             break;
             case "email":
-                if(expresiones.email.test(e.target.value)){
-                    inputEmail.style.color = "green"
-                }else{
-                    inputEmail.style.color = "red"
-                }
+                validarCampo(expresiones.email, e.target, "email")
             break;
+        }
+    }
+
+    const validarCampo = (expresiones, input, campo) => {
+        if(expresiones.test(input.value)){
+            document.getElementById(`${campo}`).style.color = "green"
+            document.querySelector(`.grupo__${campo} #input-error-${campo}`).style.display = "none"
+            document.querySelector(`.grupo__${campo} .grupo__inputs i`).style.display = "block"
+            campos[campo] = true;
+        }else{
+            document.getElementById(`${campo}`).style.color = "red"
+            document.querySelector(`.grupo__${campo} #input-error-${campo}`).classList.add("input-error-activo")
+            document.querySelector(`.grupo__${campo} .grupo__inputs i`).style.display = "none"
+            document.querySelector(`.grupo__${campo} #input-error-${campo}`).style.display = "block"
+            campos[campo] = false;
         }
     }
 
@@ -70,4 +72,22 @@
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        let terminos = document.getElementById("accept")
+        
+        if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && terminos.checked){
+            formulario.submit()
+            formulario.reset();
+            document.querySelector("#formulario__mensaje-exito").style.display = "block"
+            document.querySelector(".formulario__mensaje-error p").style.display = "none"
+            document.querySelector(".formulario__mensaje-error-terminos p").style.display = "none"
+            setTimeout(() =>{
+                document.querySelector("#formulario__mensaje-exito").style.display = "none"
+            }, 7000)
+        }else if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && !terminos.checked){
+            document.querySelector(".formulario__mensaje-error p").style.display = "none"
+            document.querySelector(".formulario__mensaje-error-terminos p").style.display = "block"
+        }else{
+            document.querySelector(".formulario__mensaje-error p").style.display = "block"
+        }
     })

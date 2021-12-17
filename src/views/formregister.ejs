@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%- include('./partials/head') %>
         <link rel="stylesheet" href="/stylesheets/formslogin.css" />
-        
+        <script src="https://kit.fontawesome.com/eece933466.js" crossorigin="anonymous"></script>
         
 </head>
 
@@ -48,41 +48,85 @@
                                             <img src="/images/formslogin/tw.png" alt="twitter-icon"/>
                                             <img src="/images/formslogin/gp.png" alt="google-icon"/>
                                         </div>
-                                        <div class="errores">
-                                            <ul></ul>
+                                        <div>
+                                            <form action="/user/register" method="POST" class="input-group input-register" id="register" autocomplete="off" enctype="multipart/form-data" autocomplete="off">
+                                                <div class="grupo__fullname">
+                                                    <div class="grupo__inputs">
+                                                        <input type="text" name="fullname" class="input-field input-field-register" placeholder="Nombre Completo" id="fullname" autocomplete="off"/>
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-fullname" class="input-error">Tu nombre es un campo obligatorio y debe tener 2 caracteres como minimo y solo puede contener letras.</small>
+                                                </div>
+                                                
+                                                <div class="grupo__userAddress">
+                                                    <div class="grupo__inputs">
+                                                        <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion" id="userAddress" autocomplete="off"/>
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-userAddress" class="input-error">Tu Direccion es un campo obligatorio y debe tener 2 caracteres como minimo.</small>
+                                                </div>
+                                                
+                                                <div class="grupo__city">
+                                                    <div class="grupo__inputs">
+                                                        <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad" id="city" autocomplete="off"/>
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-city" class="input-error">Tu ciudad es un campo obligatorio y debe tener 2 caracteres como minimo y solo puede contener letras.</small>
+                                                </div>
+                                                
+                                                <div class="grupo__email">
+                                                    <div class="grupo__inputs">
+                                                        <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" id="email" autocomplete="off"/>
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-email" class="input-error">Tu mail debe tener un formato valido!</small>
+                                                </div>
+                                                
+                                                <div class="grupo__password">
+                                                    <div class="grupo__inputs">
+                                                        <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" id="password" autocomplete="off"/>
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-password" class="input-error">Tu constraseña es obligatorio y debe tener 8 caracteres como minimo.</small>
+                                                </div>
+
+                                                <div class="grupo__avatar input-field">
+                                                    <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
+                                                    <div class="grupo__inputs">
+                                                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg , image/jgp ">
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-avatar" class="input-error">el archivo debe ser JPG, JPEG, PNG, GIF.</small>
+                                                </div>
+                                                
+                                                <div>
+                                                <input id="accept" name="accept" type="checkbox" class="check-box" />
+                                                <a class="to-terms" href="/terms "><span class="form-span ">Acepto terminos y condiciones</span></a>
+                                                
+                                            </div>
+                                                <button type="submit " class="submit-btn ">Registrarse</button>
+                                                    
+
+                                                <div class="formulario__mensaje-error-terminos" id="formulario__mensaje-error">
+                                                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor acepta los terminos y condiciones. </p>
+                                                </div>
+                                                
+                                                <div class="formulario__mensaje-error" id="formulario__mensaje-error">
+                                                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                                                </div>
+
+                                                <div class="formulario__grupo-enviado">
+                                                    <p class="formulario__mensaje-exito" style="display: none" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                                                </div>
+                                            </form>
                                         </div>
                                     <!-- FORM-->
-                                        <form action="/user/register" method="POST" class="input-group input-register" id="register"
-                                            autocomplete="on" enctype="multipart/form-data" autocomplete="off">
-
-                                            <label for="fullname"></label>
-                                            <input type="text" name="fullname" class="input-field input-field-register" placeholder="Nombre Completo" id="fullname" autocomplete="off"/>
-
-                                            <label for="userAddress"></label>
-                                            <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion" id="userAddress" autocomplete="off"/>
-                                            
-                                            <label for="city"></label>
-                                            <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad" id="city" autocomplete="off"/>
-                                            
-                                            <label for="email"></label>
-                                            <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" id="email" autocomplete="off"/>
-
-                                            <label for="password"></label>
-                                            <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" id="password" autocomplete="off"/>
-
-                                            <div class="input-field">
-                                                <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
-                                                <input type="file" clas id="avatar" name="avatar" accept="image/png, image/jpeg , image/jgp ">
-                                            </div>
-
-                                            <input id="accept" name="accept" type="checkbox" class="check-box" />
-                                            <a class="to-terms" href="/terms "><span class="form-span ">Acepto terminos y condiciones</span></a>
-                                            <button type="submit " class="submit-btn ">Registrarse</button>
-                                        </form>
+                                        
                                     </div>
                                 </div>
     </main>
     <script src="/js/formregister.js"></script>
+    
     <footer>
         <%- include('./partials/footer') %>
     </footer>

@@ -7,6 +7,7 @@
     padding: 0;
 }
 
+
 .hero {
     height: 72vh;
     width: 100vw;
@@ -112,6 +113,23 @@ input[type="file"] {
     cursor: pointer;
 }
 
+.grupo__inputs{
+    display: flex;
+}
+
+.grupo__inputs i{
+    font-size: 20px;
+    margin-top: 19px;
+    color: green;
+    display: none;
+}
+
+.input-error{
+    color: red;
+    display: none;
+}
+
+
 label > i{
     color: #b96ac9;
     margin-right: 5px;
@@ -166,19 +184,43 @@ input[type="file"] + label {
 }
 
 .check-box {
-    margin: 30px 10px 30px 0;
-    height: 13px;
+    margin: 12px 10px 20px 0px;
+    height: 12px;
 }
 
 .form-span {
     color: #777;
-    font-size: 13px;
-    bottom: 68px;
-    position: absolute;
+    font-size: 14.5px;
+    margin-top: 8px;
 }
 
 .to-terms span:hover {
     text-decoration: underline;
+}
+
+.formulario__grupo-enviado{
+    text-align: center;
+    color: green;
+    margin-top: 5px;
+}
+
+.formulario__mensaje-error p {
+    text-align: center;
+    background-color: red;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
+}
+.formulario__mensaje-error-terminos p {
+    text-align: center;
+    background-color: orange;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
 }
 
 @media only screen and (min-width: 500px) {
