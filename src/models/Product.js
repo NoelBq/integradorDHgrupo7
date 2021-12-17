@@ -1,6 +1,12 @@
 const db = require('../database/models');
 
 const Product = {
+    getAmountProductsByUser: async function (id) {
+        const res = await db.cart.count(
+            { where: { usersId: id } }
+        )
+        return res;
+    },
     getAllProducts: async function () {
         const res = await db.products.findAll({include: [ { 
                     model: db.sequelize.models.categories, as: "category"

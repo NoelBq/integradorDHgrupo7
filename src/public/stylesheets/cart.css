@@ -512,6 +512,7 @@ ol, ul {
     display:flex;
     flex-direction:column;
     justify-content:center;
+    cursor: pointer;
   }
   .options > .opt > .icon{
     height:30px;

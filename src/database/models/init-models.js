@@ -6,7 +6,6 @@ var _products = require("./products");
 var _users = require("./users");
 var _testimonials = require("./testimonials");
 var _cart = require("./cart");
-var _cartdetail = require('./cartdetail')
 
 function initModels(sequelize) {
   var categories = _categories(sequelize, DataTypes);
@@ -16,21 +15,18 @@ function initModels(sequelize) {
   var users = _users(sequelize, DataTypes);
   var testimonials = _testimonials(sequelize, DataTypes);
   var cart = _cart(sequelize, DataTypes);
-  var cartdetail = _cartdetail(sequelize, DataTypes);
   
   
   products.belongsToMany(orders, { as: 'orderId_orders', through: orderdetail, foreignKey: "productId", otherKey: "orderId" });
-  products.belongsToMany(cart, { as: 'cartId_cart', through: cartdetail, foreignKey: "productId", otherKey: "cartId" });
   products.belongsTo(categories, { as: "category", foreignKey: "categoryId"});
   categories.hasMany(products, { as: "products", foreignKey: "categoryId"});
   orderdetail.belongsTo(orders, { as: "order", foreignKey: "orderId"});
   orders.hasMany(orderdetail, { as: "orderdetails", foreignKey: "orderId"});
   orderdetail.belongsTo(products, { as: "product", foreignKey: "productId"});
   products.hasMany(orderdetail, { as: "orderdetails", foreignKey: "productId"});
-  orders.belongsTo(users, { as: "user", foreignKey: "usersId"});
-  cart.belongsTo(users, { as: "user", foreignKey: "usersId"});
-  cartdetail.belongsTo(cart, { as: "cart", foreignKey: "cartId"});
-  cartdetail.belongsTo(products, { as: "product", foreignKey: "productId"});
+  orders.belongsTo(users, { as: "users", foreignKey: "usersId"});
+  cart.belongsTo(users, { as: "users", foreignKey: "usersId"});
+  cart.belongsTo(products, { as: "product", foreignKey: "productId" });
   users.hasMany(orders, { as: "orders", foreignKey: "usersId"});
   users.hasMany(cart, { as: "cart", foreignKey: "usersId"});
 
@@ -41,8 +37,7 @@ function initModels(sequelize) {
     products,
     users,
     testimonials, 
-    cart, 
-    cartdetail
+    cart
   };
 }
 module.exports = initModels;

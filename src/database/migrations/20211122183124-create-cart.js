@@ -17,13 +17,14 @@ module.exports = {
           key: 'id'
         }
       },
-      price: {
-        type: Sequelize.FLOAT,
-        allowNull: false
-      },
-      quantity: {
+      productId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'products',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

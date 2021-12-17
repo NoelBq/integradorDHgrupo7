@@ -15,15 +15,16 @@ module.exports = function(sequelize, DataTypes) {
         key: 'id'
       }
     },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    quantity: {
+    productId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      primaryKey: true,
+      references: {
+        model: 'products',
+        key: 'id'
+      }
     },
-    cartCreated: {
+    createdAt: {
       type: DataTypes.DATE,
       allowNull: false
     }

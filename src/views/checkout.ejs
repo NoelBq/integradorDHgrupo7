@@ -17,43 +17,14 @@
         <h1 class="projTitle">Checkout</h1>
         <div class="heading cf">
           <h2>Mi Carro</h2>
-          <a href="#" class="continue">Continuar Comprando</a>
+          <a href="/shop" class="continue">Continuar Comprando</a>
         </div>
         <div class="cart">
           <ul class="cartWrap">
-            <li class="items even">
-              <div class="infoWrap"> 
-                <div class="cartSection">
-                  <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                  <p class="itemNumber">#QUE-007544-002</p>
-                  <h3>Articulo  1</h3>
-                  <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-                  <p class="stockStatus"> Stock</p>
-                </div>  
-                <div class="prodTotal cartSection">
-                  <p>$15.00</p>
-                </div>
-                <div class="cartSection removeWrap">
-                  <a href="#" class="remove"><i class="fas fa-trash"></i></a>
-                </div>
-              </div>
-            </li>
-            <li class="items odd">
-              <div class="infoWrap"> 
-                <div class="cartSection">
-                  <h3>Articulo 2</h3>
-                  <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-                  
-                  <p class="stockStatus out"> Sin Stock</p>
-                </div>  
-                <div class="prodTotal cartSection">
-                  <p>$15.00</p>
-                </div>
-                <div class="cartSection removeWrap">
-                  <a href="#" class="remove"><i class="fas fa-trash"></i></a>
-                </div>
-              </div>
-            </li>
+
+            <% carts.forEach(function(product){ %>
+              <%- include('partials/checkoutcart', {product: product}); %>
+            <% }); %>
           </ul>
         </div>
         
@@ -61,12 +32,8 @@
         <div><a href="#" class="btn"></a></div>
         
         <div class="subtotal cf">
-          <ul>
-            <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
-            
-            <li class="totalRow"><span class="label">Envio</span><span class="value">$5.00</span></li>
-            
-            <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
+          <ul>    
+            <li class="totalRow final"><span class="label">Total</span><span class="value">$<%- totalPrice %></span></li>
           </ul>
         </div>
       </div>    
@@ -102,42 +69,56 @@
           </div>
         </div>
         <div class="status vcenter"> <i class="fa fa-check" aria-hidden="true"></i>
-          Option : Credito/Debito
+          Option : <span id="payment">  Credito/Debito </span>
+ 
         </div>
         <h5 class="center">OTRAS OPCIONES</h5>
         <div class="options vcenter">
-          <div class="opt">
+          <div class="opt" onclick="cash()">
             <div class="icon center">
               <i class="far fa-money-bill-alt"></i>
             </div>
-            <div class="optname center">Efectivo</div>
+            <div id="cash" class="optname center">Efectivo</div>
           </div>
-           <div class="opt">
+           <div id="wire" onclick="wire()"class="opt">
             <div class="icon center">
-              <i class="fas fa-money-check-alt"></i>
+              <i  class="fas fa-money-check-alt"></i>
             </div>
-            <div class="optname center">Transf.</div>
+            <div id="wire"class="optname center">Transf.</div>
           </div>
-           <div class="opt">
+           <div class="opt" onclick="check()">
             <div class="icon center">
               <i class="fas fa-money-check"></i>
             </div>
-            <div class="optname center">Cheque</div>
+            <div id="check"class="optname center">Cheque</div>
           </div>
         </div>
         <div class="payment vcenter">
           <div class="amount">
             <div class="infoheader vcenter">Total</div>
-            <div class="infocontent val vcenter">$ 1,960</div>
+            <div class="infocontent val vcenter">$<%- totalPrice %></div>
           </div>
           <div class="button center">PAGAR</div>
         </div>
       </div>
 
-
     </div>
-    
+
   </main>
   <%- include('./partials/footer') %>
+  <script>
+            
+             let paymentOpt = document.getElementById('payment') 
+             function wire() {
+               paymentOpt.innerText = "Transferencia"
+             }
+             function cash() {
+               paymentOpt.innerText = "Efectivo"
+             }
+             function check() {
+               paymentOpt.innerText = "Cheque"
+             }
+
+  </script>
 </body>
 </html>

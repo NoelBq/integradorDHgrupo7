@@ -50,8 +50,28 @@ body {
 
 .nav-links i {
     color: var(--lightviolet);
-    font-size: 1em;
+    font-size: 1.5em;
 }
+  
+  .icon-button__badge {
+    position: relative;
+    top: -29px;
+    left: 19px;
+    width: 15px;
+    height: 15px;   
+    font-size: 10px;
+    background:linear-gradient(
+        to right,
+        #6480ef,
+        #7775e8,
+        #806ce8);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
 
 #chkToggle {
     display: none;
@@ -120,7 +140,13 @@ body {
     }
     .nav-links {
         margin-left: 40px;
+
     }
+    .nav-cart {
+        margin-top: 4px;
+    }
+
+
     .logo {
         margin-top: 0;
         font-size: 2em;

@@ -4,37 +4,70 @@ const product = require("../models/Product");
 const categories = require("../models/Categories");
 const cart = require("../models/Cart");
 const path = require("path");
+const e = require('express');
+const products = require('../database/models/products');
+const { log } = require('console');
+const { LOADIPHLPAPI } = require('dns');
+
+const productCart = async(req) => {
+  try {
+    let productsInCart = 0
+    let user = req.session.userLogged; 
+    if(user) {
+      productsInCart = await product.getAmountProductsByUser(user.id)
+      return productsInCart;
+    }
+    return 0;
+  } catch(error) {
+    console.log(error);
+    return 0;
+  }
+};
 
 const productController = {
   
   product: async (req, res) => {
-    const productByPk = await product.getProductByPk(req.params.id);
-    res.render('product', { product: productByPk, user: req.session.userLogged });
+    let productsCartDTO =  await productCart(req);
+    try {
+      let productsInCart = 0
+      let user = req.session.userLogged; 
+      if(user) {
+        productsInCart = await product.getAmountProductsByUser(user.id)
+      }
+      const productByPk = await product.getProductByPk(req.params.id);
+      res.render('product', { product: productByPk, user: req.session.userLogged, productsInCart : productsInCart });
+      
+    } catch (error) {
+      console.log(error);
+    }
   },
-
+  
   cart: async (req, res) => {
     let user = req.session.userLogged; 
     if(!user) {
       res.render('formlogin');
     } else {
       try {
-        let id = req.body.id;
-        const productByPk = await product.getProductByPk(id);
-        let cartDTO = {
-          usersId: user.id, 
-          productId: id,
-          quantity: req.body.quantity,
-          price: productByPk.price, 
-          createdAt: Date.now(),  
-        }  
-       const cartToCreate = await cart.createCart(cartDTO);
-       console.log('added to cart');
+        let id = parseInt(req.body.id);
+        const cartArrDTO = [];
+        for (let index = 0; index < req.body.quantity; index++) {
+          let cartDTO = {
+            usersId: user.id, 
+            productId: id,
+            createdAt: Date.now()
+          }  
+          cartArrDTO.push(cartDTO);
+        }
+        const response = await cart.bulkCreate(cartArrDTO);
+        console.log('added to cart');
+        console.log(response);
+        res.status(200).redirect(`/product/${id}`);
       } catch (error) {
         console.log(error);
       }
     }
   },
-
+  
   
   deleteproduct: async (req, res) => {
     try {
@@ -71,7 +104,7 @@ const productController = {
     } else {
       category = productDTO.categoryId;
     }
-  
+    
     // let product = localProductsDB.find(p => p.id == req.params.id);
     if (imageForm != undefined) {
       image = `/images/${req.file.filename}`;
@@ -121,7 +154,26 @@ const productController = {
       console.log(error);
     }
     
+  },
+  checkout: async (req, res) => {
+    let user = req.session.userLogged; 
+    let id = user.id;
+    try {
+      let cartDTO = []
+      let carts = await cart.getAllProductsInCartByUserId(id);
+      carts.forEach((product) => {
+        cartDTO.push(product.product)
+      })
+
+    console.log(cartDTO);
+      let cartsQuantity = carts.length;
+      let totalPrice = carts.reduce(function (acc, carts) { return acc + carts.product.price; }, 0);
+      res.render("checkout", {user: req.session.userLogged, carts: cartDTO, cartsQuantity: cartsQuantity, totalPrice: totalPrice});
+    } catch (error) {
+      console.log(error);
+    }
   }
+  
 }
 
 module.exports = productController;

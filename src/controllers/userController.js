@@ -1,6 +1,7 @@
 
 const fs = require('fs');
 const userModeldb = require("../models/userModeldb")
+const product = require("../models/Product");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
@@ -15,9 +16,19 @@ const userController = {
             res.status(500).json({data: null ,error:error, succes: false})
         }
     },
-    userProfile: (req, res) => {
-        console.log(req.cookies.userEmail);
-        res.render('userprofile', {user: req.session.userLogged})  
+    userProfile: async (req, res) => {
+        try {
+            let productsInCart = 0
+            let user = req.session.userLogged; 
+            if(user) {
+              productsInCart = await product.getAmountProductsByUser(user.id)
+            }
+            console.log(req.cookies.userEmail);
+            res.render('userprofile', {user: req.session.userLogged, productsInCart})  
+            
+        } catch (error) {
+            console.log(error);
+        }
     },
     processRegister: async (req, res) => {
         let file = req.file;

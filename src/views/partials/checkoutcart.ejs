@@ -1,0 +1,18 @@
+
+            <li class="items">
+                <div class="infoWrap"> 
+                  <div class="cartSection">
+                    <img src="<%- product.image %>" alt="" width="50" height="50" class="itemImg" />
+                    <p class="itemNumber">#<%-product.productId %></p>
+                    <h3><%-product.productName %></h3>
+                    <p> <input type="text"  class="qty" placeholder="1"/> x $<%-product.price %></p>
+                    <p class="stockStatus"> Stock</p>
+                  </div>  
+                  <div class="prodTotal cartSection">
+                    <p>$<%-product.price %></p>
+                  </div>
+                  <div class="cartSection removeWrap">
+                    <a href="#" class="remove"><i class="fas fa-trash"></i></a>
+                  </div>
+                </div>
+              </li>
