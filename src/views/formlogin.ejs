@@ -39,19 +39,38 @@
                             <img src="/images/formslogin/gp.png" alt="google-icon" />
                         </div>
                         <form method="POST" id="login" action="/user/login" class="input-group input-login">
-                            <label for="email"></label>
-                            <input name="email" type="email" class="input-field input-field-login" placeholder="Email" required />
-                            <label for="password"></label>
-                            <input name="password" type="password" class="input-field input-field-login" placeholder="Contraseña" required />
+                            <div class="grupo__email">
+                                <div class="grupo__inputs">
+                                    <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" id="email" autocomplete="off"/>
+                                    <i id="inputcheck" class="fas fa-check-circle"></i>
+                                </div>
+                                <small id="input-error-email" class="input-error">Tu mail debe tener un formato valido!</small>
+                            </div>
+                            <div class="grupo__password">
+                                <div class="grupo__inputs">
+                                    <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" id="password" autocomplete="off"/>
+                                    <i id="inputcheck" class="fas fa-check-circle"></i>
+                                </div>
+                                <small id="input-error-password" class="input-error">Tu constraseña es obligatoria!.</small>
+                            </div>
                             <input type="checkbox" class="check-box" name="remember" />
                             <span class="form-span">Recordar Usuario</span>
                             <button type="submit" class="submit-btn">Iniciar Sesion</button>
+
+                            <div class="formulario__mensaje-error" id="formulario__mensaje-error">
+                                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                            </div>
+
+                            <div class="formulario__grupo-enviado">
+                                <p class="formulario__mensaje-exito" style="display: none" id="formulario__mensaje-exito">Bienvenido!</p>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="/js/formlogin.js"></script>
     <footer>
         <%- include('./partials/footer') %>
     </footer>
