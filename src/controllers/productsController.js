@@ -165,7 +165,18 @@ const productController = {
         cartDTO.push(product.product)
       })
 
-    console.log(cartDTO);
+    cartDTO = cartDTO.reduce((acc, curr, i, arr) => {
+      if (!acc.find(i => curr.id == i.id)) {
+          curr.qty = 1;
+          acc.push(curr)
+      } else {
+          let item = acc.find(i => curr.id == i.id);
+          item.price += curr.price
+          item.qty ++
+      }
+        return acc
+      }, [])
+
       let cartsQuantity = carts.length;
       let totalPrice = carts.reduce(function (acc, carts) { return acc + carts.product.price; }, 0);
       res.render("checkout", {user: req.session.userLogged, carts: cartDTO, cartsQuantity: cartsQuantity, totalPrice: totalPrice});
