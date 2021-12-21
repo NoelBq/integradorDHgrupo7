@@ -6,8 +6,7 @@ const cart = require("../models/Cart");
 const path = require("path");
 const e = require('express');
 const products = require('../database/models/products');
-const { log } = require('console');
-const { LOADIPHLPAPI } = require('dns');
+
 
 const productCart = async(req) => {
   try {
@@ -41,7 +40,41 @@ const productController = {
       console.log(error);
     }
   },
-  
+
+  checkout: async (req, res) => {
+    let productsInCart = 0
+    let user = req.session.userLogged; 
+    let id = user.id;
+		if(user) {
+		  productsInCart = await product.getAmountProductsByUser(user.id)
+		}
+ 
+    try {
+        let cartDTO = []
+        let carts = await cart.getAllProductsInCartByUserId(id);
+        carts.forEach((product) => {
+            cartDTO.push(product.product)
+        })
+        
+        cartDTO = cartDTO.reduce((acc, curr, i, arr) => {
+            if (!acc.find(i => curr.id == i.id)) {
+                curr.qty = 1;
+                acc.push(curr)
+            } else {
+                let item = acc.find(i => curr.id == i.id);
+                item.price += curr.price
+                item.qty ++
+            }
+            return acc
+        }, [])
+        
+        let cartsQuantity = carts.length;
+        let totalPrice = carts.reduce(function (acc, carts) { return acc + carts.product.price; }, 0);
+        res.render("checkout", {user: req.session.userLogged, carts: cartDTO, cartsQuantity: cartsQuantity, totalPrice: totalPrice, productsInCart: productsInCart});
+    } catch (error) {
+        console.log(error);
+    }
+},
   cart: async (req, res) => {
     let user = req.session.userLogged; 
     if(!user) {
@@ -156,13 +189,17 @@ const productController = {
     
   },
   checkout: async (req, res) => {
+    let productsInCart = 0
     let user = req.session.userLogged; 
     let id = user.id;
+		if(user) {
+		  productsInCart = await product.getAmountProductsByUser(user.id)
+		}
     try {
       let cartDTO = []
       let carts = await cart.getAllProductsInCartByUserId(id);
       carts.forEach((product) => {
-        cartDTO.push(product.product)
+        cartDTO.push({...product.product.get({plain: true})})
       })
 
     cartDTO = cartDTO.reduce((acc, curr, i, arr) => {
@@ -178,13 +215,16 @@ const productController = {
       }, [])
 
       let cartsQuantity = carts.length;
-      let totalPrice = carts.reduce(function (acc, carts) { return acc + carts.product.price; }, 0);
-      res.render("checkout", {user: req.session.userLogged, carts: cartDTO, cartsQuantity: cartsQuantity, totalPrice: totalPrice});
+      let totalPrice = carts.reduce(function (acc, cart) { 
+        console.log(cart.product.price);
+        acc += cart.product.price;
+        return acc; 
+      }, 0);
+      res.render("checkout", {user: req.session.userLogged, carts: cartDTO, cartsQuantity: cartsQuantity, totalPrice: totalPrice, productsInCart:productsInCart});
     } catch (error) {
       console.log(error);
     }
   }
-  
 }
 
 module.exports = productController;

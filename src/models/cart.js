@@ -26,6 +26,26 @@ const Cart = {
         )
         return res;
     },
+    deleteCartItem: async function(id) {
+        const res = await db.cart.destroy(
+            { 
+                where: {
+                    productId : id
+                } 
+            }
+        )
+        return res;
+    },
+    deleteCart: async function(id) {
+        const res = await db.cart.destroy(
+            { 
+                where: {
+                    id : id
+                } 
+            }
+        )
+        return res;
+    },
 }
 
 module.exports = Cart;

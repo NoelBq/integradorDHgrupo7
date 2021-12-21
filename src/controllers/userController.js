@@ -17,6 +17,7 @@ const userController = {
         }
     },
     userProfile: async (req, res) => {
+        let orders = []
         try {
             let productsInCart = 0
             let user = req.session.userLogged; 
@@ -24,7 +25,7 @@ const userController = {
               productsInCart = await product.getAmountProductsByUser(user.id)
             }
             console.log(req.cookies.userEmail);
-            res.render('userprofile', {user: req.session.userLogged, productsInCart})  
+            res.render('userprofile', {user: req.session.userLogged, productsInCart, orders})  
             
         } catch (error) {
             console.log(error);

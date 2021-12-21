@@ -14,98 +14,109 @@
   <main>
     <div class="main-wrapper">
       <div class="checkoutWrapper cf">
-        <h1 class="projTitle">Checkout</h1>
-        <div class="heading cf">
-          <h2>Mi Carro</h2>
-          <a href="/shop" class="continue">Continuar Comprando</a>
-        </div>
-        <div class="cart">
-          <ul class="cartWrap">
 
-            <% carts.forEach(function(product){ %>
-              <%- include('partials/checkoutcart', {product: product}); %>
-            <% }); %>
-          </ul>
-        </div>
         
-        
-        <div><a href="#" class="btn"></a></div>
-        
-        <div class="subtotal cf">
-          <ul>    
-            <li class="totalRow final"><span class="label">Total</span><span class="value">$<%- totalPrice %></span></li>
-          </ul>
-        </div>
-      </div>    
-      <div class="mainContainer">
-        <div class="cardHolder">
-          <div class="header">
-            <div class="heading center">Opciones de Pago</div>
 
-            <div class="card">
-              <div class="top part">
-                <img src="../images/visalogo.png" alt="visa-1.png" border="0" />
-              </div>
-              <div class="middle part">
-                <div class="infoheader vcenter">Numero de Tarjeta</div>
-                <div class="infocontent number vcenter">
-                  <div class="num center">****</div>
-                  <div class="num center">****</div>
-                  <div class="num center">4658</div>
-                  <div class="num center">****</div>
+        <% if(carts.length > 0){ %>
+        
+          <h1 class="projTitle">Checkout</h1>
+          <div class="heading cf">
+            <h2>Mi Carro</h2>
+            <a href="/shop" class="continue">Continuar Comprando</a>
+          </div>
+  
+    
+          <div class="cart">
+            <ul class="cartWrap">
+              <% carts.forEach(function(product){ %>
+                  <%- include('partials/checkoutcart', {product: product}); %>
+                <% }); %>
+            </ul>
+          </div>
+          
+          
+          <div><a href="#" class="btn"></a></div>
+          
+          <div class="subtotal cf">
+            <ul>    
+              <li class="totalRow final"><span class="label">Total</span><span class="value">$<%- totalPrice %></span></li>
+            </ul>
+          </div>
+        </div>    
+        <div class="mainContainer">
+          <div class="cardHolder">
+            <div class="header">
+              <div class="heading center">Opciones de Pago</div>
+  
+              <div class="card">
+                <div class="top part">
+                  <img src="../images/visalogo.png" alt="visa-1.png" border="0" />
+                </div>
+                <div class="middle part">
+                  <div class="infoheader vcenter">Numero de Tarjeta</div>
+                  <div class="infocontent number vcenter">
+                    <div class="num center">****</div>
+                    <div class="num center">****</div>
+                    <div class="num center">4658</div>
+                    <div class="num center">****</div>
+                  </div>
+                </div>
+                <div class="bottom part">
+                  <div class="holderInfo">
+                     <div class="infoheader vcenter">Titular</div>
+                    <div class="infocontent name vcenter"><%- user.fullname %></div>
+                  </div>
+                  <div class="expDate">
+                    <div class="infoheader vcenter">Vencimiento</div>
+                    <div class="infocontent date vcenter">09/2023</div>
+                  </div>
                 </div>
               </div>
-              <div class="bottom part">
-                <div class="holderInfo">
-                   <div class="infoheader vcenter">Titular</div>
-                  <div class="infocontent name vcenter">Roberto Lopez</div>
-                </div>
-                <div class="expDate">
-                  <div class="infoheader vcenter">Vencimiento</div>
-                  <div class="infocontent date vcenter">09/2023</div>
-                </div>
+            </div>
+          </div>
+          <div class="status vcenter"> <i class="fa fa-check" aria-hidden="true"></i>
+            Option : <span id="payment">  Credito/Debito </span>
+   
+          </div>
+          <h5 class="center">OTRAS OPCIONES</h5>
+          <div class="options vcenter">
+            <div class="opt" onclick="cash()">
+              <div class="icon center">
+                <i class="far fa-money-bill-alt"></i>
               </div>
+              <div id="cash" class="optname center">Efectivo</div>
+            </div>
+             <div id="wire" onclick="wire()"class="opt">
+              <div class="icon center">
+                <i  class="fas fa-money-check-alt"></i>
+              </div>
+              <div id="wire"class="optname center">Transf.</div>
+            </div>
+             <div class="opt" onclick="check()">
+              <div class="icon center">
+                <i class="fas fa-money-check"></i>
+              </div>
+              <div id="check"class="optname center">Cheque</div>
             </div>
           </div>
-        </div>
-        <div class="status vcenter"> <i class="fa fa-check" aria-hidden="true"></i>
-          Option : <span id="payment">  Credito/Debito </span>
- 
-        </div>
-        <h5 class="center">OTRAS OPCIONES</h5>
-        <div class="options vcenter">
-          <div class="opt" onclick="cash()">
-            <div class="icon center">
-              <i class="far fa-money-bill-alt"></i>
+          <div class="payment vcenter">
+            <div class="amount">
+              <div class="infoheader vcenter">Total</div>
+              <div class="infocontent val vcenter">$<%- totalPrice %></div>
             </div>
-            <div id="cash" class="optname center">Efectivo</div>
-          </div>
-           <div id="wire" onclick="wire()"class="opt">
-            <div class="icon center">
-              <i  class="fas fa-money-check-alt"></i>
-            </div>
-            <div id="wire"class="optname center">Transf.</div>
-          </div>
-           <div class="opt" onclick="check()">
-            <div class="icon center">
-              <i class="fas fa-money-check"></i>
-            </div>
-            <div id="check"class="optname center">Cheque</div>
+            <form action="/order" method="POST">
+              <input type="hidden" name="qty" value="<%-carts.length%>">
+              <button type='submit' class="button center">PAGAR</button>
+            </form>
           </div>
         </div>
-        <div class="payment vcenter">
-          <div class="amount">
-            <div class="infoheader vcenter">Total</div>
-            <div class="infocontent val vcenter">$<%- totalPrice %></div>
-          </div>
-          <form action="">
-            <div class="button center">PAGAR</div>
-          </form>
-        </div>
+  
       </div>
 
-    </div>
-
+          <% } else {%>
+            <h1 class="projTitle">Carro Vacio</h1>
+          <%- include('partials/emptycart') %>
+      <% } %>
   </main>
   <%- include('./partials/footer') %>
   <script>

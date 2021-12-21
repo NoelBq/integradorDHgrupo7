@@ -103,11 +103,41 @@ ol, ul {
     font-size: 2em;
     float: left;
   }
-  .heading a.continue:link, .heading a.continue:visited {
+
+  /* empty cart */
+
+  .empty-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .empty-cart img {
+    width: 40%;
+  }
+
+  .empty-cart a.continue {
+    height: 40px;
     text-decoration: none;
     letter-spacing: -.015em;
     font-size: .75em;
     padding: 1em;
+    color: #fff;
+    background:  linear-gradient(
+      to right,
+      #6480ef,
+      #7775e8,
+      #806ce8);
+    float: right;
+    text-align: right;
+    transition: all 0.25s linear;
+  }
+  
+  .heading a.continue:link, .heading a.continue:visited {
+    text-decoration: none;
+    letter-spacing: -.015em;
+    font-size: .75em;
+    padding: 2em;
     color: #fff;
     background:  linear-gradient(
       to right,
@@ -228,19 +258,21 @@ ol, ul {
     color: #6f6f6f;
   }
   
-  a.remove {
+  button.remove {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    background: var(--lightgrey);
+    background: #95a5a6;
     padding: .5em;
     font-size: .75em;
     display: inline-block;
     border-radius: 100%;
     line-height: .85;
+    border: none;
     transition: all 0.25s linear;
+    cursor: pointer;
   }
-  a.remove:hover {
+  button.remove:hover {
     background: #f30;
   }
   
@@ -543,6 +575,7 @@ ol, ul {
   .button{
     width:120px;
     height:35px;
+    border: none;
     border-radius:1.2em;
     background:linear-gradient(
       to right,
@@ -553,14 +586,24 @@ ol, ul {
     color:white;
     font-weight:bolder;
     letter-spacing:2px;
+    cursor: pointer;
   }
 
-  @media only screen and (min-width: 600px)  {
+  @media only screen and (min-width: 768px)  {
     .main-wrapper {
       flex-direction: row;
+      margin-right: 2em;
+    }
+
+    .checkoutWrapper {
+      margin: 2em;
     }
 
     .mainContainer {
       margin-top: 12em;
+    }
+
+    .cardHolder {
+      margin-right: 4px;
     }
   }
