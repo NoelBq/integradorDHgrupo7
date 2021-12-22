@@ -40,6 +40,7 @@
                                 </div>
                             </li>
                             <li>
+                                <% if(user.role == 'basic'){ %>
                                 <div class="nav-links">
                                     <a href="/product/checkout">
                                         <% if(typeof productsInCart == 'undefined'){ %>
@@ -49,6 +50,7 @@
                                         <% } %> 
                                     </a>
                                 </div>
+                              <% } %>
                             </li>
                         </ul>
        <% } else{ %>  
