@@ -95,7 +95,7 @@ const userController = {
                 
                 let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password);
                 if(passwordOK) {
-                    if(userToLogin.rol == 'admin') {
+                    if(userToLogin.role == 'admin') {
                         res.redirect('/adminpanel')
                     } else {
                         res.redirect('/user/profile')
