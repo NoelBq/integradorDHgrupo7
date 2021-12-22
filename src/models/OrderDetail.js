@@ -13,6 +13,12 @@ const OrderDetail = {
         )
         return res;
     },
+    getOrderByUser: async function(orderDetail) {
+        const res = await db.orderdetail.create(
+           orderDetail
+        )
+        return res;
+    },
 
 }
 

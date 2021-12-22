@@ -2,6 +2,7 @@
 const fs = require('fs');
 const userModeldb = require("../models/userModeldb")
 const product = require("../models/Product");
+const order = require("../models/Order");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
@@ -17,15 +18,14 @@ const userController = {
         }
     },
     userProfile: async (req, res) => {
-        let orders = []
         try {
+            let user = req.session.userLogged;
+            let orders = await order.getOrdersByUserId(user.id)
             let productsInCart = 0
-            let user = req.session.userLogged; 
             if(user) {
-              productsInCart = await product.getAmountProductsByUser(user.id)
+              productsInCart = await product.getAmountProductsByUser(user.id) 
             }
-            console.log(req.cookies.userEmail);
-            res.render('userprofile', {user: req.session.userLogged, productsInCart, orders})  
+            res.render('userprofile', {user: user, productsInCart, orders: orders})  
             
         } catch (error) {
             console.log(error);

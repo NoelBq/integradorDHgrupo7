@@ -52,23 +52,9 @@
     <div class="orderWrapper cf">
       <% if(orders.length > 0){ %>
       <h1 class="projTitle">Mis Pedidos</h1>
-      <div class="order">
-        <ul class="orderWrap">
-          <li class="items even">
-            <div class="infoWrap"> 
-              <div class="orderSection">
-                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                <p class="itemNumber">#QUE-007544-002</p>
-                <h3>Articulo  1</h3>
-                <p class="stockStatus">Entregado</p>
-              </div>  
-              <div class="prodTotal orderSection">
-                <p>$15.00</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <% orders.forEach(function(order){ %>
+        <%- include('partials/ordersUser', {order: order}); %>
+      <% }); %>
       <% } else {%>
         <h1 class="projTitle">Aun no pediste nada</h1>
       <%- include('partials/emptycart') %>

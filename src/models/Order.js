@@ -15,7 +15,7 @@ const Order = {
     },
     getOrdersByUserId: async function(id) {
         const res = await db.orders.findAll(
-            { where: { userId: id } }
+            { where: { usersId: id } }
         )
         return res;
     },
