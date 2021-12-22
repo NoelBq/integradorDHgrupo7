@@ -8,7 +8,7 @@
 }
 
 .hero {
-    height: 600px;
+    height: 800px;
     width: 100vw;
     background-image: url(/images/formslogin/banner.jpg);
     background-position: center;
@@ -20,17 +20,18 @@
 
 .form-box {
     width: 270px;
-    height: 520px;
+    height:  600px;
     position: absolute;
     margin: 6% auto;
     margin-top: 0px;
     background: #fff;
     padding: 5px;
-    top: 50px;
+    top: calc(50% - 289px);
 }
 
 .button-box {
     width: 220px;
+    top: -21px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
@@ -53,12 +54,7 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background:linear-gradient(
-      to right,
-      #6480ef,
-      #7775e8,
-      #806ce8
-    ); 
+    background: linear-gradient(to right, #b96ac9, #e5a9a9);
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -74,24 +70,64 @@
     transition: 0.5s;
 }
 
-
-.login-inputs {
-    margin-top: 50px;
+.social-icons {
+    margin: -34px auto;
+    text-align: center;
 }
 
-.input-group {
-    top: 100px;
+.social-icons img {
+    width: 40px;
+    margin: 0 13px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.input-login{
+    top: 212px;
     position: absolute;
     width: 206px;
     transition: 0.5s;
-    left: 50px;
+    left: 40px;
 }
 
+.input-register {
+    top: 80px;
+    position: absolute;
+    width: 206px;
+    transition: 0.5s;
+    left: 40px;
+}
+
+.input-field-register{
+    margin: 7px 0;
+}
+
+.input-field-login{
+    margin: 12px 0;
+}
 
 input[type="file"] {
     display: none;
     cursor: pointer;
 }
+
+.grupo__inputs{
+    display: flex;
+}
+
+.grupo__inputs i{
+    font-size: 20px;
+    margin-top: 19px;
+    color: green;
+    display: none;
+}
+
+.input-error{
+    color: red;
+    display: none;
+}
+
 
 label > i{
     color: #b96ac9;
@@ -113,7 +149,6 @@ input[type="file"] + label {
 .input-field {
     width: 100%;
     padding: 10px 0;
-    margin: 5px 0;
     border-left: 0;
     border-top: 0;
     border-right: 0;
@@ -147,28 +182,44 @@ input[type="file"] + label {
     border-radius: 30px;
 }
 
-.submit-btn:hover {
-    background:linear-gradient(
-        to right,
-        #6480ef,
-        #7775e8,
-        #806ce8
-      ); 
-}
-
 .check-box {
-    margin: 30px 10px 30px 0;
+    margin: 12px 10px 20px 0px;
+    height: 12px;
 }
 
 .form-span {
     color: #777;
-    font-size: 12px;
-    bottom: 68px;
-    position: absolute;
+    font-size: 10px;
+    margin-top: 8px;
 }
 
 .to-terms span:hover {
     text-decoration: underline;
+}
+
+.formulario__grupo-enviado{
+    text-align: center;
+    color: green;
+    margin-top: 5px;
+}
+
+.formulario__mensaje-error p {
+    text-align: center;
+    background-color: red;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
+}
+.formulario__mensaje-error-terminos p {
+    text-align: center;
+    background-color: orange;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
 }
 
 @media only screen and (min-width: 500px) {
@@ -177,5 +228,11 @@ input[type="file"] + label {
     }
     .input-group {
         width: 250px;
+        left: 55px;
+    
+    }
+    .input-register {
+        left: 55px;
     }
 }
+
