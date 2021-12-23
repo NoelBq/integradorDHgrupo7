@@ -114,8 +114,8 @@ input[type="file"] {
 
 .grupo__inputs i{
     font-size: 20px;
-    margin-top: 19px;
-    color: green;
+    margin-top: 10px;
+    color: green;   
     display: none;
 }
 
@@ -153,6 +153,16 @@ input[type="file"] + label {
     background: transparent;
 }
 
+.passeye {
+    position: absolute;
+    right: 20px;
+    top: 46%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color:  #b96ac9;
+   
+}
+
 .registered-banner {
     display: flex;
     align-items: center;
@@ -164,6 +174,13 @@ input[type="file"] + label {
     font-weight: bold;
     vertical-align: middle;
 }
+
+.emoji {
+    font-size: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+   
 
 .submit-btn {
     width: 85%;

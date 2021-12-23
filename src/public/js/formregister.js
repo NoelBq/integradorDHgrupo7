@@ -90,3 +90,24 @@ formulario.addEventListener('submit', (e) => {
         document.querySelector(".formulario__mensaje-error p").style.display = "block"
     }
 })
+
+// password strength //
+
+const emojies = ['😑','😕','😊','😎','💪'];
+const input = document.getElementById('password');
+const emoji = document.getElementById('emoji');
+const emojiCircle = document.getElementById('emoji-circle');
+
+function onEmoji() {
+    emoji.innerHTML = emojies[zxcvbn(input.value).score]
+    
+}
+
+input.addEventListener('input', onEmoji);
+
+ function eyePass(){
+    input.type = input.type === 'password'?'text':'password';
+    emoji.innerHTML = input.type === 'text'?'👀':emojies[zxcvbn(input.value).score]
+}
+
+emoji.addEventListener('click', eyePass, false)

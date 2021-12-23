@@ -38,8 +38,8 @@
                                 <label for="email"></label>
                                 <input name="email" type="email" class="input-field input-field-login" placeholder="Email" required />
                                 <label for="password"></label>
-                                <input name="password" type="password" class="input-field input-field-login" placeholder="Contraseña" required />
-                                <span><i id="toggler-eye"class="far fa-eye"></i></span>
+                                <input  id="txtPassword"  name="password" type="password" class="input-field input-field-login" placeholder="Contraseña" required />
+                                <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon" class="fa fa-eye passeye"></i></button>
                                 <input type="checkbox" class="check-box" name="remember" />
                                 <span class="form-span">Recordar Usuario</span>
                                 <button type="submit" class="submit-btn">Iniciar Sesion</button>
@@ -53,5 +53,9 @@
     <footer>
         <%- include('./partials/footer') %>
     </footer>
+    <script src="/js/formlogin.js">
+    
+    </script>
+    <script src="/js/formlogin.js"></script>
 </body>
 </html>
