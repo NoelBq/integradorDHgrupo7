@@ -96,11 +96,7 @@
     position: absolute;
     width: 206px;
     transition: 0.5s;
-    left: 40px;
-}
-
-.input-field-register{
-    margin: 7px 0;
+    left: 30px;
 }
 
 .input-field-login{
@@ -228,11 +224,7 @@ input[type="file"] + label {
     }
     .input-group {
         width: 250px;
-        left: 55px;
-    
-    }
-    .input-register {
-        left: 55px;
+        left: 50px;
     }
 }
 
