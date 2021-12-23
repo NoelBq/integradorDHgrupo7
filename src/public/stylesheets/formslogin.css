@@ -84,7 +84,7 @@
     position: absolute;
     width: 206px;
     transition: 0.5s;
-    left: 50px;
+    left: 30px;
 }
 
 
@@ -177,5 +177,6 @@ input[type="file"] + label {
     }
     .input-group {
         width: 250px;
+        left: 50px;
     }
 }
