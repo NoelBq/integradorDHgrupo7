@@ -26,7 +26,7 @@ const userModeldb = {
     },
     
     findMail: async function(email){
-        return await db.users.findAll({
+        return await db.users.findOne({
             where: {
                 email: email
             }

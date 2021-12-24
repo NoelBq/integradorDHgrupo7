@@ -60,6 +60,67 @@
     transition: 0.5s;
 }
 
+
+/* container avatar */
+
+
+
+@-webkit-keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
+  .container-avatar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+    -webkit-animation: float 6s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite;
+  }
+  .avatar img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+
 .btn-register {
     top: 0;
     left: 109px;
@@ -85,7 +146,7 @@
 }
 
 .input-login{
-    top: 212px;
+    top: 300px;
     position: absolute;
     width: 206px;
     transition: 0.5s;
@@ -93,7 +154,7 @@
 }
 
 .input-register {
-    top: 80px;
+    top: 90px;
     position: absolute;
     width: 206px;
     transition: 0.5s;

@@ -9,7 +9,6 @@ async function rememberUser(req, res, next)  {
             if(userFromCookie) {
                 req.session.userLogged = userFromCookie;
             }
-            
         } catch (error) {
             console.log(error);
         }
