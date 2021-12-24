@@ -155,13 +155,13 @@ input[type="file"] + label {
 }
 
 .passeye {
+    font-size: 20px;
     position: absolute;
-    right: 20px;
-    top: 46%;
+    right: 26px;
+    top: 33%;
     transform: translateY(-50%);
     cursor: pointer;
     color:  #b96ac9;
-   
 }
 
 .registered-banner {

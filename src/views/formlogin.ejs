@@ -33,6 +33,20 @@
                             <button type="button" class="toggle-btn">Iniciar Sesion</button>
                             <a href="/user/register"><button type="button" class="toggle-btn">Registro</button></a>
                         </div>
+                        <div class="sundae">
+                            <div class="sundae-top">
+                              <div class="straw"></div>
+                              <div class="scoop scoop-one"></div>
+                              <div class="scoop scoop-two"></div>
+                              <div class="scoop scoop-three"></div>
+                            </div>
+                            <div class="sundae-middle"></div>
+                            <div class="sundae-middle-inner"></div>
+                            <div class="sundae-drop-left"></div>
+                            <div class="sundae-drop-middle"></div>
+                            <div class="sundae-drop-right"></div>
+                            <div class="sundae-bottom"></div>
+                          </div>
                         <form method="POST" id="login" action="/user/login" class="input-group input-login">
                             <div class="grupo__email">
                                 <div class="grupo__inputs">
@@ -47,6 +61,7 @@
                                     <i id="inputcheck" class="fas fa-check-circle"></i>
                                 </div>
                                 <small id="input-error-password" class="input-error">Tu constraseña es obligatoria!.</small>
+                                <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon" class="fa fa-eye passeye"></i></button>
                             </div>
                             <input type="checkbox" class="check-box" name="remember" />
                             <span class="form-span">Recordar Usuario</span>
@@ -58,15 +73,6 @@
 
                             <div class="formulario__grupo-enviado">
                                 <p class="formulario__mensaje-exito" style="display: none" id="formulario__mensaje-exito">Bienvenido!</p>
-                            <div class="login-inputs">
-                                <label for="email"></label>
-                                <input name="email" type="email" class="input-field input-field-login" placeholder="Email" required />
-                                <label for="password"></label>
-                                <input  id="txtPassword"  name="password" type="password" class="input-field input-field-login" placeholder="Contraseña" required />
-                                <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon" class="fa fa-eye passeye"></i></button>
-                                <input type="checkbox" class="check-box" name="remember" />
-                                <span class="form-span">Recordar Usuario</span>
-                                <button type="submit" class="submit-btn">Iniciar Sesion</button>
                             </div>
                         </form>
                     </div>

@@ -59,7 +59,7 @@ let formulario = document.querySelector("form.input-login")
         }
     })
 
-    let passwordInput = document.getElementById('txtPassword'),
+    let passwordInput = document.getElementById('password'),
     toggle = document.getElementById('btnToggle'),
     icon =  document.getElementById('eyeIcon');
 
