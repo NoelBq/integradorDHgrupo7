@@ -19,8 +19,8 @@
         <h2 class="product-card-headerTitle">Cookies</h2>
         <h4 class="product-card-headerSubtitle">Hechas con amor <i class="fas fa-heart"></i></h4>
       </div>
-      <div class="product-cards">
-        <% let newArrayCookies = products.filter(item => item.category == "Cookies");%>
+      <div class="product-cards"> 
+        <% let newArrayCookies = products.filter(item => item.category.categorieName == "Cookies");%>
         <% if(newArrayCookies.length==0){ %>
         <%- include('partials/productSinStock') %>
         <%}else{%>

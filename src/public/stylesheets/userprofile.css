@@ -9,13 +9,16 @@
     margin:0;
 }
 
-main {
+.profile-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .container-profile {
   margin: 1em;
+  
 }
 
 .container-profile > div{
@@ -137,8 +140,441 @@ main {
 }
 
 
+/* orders */
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+.orderWrapper {
+  width: 75%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5% 0;
+  padding-right: 1em;
+  margin-bottom: 5em;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.empty-cart img {
+  width: 40%;
+}
+
+.empty-cart a.continue {
+  height: 40px;
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: .75em;
+  padding: 1em;
+  color: #fff;
+  background:  linear-gradient(
+    to right,
+    #6480ef,
+    #7775e8,
+    #806ce8);
+  float: right;
+  text-align: right;
+  transition: all 0.25s linear;
+}
+
+.heading a.continue:link, .heading a.continue:visited {
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: .75em;
+  padding: 2em;
+  color: #fff;
+  background:  linear-gradient(
+    to right,
+    #6480ef,
+    #7775e8,
+    #806ce8);
+  float: right;
+  text-align: right;
+  transition: all 0.25s linear;
+}
+.heading a.continue:after {
+  content: "\276f";
+  padding: .5em;
+  position: relative;
+  right: 0;
+}
+
+.projTitle {
+  
+  font-weight: bold;
+  text-align: center;
+  font-size: 2em;
+  padding: 1em 0;
+  border-bottom: 1px solid #dadada;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.projTitle span {
+
+  font-weight: normal;
+  font-style: italic;
+  text-transform: lowercase;
+  color: #777;
+}
+
+.heading {
+  padding: 1em 0;
+  border-bottom: 1px solid #D0D0D0;
+}
+.heading h1 {
+  
+  font-size: 2em;
+  float: left;
+}
+.heading a.continue:link, .heading a.continue:visited {
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: .75em;
+  padding: 1em;
+  color: #fff;
+  background: #82ca9c;
+  font-weight: bold;
+  border-radius: 50px;
+  float: right;
+  text-align: right;
+  transition: all 0.25s linear;
+}
+.heading a.continue:after {
+  content: "\276f";
+  padding: .5em;
+  position: relative;
+  right: 0;
+}
+.heading a.continue:hover, .heading a.continue:focus, .heading a.continue:active {
+  background: #f69679;
+}
+.heading a.continue:hover:after, .heading a.continue:focus:after, .heading a.continue:active:after {
+  right: -10px;
+}
+
+.tableHead {
+  display: table;
+  width: 100%;
+  font-size: .75em;
+}
+.tableHead li {
+  display: table-cell;
+  padding: 1em 0;
+  text-align: center;
+}
+.tableHead li.prodHeader {
+  text-align: left;
+}
+
+.order {
+  padding: 1em 0;
+}
+.order .items {
+  display: block;
+  width: 100%;
+  padding: 1.5em;
+  border-bottom: 1px solid #fafafa;
+}
+.order .items.even {
+  background: #fafafa;
+}
+.order .items .infoWrap {
+  display: table;
+  width: 100%;
+}
+.order .items .orderSection {
+  display: table-cell;
+  vertical-align: middle;
+}
+.order .items .orderSection .itemNumber {
+  font-size: .75em;
+  color: #777;
+  margin-bottom: .5em;
+}
+.order .items .orderSection h3 {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+}
+.order .items .orderSection p {
+  display: inline-block;
+  font-size: .85em;
+  color: #777777;
+  
+}
+.order .items .orderSection p .quantity {
+  font-weight: bold;
+  color: #333;
+}
+.order .items .orderSection p.stockStatus {
+  color: #82CA9C;
+  font-weight: bold;
+  padding: .5em 0 0 1em;
+  text-transform: uppercase;
+}
+.order .items .orderSection p.stockStatus.out {
+  color: #F69679;
+}
+
+.order .items .orderSection.qtyWrap, .order .items .orderSection.prodTotal {
+  text-align: center;
+}
+.order .items .orderSection.qtyWrap p, .order .items .orderSection.prodTotal p {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.order .items .orderSection input.qty {
+  width: 2em;
+  text-align: center;
+  font-size: 1em;
+  padding: .25em;
+  margin: 1em .5em 0 0;
+}
+
+.special {
+  display: block;
+}
+.special .specialContent {
+  padding: 1em 1em 0;
+  display: block;
+  margin-top: .5em;
+  border-top: 1px solid #dadada;
+}
+.special .specialContent:before {
+  content: "\21b3";
+  font-size: 1.5em;
+  margin-right: 1em;
+  color: #6f6f6f;
+}
+
+a.remove {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  background: #e0e0e0;
+  padding: .5em;
+  font-size: .75em;
+  display: inline-block;
+  border-radius: 100%;
+  line-height: .85;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+a.remove:hover {
+  background: #f30;
+}
+
+.promoCode {
+  border: 2px solid #efefef;
+  float: left;
+  width: 35%;
+  padding: 2%;
+}
+.promoCode label {
+  display: block;
+  width: 100%;
+  font-style: italic;
+  font-size: 1.15em;
+  margin-bottom: .5em;
+  letter-spacing: -.025em;
+}
+.promoCode input {
+  width: 85%;
+  font-size: 1em;
+  padding: .5em;
+  float: left;
+  border: 1px solid #dadada;
+}
+.promoCode input:active, .promoCode input:focus {
+  outline: 0;
+}
+.promoCode a.btn {
+  float: left;
+  width: 15%;
+  padding: .75em 0;
+  border-radius: 0 1em 1em 0;
+  text-align: center;
+  border: 1px solid #82ca9c;
+}
+.promoCode a.btn:hover {
+  border: 1px solid #f69679;
+  background: #f69679;
+}
+
+.btn:link, .btn:visited {
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: 1em;
+  padding: 1em 3em;
+  color: #fff;
+  background: #82ca9c;
+  font-weight: bold;
+  float: right;
+  text-align: right;
+  transition: all 0.25s linear;
+}
+.btn:after {
+  content: "\276f";
+  padding: .5em;
+  position: relative;
+  right: 0;
+  transition: all 0.15s linear;
+}
+.btn:hover, .btn:focus, .btn:active {
+  background: #f69679;
+}
+.btn:hover:after, .btn:focus:after, .btn:active:after {
+  right: -10px;
+}
+.promoCode .btn {
+  font-size: .85em;
+  padding: .5em 2em;
+}
+
+/* TOTAL AND CHECKOUT  */
+.subtotal {
+  float: right;
+  width: 100%;
+}
+
+.subtotal .totalRow {
+  padding: .5em;
+  text-align: right;
+}
+.subtotal .totalRow.final {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.subtotal .totalRow span {
+  display: inline-block;
+  padding: 0 0 0 1em;
+  text-align: right;
+}
+.subtotal .totalRow .label {
+  font-size: .85em;
+  text-transform: uppercase;
+  color: #777;
+}
+.subtotal .totalRow .value {
+  letter-spacing: -.025em;
+  width: 35%;
+}
+
+@media only screen and (max-width: 39.375em) {
+  .checkoutWrapper {
+    width: 98%;
+    padding: 2% 0;
+  }
+
+  .projTitle {
+    font-size: 1.5em;
+    padding: 10% 5%;
+  }
+
+  .heading {
+    padding: 1em;
+    font-size: 90%;
+  }
+
+  .order .items .orderSection {
+    width: 90%;
+    display: block;
+    float: left;
+  }
+  .order .items .orderSection.qtyWrap {
+    width: 10%;
+    text-align: center;
+    padding: .5em 0;
+    float: right;
+  }
+  .order .items .orderSection.qtyWrap:before {
+    content: "QTY";
+    display: block;
+    padding: .25em;
+    font-size: .75em;
+  }
+  .order .items .orderSection.prodTotal, .order .items .orderSection.removeWrap {
+    display: none;
+  }
+
+
+  .promoCode, .subtotal {
+    width: 100%;
+  }
+
+  a.btn.continue {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 @media screen and (min-width:820px) {
+  .profile-wrapper {
+    flex-direction: row;
+  }
   .container-profile {
+    padding-top: 5%;
     width: 30%;
   }
 }

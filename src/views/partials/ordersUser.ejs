@@ -1,0 +1,17 @@
+<div class="order">
+    <ul class="orderWrap">
+      <li class="items even">
+        <div class="infoWrap"> 
+          <div class="orderSection">
+            
+            <p class="itemNumber">Numero de Orden: #<%-order.id%></p>
+            <h3>Realizada:  <%= moment(order.createdAt).format('DD/MM/YYYY hh:mm')%></h3>
+            <p class="stockStatus"><%-order.state%></p>
+          </div>  
+          <div class="prodTotal orderSection">
+            <p>Precio: $<%-order.totalPrice %></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>

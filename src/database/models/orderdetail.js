@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('orderdetail', {
+  return sequelize.define('order_detail', {
     productId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -23,13 +23,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    }
   }, {
     sequelize,
-    tableName: 'orderdetail',
+    tableName: 'order_detail',
     timestamps: false,
     indexes: [
       {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- inczlude('./partials/head') %> 
+  <%- include('./partials/head') %> 
   <link rel="stylesheet" href="/stylesheets/product.css">
 <body>
   <header>
@@ -18,21 +18,21 @@
           <div class = "product-imgs">
             <div class = "img-display">
               <div class = "img-showcase">
-                <img src = "/images/donas/<%- product.image %> " alt = "<%- product.name %> ">
+                <img src = "<%- product.image %> " alt = "<%- product.name %> ">
               </div>
             </div>
             <div class = "img-select">
               <div class = "img-item">
-                <img src = "/images/donas/<%- product.image %>" alt = "<%- product.name %> ">
+                <img src = "<%- product.image %>" alt = "<%- product.name %> ">
               </div>
               <div class = "img-item">
-                <img src = "/images/donas/<%- product.image %>" alt = "<%- product.name %> ">
+                <img src = "<%- product.image %>" alt = "<%- product.name %> ">
               </div>
             </div>
           </div>
           
           <div class = "product-content">
-            <h2 class = "product-title"> <%- product.name %> </h2>
+            <h2 class = "product-title"> <%- product.productName %> </h2>
             <div class = "product-rating">
               <i class = "fas fa-star"></i>
               <i class = "fas fa-star"></i>
@@ -55,10 +55,13 @@
               </ul>
             </div>
             <div class = "purchase-info">
-              <input type = "number" min = "0" value = "1">
-              <button type = "button" class = "btn cart">
-                Agregar al Carro <i class = "fas fa-shopping-cart"></i>
-              </button>
+              <form action="/cart" method="POST">
+                <input type="hidden" name="id" value="<%- product.id -%>" id="">
+                <input type="number" min="1" value ="1" name="quantity">
+                <button  type ="submit" class ="btn cart">
+                  Agregar al Carro <i class ="fas fa-shopping-cart"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>

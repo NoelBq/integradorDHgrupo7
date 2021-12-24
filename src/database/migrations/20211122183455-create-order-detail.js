@@ -6,7 +6,7 @@ module.exports = {
       productId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
+        primaryKey: false,
         references: {
           model: 'products',
           key: 'id'
@@ -15,7 +15,7 @@ module.exports = {
       orderId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
+        primaryKey: false,
         references: {
           model: 'orders',
           key: 'id'
@@ -25,10 +25,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      price: {
-        type: Sequelize.FLOAT,
-        allowNull: false
-      }
     });
   },
 

@@ -33,11 +33,6 @@
                             <button type="button" class="toggle-btn">Iniciar Sesion</button>
                             <a href="/user/register"><button type="button" class="toggle-btn">Registro</button></a>
                         </div>
-                        <div class="social-icons">
-                            <img src="/images/formslogin/fb.png" alt="facebook-icon" />
-                            <img src="/images/formslogin/tw.png" alt="twitter-icon" />
-                            <img src="/images/formslogin/gp.png" alt="google-icon" />
-                        </div>
                         <form method="POST" id="login" action="/user/login" class="input-group input-login">
                             <div class="grupo__email">
                                 <div class="grupo__inputs">
@@ -63,6 +58,15 @@
 
                             <div class="formulario__grupo-enviado">
                                 <p class="formulario__mensaje-exito" style="display: none" id="formulario__mensaje-exito">Bienvenido!</p>
+                            <div class="login-inputs">
+                                <label for="email"></label>
+                                <input name="email" type="email" class="input-field input-field-login" placeholder="Email" required />
+                                <label for="password"></label>
+                                <input  id="txtPassword"  name="password" type="password" class="input-field input-field-login" placeholder="Contraseña" required />
+                                <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon" class="fa fa-eye passeye"></i></button>
+                                <input type="checkbox" class="check-box" name="remember" />
+                                <span class="form-span">Recordar Usuario</span>
+                                <button type="submit" class="submit-btn">Iniciar Sesion</button>
                             </div>
                         </form>
                     </div>
@@ -74,5 +78,9 @@
     <footer>
         <%- include('./partials/footer') %>
     </footer>
+    <script src="/js/formlogin.js">
+    
+    </script>
+    <script src="/js/formlogin.js"></script>
 </body>
 </html>

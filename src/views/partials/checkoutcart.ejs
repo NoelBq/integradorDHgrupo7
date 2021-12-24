@@ -1,0 +1,27 @@
+
+            <li class="items">
+                <div class="infoWrap"> 
+                  <div class="cartSection">
+                    <img src="<%- product.image %>" alt="" width="50" height="50" class="itemImg" />
+                    <h3><%-product.productName %></h3>
+                    <p> <input type="text"  class="qty" disabled="disabled" placeholder="<%-product.qty %>"/> x $<%-product.price / product.qty %></p>
+                    <p class="stockStatus"> Stock</p>
+                  </div>  
+                  <div class="prodTotal cartSection">
+                    <% let prodTotal = product.price %>
+                    <p>$<%-prodTotal %></p><br>
+                    <% let totalprice = prodTotal * carts.length%>
+                  </div>
+                  <div class="cartSection removeWrap">
+                    <form action="/cart/deleteItem" method="POST">
+                      <input type="hidden" name="qty" value="<%-product.qty%>">
+                      <input type="hidden" name="productPrice" value="<%-product.price%>">
+                      <input type="hidden" name="totalPrice" value="<%-totalprice%>">
+                      <input type="hidden" name="id" value="<%-product.id%>">
+                      <button type="submit" class="remove">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+           </li>

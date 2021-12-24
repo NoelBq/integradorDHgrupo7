@@ -21,7 +21,7 @@
 
 .form-box {
     width: 270px;
-    height: 550px;
+    height:  600px;
     position: absolute;
     margin: 6% auto;
     margin-top: 0px;
@@ -89,19 +89,15 @@
     position: absolute;
     width: 206px;
     transition: 0.5s;
-    left: 50px;
+    left: 40px;
 }
 
 .input-register {
-    top: 125px;
+    top: 80px;
     position: absolute;
     width: 206px;
     transition: 0.5s;
-    left: 55px;
-}
-
-.input-field-register{
-    margin: 7px 0;
+    left: 30px;
 }
 
 .input-field-login{
@@ -119,8 +115,8 @@ input[type="file"] {
 
 .grupo__inputs i{
     font-size: 20px;
-    margin-top: 19px;
-    color: green;
+    margin-top: 10px;
+    color: green;   
     display: none;
 }
 
@@ -158,6 +154,16 @@ input[type="file"] + label {
     background: transparent;
 }
 
+.passeye {
+    position: absolute;
+    right: 20px;
+    top: 46%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color:  #b96ac9;
+   
+}
+
 .registered-banner {
     display: flex;
     align-items: center;
@@ -169,6 +175,13 @@ input[type="file"] + label {
     font-weight: bold;
     vertical-align: middle;
 }
+
+.emoji {
+    font-size: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+   
 
 .submit-btn {
     width: 85%;
@@ -190,7 +203,7 @@ input[type="file"] + label {
 
 .form-span {
     color: #777;
-    font-size: 14.5px;
+    font-size: 10px;
     margin-top: 8px;
 }
 
@@ -229,5 +242,7 @@ input[type="file"] + label {
     }
     .input-group {
         width: 250px;
+        left: 50px;
     }
 }
+

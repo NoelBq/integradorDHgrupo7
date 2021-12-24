@@ -4,6 +4,8 @@ var _orderdetail = require("./orderdetail");
 var _orders = require("./orders");
 var _products = require("./products");
 var _users = require("./users");
+var _testimonials = require("./testimonials");
+var _cart = require("./cart");
 
 function initModels(sequelize) {
   var categories = _categories(sequelize, DataTypes);
@@ -11,8 +13,10 @@ function initModels(sequelize) {
   var orders = _orders(sequelize, DataTypes);
   var products = _products(sequelize, DataTypes);
   var users = _users(sequelize, DataTypes);
-
-  orders.belongsToMany(products, { as: 'productId_products', through: orderdetail, foreignKey: "orderId", otherKey: "productId" });
+  var testimonials = _testimonials(sequelize, DataTypes);
+  var cart = _cart(sequelize, DataTypes);
+  
+  
   products.belongsToMany(orders, { as: 'orderId_orders', through: orderdetail, foreignKey: "productId", otherKey: "orderId" });
   products.belongsTo(categories, { as: "category", foreignKey: "categoryId"});
   categories.hasMany(products, { as: "products", foreignKey: "categoryId"});
@@ -20,8 +24,11 @@ function initModels(sequelize) {
   orders.hasMany(orderdetail, { as: "orderdetails", foreignKey: "orderId"});
   orderdetail.belongsTo(products, { as: "product", foreignKey: "productId"});
   products.hasMany(orderdetail, { as: "orderdetails", foreignKey: "productId"});
-  orders.belongsTo(users, { as: "user", foreignKey: "usersId"});
+  orders.belongsTo(users, { as: "users", foreignKey: "usersId"});
+  cart.belongsTo(users, { as: "users", foreignKey: "usersId"});
+  cart.belongsTo(products, { as: "product", foreignKey: "productId" });
   users.hasMany(orders, { as: "orders", foreignKey: "usersId"});
+  users.hasMany(cart, { as: "cart", foreignKey: "usersId"});
 
   return {
     categories,
@@ -29,6 +36,8 @@ function initModels(sequelize) {
     orders,
     products,
     users,
+    testimonials, 
+    cart
   };
 }
 module.exports = initModels;

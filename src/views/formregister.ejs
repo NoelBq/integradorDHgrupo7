@@ -43,11 +43,6 @@
                                                     Sesion</button></a>
                                             <button type="button" class="toggle-btn">Registro</button>
                                         </div>
-                                        <div class="social-icons">
-                                            <img src="/images/formslogin/fb.png" alt="facebook-icon"/>
-                                            <img src="/images/formslogin/tw.png" alt="twitter-icon"/>
-                                            <img src="/images/formslogin/gp.png" alt="google-icon"/>
-                                        </div>
                                         <div>
                                             <form action="/user/register" method="POST" class="input-group input-register" id="register" autocomplete="off" enctype="multipart/form-data" autocomplete="off">
                                                 <div class="grupo__fullname">
@@ -55,7 +50,7 @@
                                                         <input type="text" name="fullname" class="input-field input-field-register" placeholder="Nombre Completo" id="fullname" autocomplete="off"/>
                                                         <i id="inputcheck" class="fas fa-check-circle"></i>
                                                     </div>
-                                                    <small id="input-error-fullname" class="input-error">Tu nombre es un campo obligatorio y debe tener 2 caracteres como minimo y solo puede contener letras.</small>
+                                                    <small id="input-error-fullname" class="input-error">Campo Obligatorio, minimo 2 caracteres</small>
                                                 </div>
                                                 
                                                 <div class="grupo__userAddress">
@@ -63,7 +58,7 @@
                                                         <input type="text" name="userAddress" class="input-field input-field-register" placeholder="Direccion" id="userAddress" autocomplete="off"/>
                                                         <i id="inputcheck" class="fas fa-check-circle"></i>
                                                     </div>
-                                                    <small id="input-error-userAddress" class="input-error">Tu Direccion es un campo obligatorio y debe tener 2 caracteres como minimo.</small>
+                                                    <small id="input-error-userAddress" class="input-error">Campo obligatorio</small>
                                                 </div>
                                                 
                                                 <div class="grupo__city">
@@ -71,7 +66,7 @@
                                                         <input type="text" name="city" class="input-field input-field-register" placeholder="Ciudad" id="city" autocomplete="off"/>
                                                         <i id="inputcheck" class="fas fa-check-circle"></i>
                                                     </div>
-                                                    <small id="input-error-city" class="input-error">Tu ciudad es un campo obligatorio y debe tener 2 caracteres como minimo y solo puede contener letras.</small>
+                                                    <small id="input-error-city" class="input-error">Capo obligatorio, ingrese una localidad valida!</small>
                                                 </div>
                                                 
                                                 <div class="grupo__email">
@@ -84,7 +79,8 @@
                                                 
                                                 <div class="grupo__password">
                                                     <div class="grupo__inputs">
-                                                        <input name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" id="password" autocomplete="off"/>
+                                                        <input  name="password" type="password" nametype="password" class="input-field input-field-register" placeholder="Contraseña" id="password" autocomplete="off"/>
+                                                        <text class="emoji" id="emoji" x="0" y="10">😑</text>
                                                         <i id="inputcheck" class="fas fa-check-circle"></i>
                                                     </div>
                                                     <small id="input-error-password" class="input-error">Tu constraseña es obligatorio y debe tener 8 caracteres como minimo.</small>
@@ -126,6 +122,7 @@
                                     </div>
                                 </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
     <script src="/js/formregister.js"></script>
     
     <footer>

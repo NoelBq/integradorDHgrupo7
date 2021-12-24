@@ -6,6 +6,8 @@
     "configurations": [{
         "name": "Launch Program",
         "program": "${workspaceFolder}/src/index.js",
+        "console": "integratedTerminal",
+        "outputCapture": "std",
         "request": "launch",
         "skipFiles": [
             "<node_internals>/**"

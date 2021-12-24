@@ -2,40 +2,38 @@ const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 
 const userModeldb = {
-  getUsers: async function(){
-    return await db.users.findAll()
-  },
-  createUser: async function (body,file) {
-    try {
-      await db.users.create({
-        fullname: body.fullname,
-        userAddress: body.userAddress,
-        password: bcryptjs.hashSync(body.password, 10),
-        email: body.email,
-        city: body.city,
-        createdAt: Date.now(),
-        role: "basic",
-        image: file,
-      });
-    } catch (error) {
-      console.log(error);
+    createUser: async function(user){
+        try { 
+            await db.users.create(user) 
+        }  catch(error){
+            console.log(error)
+        }
+    },
+    
+    getAllUsers: async function () {
+        const res = await db.users.findAll();
+        return res;
+    },
+    
+    findUserByEmail: async function(email) {
+        const res = await db.users.findOne({
+            where: {
+                email: email
+            }
+        })
+        return res;
+        
+    },
+    
+    findMail: async function(email){
+        return await db.users.findAll({
+            where: {
+                email: email
+            }
+        });
     }
-  },
-  findMail: async function (email) {
-    return await db.users.findOne({
-      where: {
-        email: email,
-      },
-    });
-  },
-  getPassword: async function (email) {
-    try {
-      let user = await this.findMail(email);
-      return user.password;
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+}
+
+
 
 module.exports = userModeldb;

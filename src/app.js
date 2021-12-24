@@ -10,9 +10,14 @@ const Sequelize = require('sequelize');
 const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const cartRoutes = require('./routes/cartRoutes')
 const methodOverride  = require('method-override');
 const cookieMiddleware = require('./middleware/cookieMiddleware');
-
+const moment = require('moment');
+const multer  = require('multer');
+const { cart } = require("./controllers/productsController");
+app.locals.moment = moment;
 
 app.use(session({
     secret: "It's a secret",
@@ -34,6 +39,9 @@ app.set("views", path.join(__dirname, "./views"));
 app.use('/', mainRoutes);
 app.use('/product', productRoutes);
 app.use('/user', userRoutes);
+app.use('/cart', cartRoutes);
+app.use('/order', orderRoutes)
+
 
 app.use((req,res,next) => {
     res.status(404).render('error')

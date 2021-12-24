@@ -1,0 +1,26 @@
+<div class="admin-product-card">
+    <div class="title"><%- product.productName %> </div>
+    
+    <div class="content">Precio: $<%- product.price %></div>
+    <div class="date">   
+
+
+        <%= moment(product.createdAt).format('DD/MM/YYYY hh:mm')%>
+    </div>
+    <div class="content-btn">
+        <div class="btn-display">
+            <form action="/product/edit/<%- product.id %>" method="GET">
+                <input type="hidden" value="<%- product.id %>">
+                <button type="submit" class="btn-admin-panel"><i class="fas fa-edit"></i></button>
+            </form>
+             <form action="/product/<%- product.id %>/delete?_method=DELETE" enctype="application/x-www-form-urlencoded" name="deleteform" method="POST"> 
+                <input type="hidden" value="<%- product.id %>">
+                <button type="submit" class="btn-admin-panel"><i class="far fa-trash-alt"></i></button>
+            </form>
+            <form action="/product/<%- product.id %>"  method="GET"> 
+                <input type="hidden" value="<%- product.id %>">
+                <button type="submit" class="btn-admin-panel"><i class="fas fa-info-circle"></i></button>
+            </form>
+        </div>
+    </div>
+</div>

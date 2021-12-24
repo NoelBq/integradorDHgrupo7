@@ -12,41 +12,60 @@
     <%- include('./partials/nav') %>
   </header>
   <main>
-    <div class="container-profile">
-      <div>
-          <div class="profile-card">
-              <div class="profile-card-header">
-                  <div class="avatar-card-photo">
-                    <% if(user.image){ %>
-                      <img src="../images/avatars/<%= user.image %>" alt="avatar">
-                    <% } else{ %>  
-                      <img src="../images/AB-ICON.png" alt="avatar">
-                   <% } %>
-                   
-                  </div>
-              </div>
-              <div class="profile-card-body">
-                  <h3 class="profile-card-name">
-                    <% if(user.fullname.length > 7){ %>
-                      <h3> <%= user.fullname.substring(0, 7)+ "..." %> </h3>
-                    <% } else{ %>  
-                     <h3> <%= user.fullname %> </h3>
-                   <% } %>
-                    
-                  <p class="profile-card-description"> <br/>Mail: <%= user.email %> </p>
-                  <div class="card-button">
-                      <button class="btn btn-outline-primary"><a href="/">Home</a></button>
-                      <button class="btn btn-outline-primary">  <a href="/shop">Shop</a></button>
-                  </div>
-                 <div class="card-button">
-                  <button class="btn btn-primary"><a href="/user/logout">Cerrar Sesion</a>
-                    </button>
-                 </div>
-              </div>
-          </div>
-      </div>
+    <div class="profile-wrapper">
+      <div class="container-profile">
+        <div>
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <div class="avatar-card-photo">
+                      <% if(user.image){ %>
+                        <img src="<%= user.image %>" alt="avatar">
+                      <% } else{ %>  
+                        <img src="../images/AB-ICON.png" alt="avatar">
+                     <% } %>
+                     
+                    </div>
+                </div>
+                <div class="profile-card-body">
+                    <h3 class="profile-card-name">
+                      <% if(user.fullname.length > 7){ %>
+                        <h3> <%= user.fullname.substring(0, 7)+ "..." %> </h3>
+                      <% } else{ %>  
+                       <h3> <%= user.fullname %> </h3>
+                     <% } %>
+                      
+                    <p class="profile-card-description"> <br/>Mail: <%= user.email %> </p>
+                    <div class="card-button">
+                        <button class="btn btn-outline-primary"><a href="/">Home</a></button>
+                        <button class="btn btn-outline-primary">  <a href="/shop">Shop</a></button>
+                    </div>
+                   <div class="card-button">
+                    <button class="btn btn-primary"><a href="/user/logout">Cerrar Sesion</a>
+                      </button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of profile card -->
+    <!-- start of orders section -->  
+    <div class="orderWrapper cf">
+      <% if(orders.length > 0){ %>
+      <h1 class="projTitle">Mis Pedidos</h1>
+      <% orders.forEach(function(order){ %>
+        <%- include('partials/ordersUser', {order: order}); %>
+      <% }); %>
+      <% } else {%>
+        <h1 class="projTitle">Aun no pediste nada</h1>
+      <%- include('partials/emptycart') %>
+  <% } %>
+    </div>    
   </div>
-  </main>
+
+  <!-- end of order wrapper -->
+ </div>
+</main>
   <%- include('./partials/footer') %>
 </body>
+
 </html>

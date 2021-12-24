@@ -10,8 +10,8 @@
                 <a href="/shop" class="nav-links">Productos</a>
             </li>
             <li>
-                <% if(user.rol == "basic"){ %>
-                    <a href="/user/profile" class="nav-links">Mi Perfil</a>
+                <% if(user.role == "basic"){ %>
+                    <a href="/user/profile" class="nav-links">Perfil</a>
                     <% } else{ %>  
                         <a href="/adminpanel" class="nav-links">Admin Panel</a>
                         <% } %>
@@ -20,7 +20,7 @@
                         <div class="nav-links">
                             <div class="user-nav-container">
                                 <% if(user.image){ %>
-                                    <img class="avatar-nav" src="../images/avatars/<%= user.image %>" alt="avatar">
+                                    <img class="avatar-nav" src="<%= user.image %>" alt="avatar">
                                     <% } else{ %>  
                                         <img class="avatar-nav" src="../images/AB-ICON.png" alt="avatar">
                                         <% } %>
@@ -35,19 +35,25 @@
                             <li>
                                 <div class="nav-links">
                                     <a href="/user/logout">
-                                        <i class="fas fa-sign-out-alt" style="font-size: 20px;"></i>
+                                        <i class="fas fa-sign-out-alt  style="font-size: 20px;"></i>
                                     </a>
                                 </div>
                             </li>
                             <li>
+                                <% if(user.role == 'basic'){ %>
                                 <div class="nav-links">
-                                    <a href="/underconstruction">
-                                        <i class="fas fa-shopping-cart" ></i>
+                                    <a href="/product/checkout">
+                                        <% if(typeof productsInCart == 'undefined'){ %>
+                                            <i class="fas fa-shopping-cart nav-cart"><span class="icon-button__badge">0</span></i>
+                                        <% } else { %> 
+                                            <i class="fas fa-shopping-cart nav-cart"><span class="icon-button__badge"><%= productsInCart %></span></i>
+                                        <% } %> 
                                     </a>
                                 </div>
+                              <% } %>
                             </li>
                         </ul>
-                        <% } else{ %>  
+       <% } else{ %>  
                             <ul class="main-nav" id="js-menu">
                                 <li>
                                     <a href="/shop" class="nav-links">Productos</a>
@@ -62,13 +68,6 @@
                                     <a href="/user/register" class="nav-links">
                                         <i class="far fa-user"></i>
                                     </a>
-                                </li>
-                                <li>
-                                    <div class="nav-links">
-                                        <a href="/underconstruction">
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </a>
-                                    </div>
                                 </li>
                             </ul>
                             <% } %>
