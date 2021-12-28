@@ -8,7 +8,7 @@
 
 <body>
     <header>
-            <%- include('./partials/nav', {user: user})%>
+        <%- include('./partials/nav', {user: user})%>
     </header>
     <main>
         <!--  welcome-box  -->
@@ -19,6 +19,28 @@
             </div>
         </div>
         <!--  /welcome-box  -->
+
+
+        <div id="container">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+
+        <svg id="filters" height="0px">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+
+
+
+
+
         <!--  shopNow  -->
         <section class="shopNow">
             <div class="shopNow-img">
@@ -33,7 +55,13 @@
         </section>
         <!--    /shopNow    -->
         <!-- Aboutbox-->
-        <div class="about-box" id="about-box">
+
+
+        <!-- animation -->
+
+
+        </div>
+        <section class="about-box" id="about-box">
             <div class="about-text">
                 <h2 class="about-text-title">
                     Somos Sweet Treats <i class="fas fa-heart"></i>
@@ -42,27 +70,30 @@
                     Somos una empresa que adora <br /> compartir nuestra pasion por los dulces <br /><br /> Todos nuestros productos son 100% <br /> preparados por nosotros con mucho amor <br /><br /> deseamos que te guste nuestro catalogo <br /><br />                    Gracias por hacer esto posible <i class="far fa-laugh-beam"></i>
                 </p>
             </div>
-            <div class="about-box-icon">
-                <img src="/images/AB-ICON.png" alt="" />
-            </div>
-        </div>
+        </section>
         <!-- /Aboutbox-->
+
+        <!-- midsection -->
+        <section class="midsection">
+            <h3 id="text"></h1>
+            </section>
         <!-- Testimonials-->
         <section>
             <div class="testimonials">
                 <% let shuffleTestimonials=(testimonials.sort((a, b)=> 0.5 -
-          Math.random())).slice(0, 3);%>
-                    <%
-          shuffleTestimonials.forEach(function(testimonial){ %>
-                        <%-
-          include('partials/testimonials',{testimonial: testimonial}) %>
-                            <% });
-          %>
+                    Math.random())).slice(0, 3);%>
+                    <% shuffleTestimonials.forEach(function(testimonial){ %>
+                        <%- include('partials/testimonials',{testimonial: testimonial}) %>
+                            <% }); %>
             </div>
         </section>
         <!-- /Testimonials-->
     </main>
     <%- include('./partials/footer') %>
+
+        <script src="/js/animation.js">
+
+        </script>
 </body>
 
 </html>

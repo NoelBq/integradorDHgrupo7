@@ -2,87 +2,131 @@
 <html lang="en">
 
 <head>
-  <%- include('./partials/head') %> 
-  <link rel="stylesheet" href="../stylesheets/style.css"> 
+  <%- include('./partials/head') %>
+    <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
+
 <body>
   <!--  Inicio de la NavBar -->
   <header>
-    <%- include('./partials/nav') %> 
+    <%- include('./partials/nav') %>
   </header>
   <main>
-    
+
     <!--  Inicio de las tarjetas de producto -->
-    
+
     <section class="">
       <div class="product-card-header">
         <h2 class="product-card-headerTitle">Productos</h2>
         <h4 class="product-card-headerSubtitle">Hechos con amor <i class="fas fa-heart"></i></h4>
       </div>
       <div class="product-cards categorias-cards">
-          <div class="card cat-card">
-              <div class="card-imagebox">
-                  <a href="/shop/donas"><img src="/images/Dona1_Chocolate.png" class="card-img-top" alt="..."></a>
-              </div>
-              <div class="product-card-body">
-                  <h5 class="product-card-title">Donas</h5>
-                  <a href="/shop/donas" class="product-card-btn">Visitar ahora</a>
-              </div>
+        <div class="card cat-card">
+          <div class="card-imagebox">
+            <a href="/shop/donas"><img src="/images/Dona1_Chocolate.png" class="card-img-top" alt="..."></a>
           </div>
-          <div class="card cat-card">
-              <div class="card-imagebox">
-                  <a href="/shop/cookies"><img src="/images/cookie.jpg" class="card-img-top" alt="..."></a>
-              </div>
-              <div class="product-card-body">
-                  <h5 class="product-card-title">Galletitas</h5>
-                  <a href="/shop/cookies" class="product-card-btn">Visitar ahora</a>
-              </div>
-          </div>
-          <div class="card cat-card">
-              <div class="card-imagebox">
-                  <a href="/shop/helados"><img src="/images/helado.jpg" class="card-img-top" alt="..."></a>
-              </div>
-              <div class="product-card-body">
-                  <h5 class="product-card-title">Helados</h5>
-                  <a href="/shop/helados" class="product-card-btn">Visitar ahora</a>
-              </div>
-          </div>
-      </div>
-  </section>
-      <!-- Incio de la OfferBox-->
-      <section>
-        <div class="offerbox-box">
-          <div class="offerbox-img"><img src="/images/offerbox-bg.png" alt=""></div>
-          <div class="offerbox-text">
-            <h2 class="offerbox-text-title">Box Donas</h2>
-            <p class="offerbox-text-subtitle">Incluye: <br> </p>
-            <p class="offerbox-text-paragraph">
-              <i class="far fa-check-circle"></i> 6 Donas a eleccion tuya<br>
-              <i class="far fa-check-circle"></i> Incluye una tarjeta de regalo<br>
-              <i class="far fa-check-circle"></i> Envio 100% bonificado<br>
-            </p>
-            <div class="offerbox-text-btn">
-              <a href="/underconstruction">Mas información</a>
-            </div>
+          <div class="product-card-body">
+            <h5 class="product-card-title">Donas</h5>
+            <a href="/shop/donas" class="product-card-btn">Visitar ahora</a>
           </div>
         </div>
-      </section> 
-      
-      <!--  Inicio del Testimonials  -->
-      
-      <section>
-        <div class="testimonials">
-          <% let shuffleTestimonials = (testimonials.sort((a, b) => 0.5 - Math.random())).slice(0, 3);%>
+        <div class="card cat-card">
+          <div class="card-imagebox">
+            <a href="/shop/cookies"><img src="/images/cookie.jpg" class="card-img-top" alt="..."></a>
+          </div>
+          <div class="product-card-body">
+            <h5 class="product-card-title">Galletitas</h5>
+            <a href="/shop/cookies" class="product-card-btn">Visitar ahora</a>
+          </div>
+        </div>
+        <div class="card cat-card">
+          <div class="card-imagebox">
+            <a href="/shop/helados"><img src="/images/helado.jpg" class="card-img-top" alt="..."></a>
+          </div>
+          <div class="product-card-body">
+            <h5 class="product-card-title">Helados</h5>
+            <a href="/shop/helados" class="product-card-btn">Visitar ahora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Incio de la Slider-->
+    <section>
+
+      <div class="slider">
+        <div class="item">
+          <img
+            src="https://media.istockphoto.com/photos/preparing-homemade-donuts-picture-id686623972?b=1&k=20&m=686623972&s=170667a&w=0&h=AfZEXBd3-Gzo-3miXVI2MBVW1vKjtT9-zB_tY6ZIOJY=">
+        </div>
+        <div class="item">
+          <img
+            src="https://images.unsplash.com/photo-1591677445539-840cc64705f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGljZWNyZWFtfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60">
+        </div>
+        <div class="item">
+          <img
+            src="https://images.unsplash.com/photo-1622467827417-bbe2237067a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29va2llfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60">
+        </div>
+
+
+        <a class="previous" onclick="previousSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+      </div>
+    </section>
+
+    <!--  Inicio del Testimonials  -->
+
+    <section>
+      <div class="testimonials">
+        <% let shuffleTestimonials=(testimonials.sort((a, b)=> 0.5 - Math.random())).slice(0, 3);%>
           <% shuffleTestimonials.forEach(function(testimonial){ %>
             <%- include('partials/testimonials',{testimonial: testimonial}) %>
-            <% }); %>
-          </div>
-        </section>
-      </main>
-      
-      <!-- Inicio del footer-->
-      
-      <%- include('./partials/footer') %> 
-    </body>
-    
-    </html>
+              <% }); %>
+      </div>
+    </section>
+  </main>
+
+  <!-- Inicio del footer-->
+
+  <%- include('./partials/footer') %>
+    <script>
+      /* Устанавливаем индекс слайда по умолчанию */
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+
+      function nextSlide() {
+        showSlides(slideIndex += 1);
+      }
+
+
+      function previousSlide() {
+        showSlides(slideIndex -= 1);
+      }
+
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("item");
+
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = slides.length
+        }
+
+
+        for (let slide of slides) {
+          slide.style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
+</body>
+
+</html>
