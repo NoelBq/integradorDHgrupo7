@@ -85,7 +85,8 @@ const mainController = {
 			let user = req.session.userLogged; 
 			if(user) {
 			  productsInCart = await product.getAmountProductsByUser(user.id)
-			  const products = await product.getAllProducts();
+			}
+			  let products = await product.getAllProducts();
 			  const testimonialsDTO = await testimonials.getTestimonials();
 			  res.render("shopHelados", {
 				  testimonials: testimonialsDTO,
@@ -93,7 +94,7 @@ const mainController = {
 				  user: req.session.userLogged,
 				  productsInCart : productsInCart
 			  });
-			}	
+				
 		} catch (error) {
 			console.log(error);
 		}
