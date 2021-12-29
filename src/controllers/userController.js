@@ -63,7 +63,7 @@ const userController = {
                 console.log(userDTO);
                 try{
                     let resultado = await userModeldb.findMail(req.body.email);
-                    if(resultado.length === 0){
+                    if(resultado == null){
                         try {
                             await userModeldb.createUser(userDTO)
                             res.status(200).redirect("login?registered=1")
