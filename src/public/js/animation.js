@@ -125,7 +125,6 @@ function deleteOut(txtArr, curChar = 0) {
       //remove
       const elTxtArr = elTxt.split("");
       const elTxtArrLen = elTxtArr.length;
-      console.log(elTxtArr.length - 1);
       const newElTxt = elTxtArr.splice(0, curChar - 1).join("");
       ModifyTxt(el, newElTxt);
       if (elTxtArrLen == 0) {

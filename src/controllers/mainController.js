@@ -79,25 +79,27 @@ const mainController = {
 			console.log(error);
 		}
 	},
+
 	shopHelados: async (req, res) => {
-		try {
-			let productsInCart = 0
-			let user = req.session.userLogged; 
-			if(user) {
-			  productsInCart = await product.getAmountProductsByUser(user.id)
-			  const products = await product.getAllProducts();
-			  const testimonialsDTO = await testimonials.getTestimonials();
-			  res.render("shopHelados", {
-				  testimonials: testimonialsDTO,
-				  products: products,
-				  user: req.session.userLogged,
-				  productsInCart : productsInCart
-			  });
-			}	
-		} catch (error) {
-			console.log(error);
-		}
-	},
+        try {
+            let productsInCart = 0
+            let user = req.session.userLogged; 
+            if(user) {
+              productsInCart = await product.getAmountProductsByUser(user.id)
+            }
+              let products = await product.getAllProducts();
+              const testimonialsDTO = await testimonials.getTestimonials();
+              res.render("shopHelados", {
+                  testimonials: testimonialsDTO,
+                  products: products,
+                  user: req.session.userLogged,
+                  productsInCart : productsInCart
+              });
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
 	underConstruction: (req, res) => {
 		res.render("underconstruction"), {user: req.session.userLogged};
 	},
