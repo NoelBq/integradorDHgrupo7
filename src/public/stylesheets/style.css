@@ -82,6 +82,7 @@ button.learn-more:hover {
     height: 400px;
     background-size: cover;
     margin-bottom: -20px;
+    margin-top: -5px;
 }
 
 .about-box-icon {

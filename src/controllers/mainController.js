@@ -79,7 +79,9 @@ const mainController = {
 			console.log(error);
 		}
 	},
+
 	shopHelados: async (req, res) => {
+<<<<<<< HEAD
 		try {
 			let productsInCart = 0
 			let user = req.session.userLogged; 
@@ -99,6 +101,27 @@ const mainController = {
 			console.log(error);
 		}
 	},
+=======
+        try {
+            let productsInCart = 0
+            let user = req.session.userLogged; 
+            if(user) {
+              productsInCart = await product.getAmountProductsByUser(user.id)
+            }
+              let products = await product.getAllProducts();
+              const testimonialsDTO = await testimonials.getTestimonials();
+              res.render("shopHelados", {
+                  testimonials: testimonialsDTO,
+                  products: products,
+                  user: req.session.userLogged,
+                  productsInCart : productsInCart
+              });
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+>>>>>>> 09fc045094a061b55f6d0496893a5a6c70e242b2
 	underConstruction: (req, res) => {
 		res.render("underconstruction"), {user: req.session.userLogged};
 	},
