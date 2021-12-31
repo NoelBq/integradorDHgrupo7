@@ -18,7 +18,8 @@
       <div class="product-card-header">
         <h2 class="product-card-headerTitle">Helados</h2>
         <h4 class="product-card-headerSubtitle">Hechos con amor <i class="fas fa-heart"></i></h4>
-      </div>  
+      </div>
+      <div class="product-cards">
       <% let newArrayHelados = products.filter(item => item.category.categorieName == "Helado");%>
       <% if(newArrayHelados.length==0){ %>
         <%- include('partials/productSinStock') %>
@@ -26,6 +27,7 @@
       <% newArrayHelados.forEach(function(product){ %>
           <%- include('partials/product',{product: product}) %>
         <% });} %>
+      </div>
       </section>
       <!-- Incio de la OfferBox-->
       <section>
