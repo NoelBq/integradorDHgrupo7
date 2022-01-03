@@ -5,9 +5,7 @@
     "version": "0.2.0",
     "configurations": [{
         "name": "Launch Program",
-        "program": "${workspaceFolder}/src/index.js",
-        "console": "integratedTerminal",
-        "outputCapture": "std",
+        "program": "/${workspaceFolder}/backend/src/index.js",
         "request": "launch",
         "skipFiles": [
             "<node_internals>/**"
