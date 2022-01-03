@@ -21,13 +21,15 @@
                 <div class="container">
                     <form action="/product" method="POST" enctype="multipart/form-data" class="form addproduct" autocomplete="off">
                         <h3>Agregar producto</h3>
-                        <div class="form-item">
+                        <div class="form-item grupo__productName">
                             <label for="product-name">Nombre producto</label>
-                            <input type="text" name="productname" class="is-input" placeholder="Nombre producto" id="product-name" autocomplete="off" required>
+                            <input type="text" name="productName" class="is-input" placeholder="Nombre producto" id="productName" autocomplete="off" required>
+                            <small id="input-error-productName" class="input-error" style="display: none; color: red">Campo Obligatorio, minimo 2 caracteres</small>
                         </div>
-                        <div class="form-item addproduct-description">
+                        <div class="form-item addproduct-description grupo__description">
                             <label for="description">Descripción</label>
                             <input type="text" name="description" class="is-input" placeholder="Descripción producto" id="description">
+                            <small id="input-error-description" class="input-error" style="display: none; color: red">Campo Obligatorio, minimo 2 caracteres.</small>
                         </div>
                         <div class="form-item addproduct-image">
                             <div class="custom-file">
@@ -36,11 +38,13 @@
                             </div>
                         </div>
                         <div class="form-item addproduct-image">
-                            <div class="custom-file">
+                            <div class="custom-file grupo__stock" >
                                 <label class="custom-file-label" for="customFileLang">Stock</label>
-                                <input type="number" name="stock" min="0" class="is-input"  required>
+                                <input type="number" name="stock" min="0" max="999" class="is-input" id="stock" required>
+                                <small id="input-error-stock" class="input-error" style="display: none; color: red">Campo Obligatorio, mininimo 1 maximo 999.</small>
                             </div>
                         </div>
+                        
                         <div class="form-item addproduct-category">
                             <label for="category">Categoría</label>
                             <select name="category" class="is-input" placeholder="Categoría" id="category" required>
@@ -48,22 +52,25 @@
                             <option value="2">Cookies</option>
                             <option value="3">Helados</option>
                         </div>
+                        
                         <div class="form-item addproduct-price">
                             <label for="addprice"> Precio </label>
-                            <input type="text" name="price" class="is-input" placeholder="Precio" id="addprice" required>
+                            <input type="text" name="addprice" class="is-input" placeholder="Precio" id="addprice" required>
+                            <small id="input-error-addprice" class="input-error" style="display: none; color: red">Campo Obligatorio, mininimo 1$ .</small>
                         </div>
                         <div class="form-item">
                             <div class="form-section">
-                                <button type="submit" class="button is-button">Agregar producto</button>
-                                
+                                <button type="submit" class="button is-button">Agregar producto</button>                                
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>
         </div>
     </section>
 </main>
+<script src="/js/formadmin.js"></script>
 <%- include('./partials/footer') %>
 </body>
 
