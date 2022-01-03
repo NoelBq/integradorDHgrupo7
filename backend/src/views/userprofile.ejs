@@ -29,9 +29,15 @@
                 </div>
                 <div class="profile-card-body">
                       <% if(user.fullname.length > 7){ %>
+<<<<<<< HEAD:backend/src/views/userprofile.ejs
                         <h3 class="profile-card-name"> <%= user.fullname.substring(0, 7)+ "..." %> </h3>
                       <% } else{ %>  
                        <h3 class="profile-card-name"> <%= user.fullname %> </h3>
+=======
+                        <h3 class="profile-card-fullname"> <%= user.fullname.substring(0, 7)+ "..." %> </h3>
+                      <% } else{ %>  
+                       <h3 class="profile-card-fullname"> <%= user.fullname %> </h3>
+>>>>>>> 81d1b44d21ab503ac1227c3e22455514a00331a7:src/views/userprofile.ejs
                      <% } %>
                       
                     <p class="profile-card-description"> <br/>Mail: <%= user.email %> </p>
