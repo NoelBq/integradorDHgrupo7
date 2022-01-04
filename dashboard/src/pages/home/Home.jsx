@@ -2,6 +2,7 @@
 import "./home.css";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
+import Chart from '../../components/chart/Chart'
 
 
 export default function Home() {
@@ -10,7 +11,8 @@ export default function Home() {
     
       <div className="homeWidgets">
         <FeaturedInfo />
-        <WidgetSm/>
+        <Chart/>
+
       </div>
     </div>
   );
