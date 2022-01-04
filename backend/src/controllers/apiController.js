@@ -44,7 +44,7 @@ const api = {
     getProducts: async (req,res) =>{
         try{
             const result = await products.getAllProducts()
-            return result;
+            res.send(result)
         }catch(error){
             throw error;
 
