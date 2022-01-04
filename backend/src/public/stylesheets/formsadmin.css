@@ -288,6 +288,31 @@ body {
     font-size: 1em;
 }
 
+.formulario__grupo-enviado{
+    text-align: center;
+    color: green;
+    margin-top: 5px;
+}
+
+.formulario__mensaje-error p {
+    text-align: center;
+    background-color: red;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
+}
+.formulario__mensaje-error-imagen p {
+    text-align: center;
+    background-color: orange;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
     .wrapper-admin {
         flex-direction: row;

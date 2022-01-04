@@ -165,12 +165,12 @@ const productController = {
   },
   productInsert: async (req, res) => {
     let stock = parseInt(req.body.stock);
-    let price = parseInt(req.body.price);
+    let price = parseInt(req.body.addprice);
     let category = parseInt(req.body.category);
     let image = `/images/${req.file.filename}`;
     
     let productDTO = {
-      productName: req.body.productname,
+      productName: req.body.productName,
       stock: stock,
       price: price,
       image: image,
