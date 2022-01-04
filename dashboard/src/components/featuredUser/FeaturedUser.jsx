@@ -1,37 +1,26 @@
 import "./featuredUser.css";
 
 import React, { useState, useEffect } from 'react';
+import { ArrowDownward, ArrowUpward,  EmojiPeople , PeopleAlt} from "@material-ui/icons";
 import axios from 'axios';
 
 
-export default function FeaturedUser() {
-
-const [users, setUsers] = useState([]);
-
-useEffect(() => {
-    axios.get('http://localhost:3001/api/users')
-    .then((res) => {
-       setUsers(res.data)
-    })
-}, [])
-
-console.log(users)
-
+export default function FeaturedUser(props) {
 
   return (
-    <div>User</div>
-    // <div className="featured">
-    //   <div className="featuredItem">
-    //     <span className="featuredTitle">Usuarios</span>
-    //     <div className="featuredMoneyContainer">
-    //     </div>
-    //   </div>
-    //   <div className="featuredItem">
-    //     <span className="featuredTitle">Usuarios</span>
-    //     <div className="featuredMoneyContainer">
-  
-    //     </div>
-    //   </div>
-    // </div>
+  <>
+    <div className="featured">
+      <div className="featuredItem">
+        <span className="featuredTitle">< PeopleAlt/> Usuarios Registrados</span>
+        <div className="featuredMoneyContainer">
+        <span className="featuredMoney">
+          {props.users.length} Usuarios</span>
+        <span className="featuredMoneyRate"> Aumento
+            2 <ArrowUpward className="featuredIcon"/>
+          </span>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
