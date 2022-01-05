@@ -1,5 +1,5 @@
 import React from 'react'
-import './producttable.css'
+import './productTable.css'
 import Moment from 'react-moment';
 
 export default function ProductTable(props) {
@@ -8,14 +8,13 @@ export default function ProductTable(props) {
     return (
        <>
         <table>
-            <caption>Productos</caption>
             <thead>
                 <tr>
                 <th>Id</th>
                 <th>Nombre</th>
-                <th>Ciudad</th>
-                <th>Direccion</th>
-                <th>Email</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Categoria</th>
                 <th>Creado</th>
                 </tr>
             </thead>
@@ -23,10 +22,10 @@ export default function ProductTable(props) {
             {props.products.map((product, i) =>
                 <tr key={i}>
                     <td> {product.id}</td>
-                    <td>{product.fullname}</td>
-                    <td>{product.city}</td>
-                    <td>{product.productAddress}</td>
-                    <td>{product.email}</td>
+                    <td>{product.productName}</td>
+                    <td>{product.stock}</td>
+                    <td>${product.price}</td>
+                    <td>{product.category.categorieName}</td>
                     <td> <Moment format="DD/MM/YYYY">{product.createdAt}</Moment></td>
                 </tr>
             )}

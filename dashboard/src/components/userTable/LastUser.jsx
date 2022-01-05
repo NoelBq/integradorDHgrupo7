@@ -15,7 +15,6 @@ export default function LastUser(props) {
                 <tr>
                 <th>Id</th>
                 <th>Nombre</th>
-                <th>Avatar</th>
                 <th>Ciudad</th>
                 <th>Direccion</th>
                 <th>Email</th>
@@ -25,7 +24,6 @@ export default function LastUser(props) {
                 <tr>
                     <td> {lastUser[0].id}</td>
                     <td>{lastUser[0].fullname}</td>
-                    <td><img src={lastUser[0].image}/></td>
                     <td>{lastUser[0].city}</td>
                     <td>{lastUser[0].userAddress}</td>
                     <td>{lastUser[0].email}</td>

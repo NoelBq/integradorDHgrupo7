@@ -6,6 +6,9 @@ import axios from 'axios';
 
 export default function FeaturedProducts(props) {
 
+    if (!props.products.length || !props.product.length) {
+        return <span></span>
+    }
  
   return (
     <div className="featured">
@@ -21,9 +24,9 @@ export default function FeaturedProducts(props) {
       <div className="featuredItem">
         <span className="featuredTitle">Mas Vendido</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney"> </span>
+          <span className="featuredMoney"> {props.product.productName}</span>
           <span className="featuredMoneyRate">
-            -1.4 <ArrowDownward className="featuredIcon negative"/>
+            -1.4 <ArrowUpward   className="featuredIcon positive"/>
           </span>
         </div>
       </div>
