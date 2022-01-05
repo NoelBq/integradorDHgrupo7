@@ -13,10 +13,8 @@ export default function Topbar() {
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
-            <a href="http://localhost:3001/" className="href">< KeyboardReturn/></a>
-            
+            <a href="http://localhost:3001/" className="href">< KeyboardReturn/></a>   
           </div>
-           {/* <img src={list.image} alt="profileImage" className="topAvatar" /> */}
         </div>
       </div>
     </div>
