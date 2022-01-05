@@ -47,6 +47,16 @@ return res;
         )
         return res;
     },
+    deleteProduct: async function(id) {
+        const res = await db.products.destroy(
+            { 
+                where: {
+                    id : id
+                } 
+            }
+        )
+        return res;
+    },
     
     
 
