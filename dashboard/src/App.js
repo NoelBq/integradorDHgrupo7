@@ -4,7 +4,7 @@ import Home from "./pages/home/Home"
 import ProductList from "./pages/productList/ProductList"
 import Users from "./pages/users/Users"
 import Categories from "./pages/categories/Categories";
-import ProductList from "./pages/productList/ProductList";
+
 import "./app.css";
 import {
   BrowserRouter as Router,

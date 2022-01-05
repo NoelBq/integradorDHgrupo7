@@ -4,21 +4,22 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-export default function FeaturedProducts() {
+export default function FeaturedProducts(props) {
 
+ 
   return (
     <div className="featured">
       <div className="featuredItem">
-        <span className="featuredTitle">Ganancias</span>
+        <span className="featuredTitle">Cantidad de Productos</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$</span>
+          <span className="featuredMoney">{props.products.length}</span>
           <span className="featuredMoneyRate">
-            -11.4 <ArrowDownward  className="featuredIcon negative"/>
+            -11.4 <ArrowUpward  className="featuredIcon positive"/>
           </span>
         </div>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Pedidos</span>
+        <span className="featuredTitle">Mas Vendido</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney"> </span>
           <span className="featuredMoneyRate">

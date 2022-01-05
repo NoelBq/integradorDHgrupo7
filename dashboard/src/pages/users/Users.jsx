@@ -4,6 +4,7 @@ import UserTable from '../../components/userTable/UserTable';
 import LastUser from '../../components/userTable/LastUser';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ArrowUpward } from '@material-ui/icons';
 
 
 export default function Users() {
@@ -19,12 +20,13 @@ export default function Users() {
     }, [])
 
    
-    
+
     return (
         <div className="home">
             <div className="homeWidgets">
                 <FeaturedUser users={users} />
                 <UserTable users={users}/>
+                <LastUser users={users} />
             </div>
         </div>
         )
