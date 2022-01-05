@@ -11,7 +11,7 @@ router.get("/shop/donas", mainController.shopDonas);
 router.get("/shop/helados", mainController.shopHelados);
 router.get("/shop/cookies", mainController.shopCookies);
 router.get("/underconstruction", mainController.underConstruction);
-router.get("/formsadmin" ,mainController.formsadmin); // falta agregar el adminmiddleware se lo saque para trabajar mas comodo
+router.get("/formsadmin",adminMiddleware ,mainController.formsadmin); 
 router.get("/adminpanel",adminMiddleware ,mainController.adminpanel);
 
 

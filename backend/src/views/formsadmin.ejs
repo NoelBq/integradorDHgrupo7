@@ -42,25 +42,22 @@
                         <div class="form-item addproduct-stock">
                             <div class="custom-file grupo__stock" >
                                 <label class="custom-file-label" for="customFileLang">Stock</label>
-                                <input type="number" name="stock" min="1" max="999" class="is-input" id="stock" required>
+                                <input type="number" name="stock" min="1"  max="999" class="is-input" id="stock" required>
                                 <small id="input-error-stock" class="input-error" style="display: none; color: red">Campo Obligatorio, mininimo 1 maximo 999.</small>
                             </div>
                         </div>
 
-
-                        
-                        <div>
-                            <label for="category">Categoría</label>
-                            <input type="radio" name="category" value="1" checked>Donas
-                            <input type="radio" name="category" value="2">Cookies
-                            <input type="radio" name="category" value="3">Helados
+                        <div style="margin: 17px 17px 17px 6px;">
+                            <label for="category" >Categoría: </label>
+                            <input style="margin-left: 15px;" type="radio" name="category" value="1" checked>Donas
+                            <input style="margin-left: 15px;" type="radio" name="category" value="2">Cookies
+                            <input style="margin-left: 15px;" type="radio" name="category" value="3">Helados
                         </div>
                         
-
                         <div class="form-item addproduct-price grupo__addprice">
                             <label for="addprice"> Precio </label>
                             <input type="number" name="addprice" min="1" max="99999" class="is-input" placeholder="Precio" id="addprice" required>
-                            <small id="input-error-addprice" class="input-error" style="display: none; color: red">Campo Obligatorio, mininimo 1 maximo 999.</small>
+                            <small id="input-error-addprice" class="input-error" style="display: none; color: red">Campo Obligatorio, mininimo 1$ maximo 99999$.</small>
                         </div>
                         
                         <div class="form-item">
