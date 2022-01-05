@@ -14,12 +14,13 @@ export default function ProductList() {
   useEffect(() => {
       axios.get('http://localhost:3001/api/products')
       .then((res) => {
-         setProducts(res)
+        const products = [...res.data]
+        setProducts(products)
       })
   }, [])
   
 
-console.log(products)
+
 
   return (
    <div>

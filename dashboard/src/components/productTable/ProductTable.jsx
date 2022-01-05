@@ -1,14 +1,14 @@
 import React from 'react'
-import './usertable.css'
+import './producttable.css'
 import Moment from 'react-moment';
 
-export default function UserTable(props) {
+export default function ProductTable(props) {
 
  
     return (
        <>
         <table>
-            <caption>Usuarios</caption>
+            <caption>Productos</caption>
             <thead>
                 <tr>
                 <th>Id</th>
@@ -20,14 +20,14 @@ export default function UserTable(props) {
                 </tr>
             </thead>
             <tbody>
-            {props.users.map((user, i) =>
+            {props.products.map((product, i) =>
                 <tr key={i}>
-                    <td> {user.id}</td>
-                    <td>{user.fullname}</td>
-                    <td>{user.city}</td>
-                    <td>{user.userAddress}</td>
-                    <td>{user.email}</td>
-                    <td> <Moment format="DD/MM/YYYY">{user.createdAt}</Moment></td>
+                    <td> {product.id}</td>
+                    <td>{product.fullname}</td>
+                    <td>{product.city}</td>
+                    <td>{product.productAddress}</td>
+                    <td>{product.email}</td>
+                    <td> <Moment format="DD/MM/YYYY">{product.createdAt}</Moment></td>
                 </tr>
             )}
             </tbody>

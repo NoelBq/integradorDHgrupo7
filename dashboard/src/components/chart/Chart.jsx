@@ -2,8 +2,11 @@ import "./chart.css";
 import {
   LineChart,
   Line,
-  XAxis,
-  CartesianGrid,
+  AreaChart, 
+  Area, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
@@ -27,13 +30,23 @@ useEffect(() => {
     <div className="chart">
       <h3 className="chartTitle">Analitics</h3>
       <ResponsiveContainer width="80%" aspect={4 / 1}>
-        <LineChart data={orders}>
-          <XAxis dataKey={orders.createdAt} stroke="#5550bd" />
-          <Line type="monotone" dataKey={orders.totalPrice} stroke="#5550bd" />
-
-          <Tooltip />
-           <CartesianGrid stroke="#e0dfdf" strokeDasharray="5 5" />
-        </LineChart>
+      <AreaChart
+       width={600}
+       height={400}
+       data={orders}
+       margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+     >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Area
+          type='monotone'
+          dataKey='uv'
+          stroke='#8884d8'
+          fill='#8884d8'
+        />
+      </AreaChart>
       </ResponsiveContainer>
     </div>
   );

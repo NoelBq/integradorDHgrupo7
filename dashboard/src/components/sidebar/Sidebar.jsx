@@ -9,6 +9,7 @@ import {
   BarChart,
   CategoryIcon,
   Assistant,
+  Class 
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
@@ -27,43 +28,27 @@ export default function Sidebar() {
           <Link to="/" className="link">
             <li className="sidebarListItem">
               <LineStyle className="sidebarIcon" />
-              Home
+              Ordenes
             </li>
             </Link>
-            
+            <Link to="/categories" className="link">
             <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analytics
+              <Class className="sidebarIcon" />
+              Categorias
             </li>
-            <li className="sidebarListItem">
-              <TrendingUp className="sidebarIcon" />
-              Sales
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Menu</h3>
-          <ul className="sidebarList">
-          <Link to="/users" className="link">
+            </Link>
+            <Link to="/users" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Users
               </li>
           </Link>
-              <Link to="/products" className="link">
+          <Link to="/products" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
                 Products
               </li>
-             </Link>
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Transactions
-            </li>
-            <li className="sidebarListItem">
-              <BarChart className="sidebarIcon" />
-              Reports
-            </li>
+            </Link>
           </ul>
         </div>
       </div>

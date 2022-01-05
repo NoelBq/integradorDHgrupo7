@@ -1,6 +1,7 @@
 
 import FeaturedUser from '../../components/featuredUser/FeaturedUser'
 import UserTable from '../../components/userTable/UserTable';
+import LastUser from '../../components/userTable/LastUser';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -16,7 +17,8 @@ export default function Users() {
             setUsers(users)
         })
     }, [])
-    
+
+   
     
     return (
         <div className="home">
