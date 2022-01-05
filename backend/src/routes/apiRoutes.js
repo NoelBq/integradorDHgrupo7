@@ -9,5 +9,6 @@ router.get('/user/:id', apiCrontroller.getUserById);
 router.get('/products', apiCrontroller.getProducts);
 router.get('/product/:id', apiCrontroller.getProductById);
 router.get('/orders', apiCrontroller.getOrders)
+router.get('/categories', apiCrontroller.getCategories);
 
 module.exports = router;

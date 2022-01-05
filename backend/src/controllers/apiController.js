@@ -80,7 +80,16 @@ const api = {
 
         }
     },
-    
+    getCategories: async (req,res) =>{
+        try{
+            const result = await categories.getAllCategories();
+            res.send(result)
+        }catch(error){
+            throw error;
+
+        }
+    },
+
     // userLogged: async (req,res) => {
     //     try {
     //         let user = req.session.userLogged;
