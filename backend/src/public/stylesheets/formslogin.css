@@ -21,7 +21,7 @@
 
 .form-box {
     width: 270px;
-    height:  600px;
+    height:  525px;
     position: absolute;
     margin: 6% auto;
     margin-top: 0px;
@@ -117,6 +117,7 @@
   .avatar img {
     width: 100%;
     height: auto;
+    margin-top: 10px;
   }
   
 
@@ -288,6 +289,15 @@ input[type="file"] + label {
     display: none;
 }
 .formulario__mensaje-error-terminos p {
+    text-align: center;
+    background-color: orange;
+    margin-top: 8px;
+    color: white;
+    padding: 5px;
+    font-weight: initial;
+    display: none;
+}
+.formulario__mensaje-error-imagenperfil p {
     text-align: center;
     background-color: orange;
     margin-top: 8px;

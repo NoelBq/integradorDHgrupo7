@@ -19,6 +19,7 @@ body {
     background-attachment: fixed;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 .container {
@@ -28,13 +29,14 @@ body {
     align-items: center;
     margin-top: 3em;
     margin-bottom: 2em;
-    width: 90vw;
+    width: 300px;
 }
 
 .container h3 {
     text-align: center;
     margin-top: 0px;
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .form {
@@ -42,6 +44,7 @@ body {
     position: relative;
     margin-bottom: 66px;
     color: #fff;
+    margin-left: 25px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -77,6 +80,16 @@ body {
     transition: all 200ms;
     border-bottom-color: #fff;
 }
+
+.addproduct-image {
+    border-bottom-color: #fff;
+    border-bottom:  1px solid;
+    padding: 4px;
+    width: 90%;
+    border-bottom: solid 2px;
+
+}
+
 
 .form-item .form-section {
     display: flex;
@@ -319,10 +332,12 @@ body {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        height: 70vh;
     }
     .container {
         width: 40vw;
         min-height: 420px;
+        max-width: 458px;
     }
     .form-item button {
         font-size: 1em;

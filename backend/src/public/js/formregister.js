@@ -1,5 +1,7 @@
 let formulario = document.querySelector("form.input-register")
 let inputs = document.querySelectorAll("form input")
+let imagen =  document.getElementById("avatar")
+let valor = imagen.files.length
 
 const expresiones = {
     fullname: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -7,27 +9,16 @@ const expresiones = {
     city: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
     password: /^.{8,40}$/, // 4 a 12 digitos.
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    avatar: (/\.(jpg|png|gif)$/i)
 }
 
-const campos = {
+let campos = {
     fullname: false,
     userAddress: false,
     city: false,
     password: false,
-    email: false
+    email: false,
 }
 
-/*let o = document.querySelector("#avatar")
-let uploadFile = o.files[0];
-const validarImagen = function(){
-    console.log(uploadFile)
-    if (o.files.length==0 || !expresiones.avatar.test(uploadFile.name) ){
-        console.log("estoy vacio")
-    }else{
-        console.log("tengo una imageeeen")
-    }
-}*/
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
@@ -55,18 +46,21 @@ const validarCampo = (expresiones, input, campo) => {
         document.querySelector(`.grupo__${campo} #input-error-${campo}`).style.display = "none"
         document.querySelector(`.grupo__${campo} .grupo__inputs i`).style.display = "block"
         campos[campo] = true;
+        valor = imagen.files.length
     }else{
         document.getElementById(`${campo}`).style.color = "red"
         document.querySelector(`.grupo__${campo} #input-error-${campo}`).classList.add("input-error-activo")
         document.querySelector(`.grupo__${campo} .grupo__inputs i`).style.display = "none"
         document.querySelector(`.grupo__${campo} #input-error-${campo}`).style.display = "block"
         campos[campo] = false;
+        valor = imagen.files.length
     }
 }
 
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
+
 });
 
 formulario.addEventListener('submit', (e) => {
@@ -74,7 +68,7 @@ formulario.addEventListener('submit', (e) => {
 
     let terminos = document.getElementById("accept")
     
-    if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && terminos.checked){
+    if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && terminos.checked && valor){
         formulario.submit()
         formulario.reset();
         document.querySelector("#formulario__mensaje-exito").style.display = "block"
@@ -82,9 +76,15 @@ formulario.addEventListener('submit', (e) => {
         document.querySelector(".formulario__mensaje-error-terminos p").style.display = "none"
         setTimeout(() =>{
             document.querySelector("#formulario__mensaje-exito").style.display = "none"
-        }, 7000)
-    }else if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && !terminos.checked){
+        }, 4000)
+    }else if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && !valor){
         document.querySelector(".formulario__mensaje-error p").style.display = "none"
+        document.querySelector(".formulario__mensaje-error-terminos p").style.display = "none"
+        document.querySelector(".formulario__mensaje-error-imagenperfil p").style.display = "block"
+    }
+    else if(campos.fullname && campos.userAddress && campos.city && campos.password && campos.email && valor && !terminos.checked){
+        document.querySelector(".formulario__mensaje-error p").style.display = "none"
+        document.querySelector(".formulario__mensaje-error-imagenperfil p").style.display = "none"
         document.querySelector(".formulario__mensaje-error-terminos p").style.display = "block"
     }else{
         document.querySelector(".formulario__mensaje-error p").style.display = "block"

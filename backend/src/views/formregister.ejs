@@ -69,6 +69,15 @@
                                                     <small id="input-error-city" class="input-error">Capo obligatorio, ingrese una localidad valida!</small>
                                                 </div>
                                                 
+                                                <div class="grupo__avatar input-field">
+                                                    <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
+                                                    <div class="grupo__inputs">
+                                                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg , image/jgp ">
+                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
+                                                    </div>
+                                                    <small id="input-error-avatar" class="input-error">el archivo debe ser JPG, JPEG, PNG, GIF.</small>
+                                                </div>
+
                                                 <div class="grupo__email">
                                                     <div class="grupo__inputs">
                                                         <input type="email" name="email" class="input-field input-field-register" placeholder=" Email" id="email" autocomplete="off"/>
@@ -86,14 +95,7 @@
                                                     <small id="input-error-password" class="input-error">Tu constraseña es obligatorio y debe tener 8 caracteres como minimo.</small>
                                                 </div>
 
-                                                <div class="grupo__avatar input-field">
-                                                    <label for="avatar"> <i class="fas fa-plus"></i>Imagen de Perfil</label>
-                                                    <div class="grupo__inputs">
-                                                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg , image/jgp ">
-                                                        <i id="inputcheck" class="fas fa-check-circle"></i>
-                                                    </div>
-                                                    <small id="input-error-avatar" class="input-error">el archivo debe ser JPG, JPEG, PNG, GIF.</small>
-                                                </div>
+                                                
                                                 
                                                 <div>
                                                 <input id="accept" name="accept" type="checkbox" class="check-box" />
@@ -106,6 +108,10 @@
 
                                                 <div class="formulario__mensaje-error-terminos" id="formulario__mensaje-error">
                                                     <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor acepta los terminos y condiciones. </p>
+                                                </div>
+
+                                                <div class="formulario__mensaje-error-imagenperfil" id="formulario__mensaje-error">
+                                                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor agrega una imagen. </p>
                                                 </div>
                                                 
                                                 <div class="formulario__mensaje-error" id="formulario__mensaje-error">

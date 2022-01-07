@@ -53,7 +53,7 @@ let formulario = document.querySelector("form.input-login")
             document.querySelector(".formulario__mensaje-error p").style.display = "none"
             setTimeout(() =>{
                 document.querySelector("#formulario__mensaje-exito").style.display = "none"
-            }, 7000)
+            }, 4000)
         }else{
             document.querySelector(".formulario__mensaje-error p").style.display = "block"
         }

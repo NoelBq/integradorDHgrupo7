@@ -21,10 +21,7 @@
   
 }
 
-.container-profile > div{
 
-  min-height: 100vh;
-}
 
 .profile-card{
   background-color: #231e39;
@@ -47,13 +44,15 @@
 
 .avatar-card-photo{
   height: 100px;
-  width:110px;
+  width:100px;
   border-radius: 50%;
   border: 1px solid #1f1a32;
-  padding: 7px;
+  padding: 6px;
   background-color: #292343;
   overflow: hidden;
   transform: translateY(calc(50% + 60px));
+  display: flex;
+  justify-content: center;
 }
 
 .avatar-card-photo img{
@@ -91,15 +90,14 @@
   margin: 10px 0 40px;
 }
 
-.card-button button:first-of-type{
-  margin-right: 10px;
-}
+
 
 .btn{
   display: inline-block;
   padding: 10px 25px;
   border-radius: 3px;
   text-align: center;
+  margin-top: 5px;
   transition: all .5s ease;
   cursor: pointer;
 }
@@ -579,5 +577,9 @@ a.remove:hover {
   .container-profile {
     padding-top: 5%;
     width: 30%;
+  }
+  .container-profile > div{
+
+    min-height: 100vh;
   }
 }

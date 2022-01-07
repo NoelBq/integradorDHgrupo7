@@ -4,7 +4,8 @@
 <head>
     <%- include('./partials/head') %>
         <link rel="stylesheet" href="/stylesheets/formslogin.css" />
-         <link rel="stylesheet" href="./stylesheets/formsadmin.css">
+        <link rel="stylesheet" href="./stylesheets/formsadmin.css">
+         
 </head>
 
 <body>
@@ -33,9 +34,9 @@
                             <small id="input-error-description" class="input-error" style="display: none; color: red">Campo Obligatorio, minimo 2 caracteres.</small>
                         </div>
                         <div class="form-item addproduct-image">
-                            <div class="custom-file">
-                                <label class="custom-file-label" for="customFileLang">Imagen</label>
-                                <input type="file" name="addimages" class="is-input" accept=".jpg , .png" id="addimages" required style="display: block;">
+                            <div class="custom-file form-item">
+                                <label for="addimages"> <i class="fas fa-plus"></i>Imagen de Producto</label>
+                                <input type="file" name="addimages" class="is-input" accept="image/png, image/jpeg , image/jgp" id="addimages" required>
                             </div>
                         </div>
 
@@ -49,9 +50,11 @@
 
                         <div style="margin: 17px 17px 17px 6px;">
                             <label for="category" >Categoría: </label>
-                            <input style="margin-left: 15px;" type="radio" name="category" value="1" checked>Donas
-                            <input style="margin-left: 15px;" type="radio" name="category" value="2">Cookies
-                            <input style="margin-left: 15px;" type="radio" name="category" value="3">Helados
+                            <div>
+                                <input style="margin-left: 15px;" type="radio" name="category" value="1" checked>Donas
+                                <input style="margin-left: 15px;" type="radio" name="category" value="2">Cookies
+                                <input style="margin-left: 15px;" type="radio" name="category" value="3">Helados
+                            </div>
                         </div>
                         
                         <div class="form-item addproduct-price grupo__addprice">

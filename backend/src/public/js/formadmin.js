@@ -2,6 +2,7 @@ let formulario = document.querySelector("form")
 let inputs = document.querySelectorAll("form input")
 let imagen =  document.getElementById("addimages")
 let buttom = document.getElementById("button-submit-admin");
+let valor = imagen.files.length
 
 
 const expresiones = {
@@ -17,7 +18,6 @@ const campos = {
     description: false,
     stock: false,
     addprice: false,
-    image: false,
 }
 
 
@@ -35,15 +35,6 @@ const validarFormulario = (e) => {
         case "addprice":
             validarCampo(expresiones.addprice, e.target, "addprice")
         break;
-        case "addimages":
-            let valor = imagen.files.length
-            console.log(valor)
-            if(valor == 0){
-                campos["image"] = false;
-            }else{
-                campos["image"] = true;
-            }
-        break;
     }
 }
 
@@ -52,11 +43,15 @@ const validarCampo = (expresiones, input, campo) => {
         document.getElementById(`${campo}`).style.color = "green"
         document.querySelector(`.grupo__${campo} #input-error-${campo}`).style.display = "none"
         campos[campo] = true;
+        valor = imagen.files.length
+        console.log(valor)
     }else{
         document.getElementById(`${campo}`).style.color = "red"
         document.querySelector(`.grupo__${campo} #input-error-${campo}`).classList.add("input-error-activo")
         document.querySelector(`.grupo__${campo} #input-error-${campo}`).style.display = "block"
         campos[campo] = false;
+        valor = imagen.files.length
+        console.log(valor)
     }
 }
 
@@ -69,7 +64,7 @@ inputs.forEach((input) => {
 buttom.addEventListener('click', (e) => {
     console.log(campos)
     e.preventDefault();
-    if(campos.productName && campos.description && campos.stock && campos.addprice && campos.image){
+    if(campos.productName && campos.description && campos.stock && campos.addprice && valor){
         formulario.submit()
         formulario.reset();
         document.querySelector(".formulario__mensaje-exito").style.display = "block"
@@ -78,7 +73,7 @@ buttom.addEventListener('click', (e) => {
         setTimeout(() =>{
             document.querySelector(".formulario__mensaje-exito").style.display = "none"
         }, 7000)
-    }else if(campos.productName && campos.description && campos.stock && campos.addprice && !campos.image){
+    }else if(campos.productName && campos.description && campos.stock && campos.addprice && !valor){
         document.querySelector(".formulario__mensaje-error p").style.display = "none"
         document.querySelector(".formulario__mensaje-error-imagen p").style.display = "block"
     }else{
