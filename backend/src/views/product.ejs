@@ -54,15 +54,20 @@
                 <li><i class="fas fa-truck"></i>Envio:<span>Sin cargo desde $2500</span></li>
               </ul>
             </div>
-            <div class = "purchase-info">
-              <form action="/cart" method="POST">
-                <input type="hidden" name="id" value="<%- product.id -%>" id="">
-                <input type="number" min="1" value ="1" name="quantity">
-                <button  type ="submit" class ="btn cart">
-                  Agregar al Carro <i class ="fas fa-shopping-cart"></i>
-                </button>
-              </form>
-            </div>
+            <% if( user && user.role =="admin"){ %>  
+               <span> </span>
+            
+              <% } else   { %>  
+                <div class = "purchase-info">
+                  <form action="/cart" method="POST">
+                    <input type="hidden" name="id" value="<%- product.id -%>" id="">
+                    <input type="number" min="1" value ="1" name="quantity">  
+                    <button  type ="submit" class ="btn cart">
+                      Agregar al Carro <i class ="fas fa-shopping-cart"></i>
+                    </button>
+                  </form>
+                </div>
+           <%   } %>
           </div>
         </div>
       </div>

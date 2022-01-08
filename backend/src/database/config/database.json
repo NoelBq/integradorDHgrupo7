@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "DBSweetTreats2",
-    "host": "127.0.0.1",
+    "username": "franAdmin",
+    "password": "Adrian12234..",
+    "database": "DBSweetTreats",
+    "host": "45.79.201.214",
     "dialect": "mysql",
     "port": "3306"
   },

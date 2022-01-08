@@ -332,12 +332,12 @@ body {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        height: 70vh;
     }
     .container {
         width: 40vw;
         min-height: 420px;
         max-width: 458px;
+        margin-bottom: 1em;
     }
     .form-item button {
         font-size: 1em;
