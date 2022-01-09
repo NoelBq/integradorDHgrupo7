@@ -1,3 +1,75 @@
+# **SWEET TREATS PROJECT**
+
+**An ecommerce project**
+
+Sweet treats  is an ecommerce project that lets you manage users, products and orders from a candy shop, conecting to a MySQL database that stores and manage the shop's data.
+
+## Heroku 
+
+[https://sweet-treats-shop.herokuapp.com/]
+
+## Features:
+
+- Users' register and login.
+- Role Validation (Admin or not)
+- Products' CRUD functions
+- Orders' CRUD functions
+## Technologies and dependecies used 
+
+- Node v14.0.0
+- bcryptjs v2.4.3,
+- body-parser v1.19.0",
+- cookie-parser v1.4.5,
+- express v4.17.1,
+- express-session v1.17.2,
+- express-validator v6.13.0,
+- method-override v3.0.0,
+- multer v1.4.3",
+- Ejs v3.1.6
+- Javascript
+- Html and Css 
+
+## Getting started
+###  Clone the repository, install node packages 
+
+```
+//on local
+git clone https://github.com/NoelBq/integradorDHgrupo7.git
+npm install or npm i to install dependencies
+```
+
+## Database Set up:
+
+- Run a MySQL server or start MySQL server with docker
+
+```
+//on local 
+docker-compose run -D
+```
+## CREATE DATABASE
+- To run migrations and seeders
+
+```
+//on local 
+./createdb.sh
+```
+
+## Getting Started
+
+-To run backend 
+
+```
+cd backend 
+npm start
+```
+
+-To run frontend 
+
+```
+cd dashboard
+npm start
+```
+
 # Grupo_7_SweetTreats
 
 - [Noelia Baquero Staci]  -
@@ -57,8 +129,6 @@ colleagues and other businesses. Some of them are:
 
 - Poppins
 
-
-
 # SPANISH
 
 ## Sobre Nosotros 
@@ -108,14 +178,4 @@ Nuestra tienda es una herramienta critica para nuestra estrategia de retail onli
 ## Fuente:
 
 -Poppins
-
-
-## Feedback sprint 01
-buena propuesta muchachos (10/10)
-
-## Feedback sprint 02
-Su web es extraordinaria , me encanto la parte del login , veo la dedicacion y el amor de estas , los felicito 
-- calificacion (10 /10 ) si pudiese les colocaria 100/10
-- Excelente trabajo
- 
 
